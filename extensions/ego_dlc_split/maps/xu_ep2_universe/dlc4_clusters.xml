@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+	<add sel="//macro[@name='Cluster_406_macro']/connections">
+		<connection name="C406S01_RegionDA1_connection" ref="regions">
+			<offset>
+				<position x="-75000" y="0" z="180000"/>
+			</offset>
+			<macro name="C406S01_RegionDA1_macro">
+				<component connection="cluster" ref="standardregion"/>
+				<properties>
+					<region ref="p1_40km_methane_field"/>
+				</properties>
+			</macro>
+		</connection>
+		<connection name="C406S01_RegionDA2_connection" ref="regions">
+			<offset>
+				<position x="25000" y="0" z="180000"/>
+			</offset>
+			<macro name="C406S01_RegionDA2_macro">
+				<component connection="cluster" ref="standardregion"/>
+				<properties>
+					<region ref="p1_40km_asteroid_field"/>
+				</properties>
+			</macro>
+		</connection>
+	</add>
+	<add sel="//macro[@name='Cluster_403_macro']/connections">
+		<connection name="C403S01_RegionDA1_connection" ref="regions">
+			<offset>
+				<position x="-66000" y="0" z="212000"/>
+			</offset>
+			<macro name="C403S01_RegionDA1_macro">
+				<component connection="cluster" ref="standardregion"/>
+				<properties>
+					<region ref="p1_40km_helium_field"/>
+				</properties>
+			</macro>
+		</connection>
+		<connection name="C403S01_RegionDA2_connection" ref="regions">
+			<offset>
+				<position x="75000" y="0" z="212000"/>
+			</offset>
+			<macro name="C403S01_RegionDA2_macro">
+				<component connection="cluster" ref="standardregion"/>
+				<properties>
+					<region ref="p1_40km_asteroid_field"/>
+				</properties>
+			</macro>
+		</connection>
+	</add>
+</diff>

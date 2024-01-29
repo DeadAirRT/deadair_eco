@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+	<add sel="/macros/macro/properties"><threatscore value="30"/></add>
+</diff>

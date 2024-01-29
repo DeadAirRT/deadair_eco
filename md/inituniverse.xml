@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[3]">
+    <add_tradeware object="$controllable" ware="ware.meat" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[3]">
+    <add_tradeware object="$controllable" ware="ware.refinedmetals" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[3]">
+    <add_tradeware object="$controllable" ware="ware.wheat" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_elseif[1]">
+    <add_tradeware object="$controllable" ware="ware.majasnails" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_elseif[1]">
+    <add_tradeware object="$controllable" ware="ware.refinedmetals" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_elseif[1]">
+    <add_tradeware object="$controllable" ware="ware.sojabeans" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_elseif[1]">
+    <add_tradeware object="$controllable" ware="ware.nividium" allowbuy="true" allowsell="false" lockavgprice="false"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_elseif[2]">
+    <add_tradeware object="$controllable" ware="ware.sunriseflowers" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_elseif[2]">
+    <add_tradeware object="$controllable" ware="ware.swampplant" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_elseif[2]">
+    <add_tradeware object="$controllable" ware="ware.teladianium" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='$tradestation?']">
+    <add_tradeware object="$controllable" ware="ware.antimattercells" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='$tradestation?']">
+    <add_tradeware object="$controllable" ware="ware.energycells" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='$tradestation?']">
+    <add_tradeware object="$controllable" ware="ware.graphene" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='$tradestation?']">
+    <add_tradeware object="$controllable" ware="ware.microchips" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='$tradestation?']">
+    <add_tradeware object="$controllable" ware="ware.plasmaconductors" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='$tradestation?']">
+    <add_tradeware object="$controllable" ware="ware.quantumtubes" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='$tradestation?']">
+    <add_tradeware object="$controllable" ware="ware.siliconwafers" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='$tradestation?']">
+    <add_tradeware object="$controllable" ware="ware.spices" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='$tradestation?']">
+    <add_tradeware object="$controllable" ware="ware.superfluidcoolant" allowbuy="true" allowsell="true" lockavgprice="true"/>
+  </add>
+  <replace sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='@$gamestartstation'][2]/do_if[@value='$controllable.canequipships']">
+    <add_default_production_wares object="$controllable" lowerlimit="62" upperlimit="70" extremechance="0"/>
+  </replace>
+  <remove sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='@$gamestartstation'][2]/do_else"/>
+</diff>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/mdscript/cues/library[@name='Manage_Stations']/cues/cue[@name='Process']/cues/cue[@name='Analyse_Stations']/actions/do_elseif[@value='$Faction == faction.split']/set_value[@exact='2'][@name='$DesiredWharfs']/@exact">1</replace>
+  <add sel="/mdscript/cues/library[@name='Manage_Stations']/cues/cue[@name='Process']/cues/cue[@name='Analyse_Stations']/actions/do_if[@value='$Faction == faction.argon or $Faction == faction.paranid']" type="@chance">0</add>
+</diff>

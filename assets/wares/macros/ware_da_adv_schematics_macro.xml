@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<macros>
+  <macro name="ware_da_adv_schematics_macro" class="object">
+    <component ref="ware_da_adv_schematics" />
+    <properties>
+      <identification unique="0" />
+    </properties>
+  </macro>
+</macros>

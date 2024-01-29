@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/rules/unit/rules/ruleset[@type='default']/rule[@important='true'][@category='build'][@classes='buildmodule']/@weight">100</replace>
+  <replace sel="/rules/unit/rules/ruleset[@type='default']/rule[@important='true'][@category='transport'][@classes='buildmodule']/@weight">5</replace>
+  <add sel="/rules/unit/rules/ruleset[@type='default']">
+    <rule category="transport" mk="1" weight="60" classes="ship_l ship_xl" important="true" purposes="trade"/>
+  </add>
+  <replace sel="/rules/deployable/rules/ruleset[@type='default']/rule[@category='lasertower'][@requireundocking='true'][@mk='1']/@weight">10</replace>
+  <replace sel="/rules/deployable/rules/ruleset[@type='default']/rule[@category='mine'][@purposes='fight'][@mk='1']/@weight">5</replace>
+  <replace sel="/rules/deployable/rules/ruleset[@type='default']/rule[@category='satellite'][@purposes='fight'][@classes='ship_s'][@mk='1']/@weight">10</replace>
+  <replace sel="/rules/deployable/rules/ruleset[@type='default']/rule[@category='satellite'][@purposes='fight'][@classes='ship_s'][@mk='2']/@weight">5</replace>
+  <replace sel="/rules/deployable/rules/ruleset[@type='default']/rule[@category='satellite'][@purposes='build'][@mk='1']/@weight">5</replace>
+  <replace sel="/rules/deployable/rules/ruleset[@type='default']/rule[@category='satellite'][@purposes='build'][@mk='2']/@weight">1</replace>
+  <replace sel="/rules/deployable/rules/ruleset[@type='default']/rule[@category='navbeacon'][@purposes='fight']/@weight">1</replace>
+  <replace sel="/rules/deployable/rules/ruleset[@type='default']/rule[@category='navbeacon'][@purposes='mine trade build']/@weight">1</replace>
+  <add sel="/rules/deployable/rules/ruleset[@type='default']">
+    <rule category="" mk="0" weight="50" purposes="fight build mine trade" classes="ship_s"/>
+  </add>
+  <add sel="/rules/deployable/rules/ruleset[@type='default']">
+    <rule category="" mk="0" weight="50" purposes="fight build mine trade" classes="ship_m"/>
+  </add>
+  <add sel="/rules/deployable/rules/ruleset[@type='default']">
+    <rule category="" mk="0" weight="75" purposes="fight build mine trade" classes="ship_l ship_xl"/>
+  </add>
+</diff>

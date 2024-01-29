@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<macros>
+  <macro name="ware_da_laborunion_contracts_macro" class="object">
+    <component ref="ware_da_laborunion_contracts" />
+    <properties>
+      <identification unique="0" />
+    </properties>
+  </macro>
+</macros>

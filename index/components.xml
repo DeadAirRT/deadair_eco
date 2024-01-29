@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<add sel="//index">
+		<entry name="prod_gen_da_adv_schematics" value="extensions\deadair_eco\assets\structures\production\prod_gen_da_adv_schematics"/>
+		<entry name="ware_da_adv_schematics" value="extensions\deadair_eco\assets\wares\ware_da_adv_schematics"/>
+		<entry name="prod_gen_da_mil_schematics" value="extensions\deadair_eco\assets\structures\production\prod_gen_da_mil_schematics"/>
+		<entry name="ware_da_mil_schematics" value="extensions\deadair_eco\assets\wares\ware_da_mil_schematics"/>
+		<entry name="prod_gen_da_laborunion_contracts" value="extensions\deadair_eco\assets\structures\production\prod_gen_da_laborunion_contracts"/>
+		<entry name="ware_da_laborunion_contracts" value="extensions\deadair_eco\assets\wares\ware_da_laborunion_contracts"/>
+	</add>
+</diff>

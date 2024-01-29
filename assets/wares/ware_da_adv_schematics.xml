@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<components>
+	<component name="ware_da_adv_schematics" class="object">
+		<source geometry="assets\wares\ware_advancedelectronics_data"/>
+		<layers>
+			<layer>
+				<waypoints/>
+				<lights/>
+			</layer>
+		</layers>
+		<connections>
+			<connection name="container" tags="contents" value="0"/>
+			<connection name="position" tags="position" value="1"/>
+			<connection name="space" tags="object">
+				<offset/>
+			</connection>
+			<connection name="Connection001" tags="part  ">
+				<offset/>
+				<parts>
+					<part name="interiors_rooms_holodisplay">
+						<lods>
+							<lod index="0">
+								<materials>
+									<material id="1" ref="effects.vertexcolor_lightcone"/>
+								</materials>
+							</lod>
+						</lods>
+						<size>
+							<max x="40.57305" y="49.53294" z="37.36468"/>
+							<center x="1.907349E-06" y="-1.907349E-06" z="3.814697E-06"/>
+						</size>
+					</part>
+				</parts>
+			</connection>
+		</connections>
+	</component>
+</components>

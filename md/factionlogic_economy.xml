@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <add sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Request_Production_Module']/actions/set_value[@name='$DebugText']" pos="before">
+    <do_if value="$Faction == faction.hatikvah">
+      <set_value name="$CheckProductionCompatibility" exact="true"/>
+    </do_if>
+  </add>
+  <replace sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Request_Factory']/actions/do_else[1]/do_else/do_if[@value='$Zone or @$BuildInSector']/do_if[@value='not $ProductionPlanned']/set_value[@exact='if $Ware.hastag.recycling then 3 else 1'][@name='$ProductionLimit']/@exact">if $Ware.hastag.recycling then 3 else 5</replace>
+  <replace sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Request_Factory']/actions/do_else[1]/do_else/do_if[@value='$Zone or @$BuildInSector']/do_if[@value='not $ProductionPlanned']/do_if[@value='@$BuildInSector']/create_factory[@name='$Station']/safepos/@radius">5km</replace>
+  <replace sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Request_Factory']/actions/do_else[1]/do_else/do_if[@value='$Zone or @$BuildInSector']/do_if[@value='not $ProductionPlanned']/do_else/create_factory[@name='$Station']/safepos/@radius">5km</replace>
+</diff>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<macros>
+  <macro name="storage_arg_l_tradestation_01_macro" class="storage">
+    <component ref="storage_arg_l_tradestation_01" />
+    <properties>
+      <identification name="{20104,23301}" makerrace="argon" size="large" description="{20104,23302}" />
+      <cargo max="300000" tags="container liquid solid" />
+      <build>
+        <sets>
+          <set ref="tradestation_argon" />
+        </sets>
+      </build>
+      <explosiondamage value="100000" />
+      <hull max="643000" />
+      <secrecy level="1" />
+    </properties>
+  </macro>
+</macros>-->
+<diff>
+<replace sel="//cargo/@max">1250000</replace>
+</diff>

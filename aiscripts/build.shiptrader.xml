@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/aiscript/interrupts/handler[1]/actions/do_if/do_if[@value='$object']/do_if[@value='event.param3.exists and $object.isclass.ship']/do_if[@value='event.param3.construction']/do_if[@value='$object.controlpostslot.{controlpost.aipilot}']/do_if[@value='$playerownedobject or $playerownedbuilder']/append_to_list[@exact='tag.rookie'][@name='$pilottags']">
+    <do_any>
+      <append_to_list name="$pilottags" exact="tag.rookie" weight="75"/>
+      <append_to_list name="$pilottags" exact="tag.regular" weight="25"/>
+    </do_any>
+  </replace>
+  <replace sel="/aiscript/attention/actions/do_if[@value='player.age gt 10s and (not $lastcheck or player.age gt $lastcheck + 5s)']/do_if[@value='not this.object.isplayerowned and this.object.isclass.station']/do_if[@value='this.station.isshipyard']/set_value[@exact='table[{class.ship_l} = table[$wanted = 1], {class.ship_m} = table[$wanted = 1]]'][@name='$wantedtraders']/@exact">table[{class.ship_l} = table[$wanted = 2], {class.ship_m} = table[$wanted = 3]]</replace>
+  <add sel="/aiscript/attention/actions/do_if[@value='player.age gt 10s and (not $lastcheck or player.age gt $lastcheck + 5s)']/do_if[@value='not this.object.isplayerowned and this.object.isclass.station']/do_if[@value='this.station.isshipyard']/set_value[@exact='table[{class.ship_l} = table[$wanted = 2], {class.ship_m} = table[$wanted = 3]]'][@name='$wantedtraders']" type="@chance">(this.owner != faction.xenon) * 100</add>
+  <add sel="/aiscript/attention/actions/do_if[@value='player.age gt 10s and (not $lastcheck or player.age gt $lastcheck + 5s)']/do_if[@value='not this.object.isplayerowned and this.object.isclass.station']/do_if[@value='this.station.isshipyard']">
+    <set_value name="$wantedtraders" exact="table[{class.ship_m} = table[$wanted = 2]]" chance="(this.owner == faction.xenon) * 100"/>
+  </add>
+  <replace sel="/aiscript/attention/actions/do_if[@value='player.age gt 10s and (not $lastcheck or player.age gt $lastcheck + 5s)']/do_if[@value='not this.object.isplayerowned and this.object.isclass.station']/do_elseif[@value='this.station.iswharf']/set_value[@exact='table[{class.ship_m} = table[$wanted = 2]]'][@name='$wantedtraders']/@exact">table[{class.ship_l} = table[$wanted = 2], {class.ship_m} = table[$wanted = 3]]</replace>
+  <add sel="/aiscript/attention/actions/do_if[@value='player.age gt 10s and (not $lastcheck or player.age gt $lastcheck + 5s)']/do_if[@value='not this.object.isplayerowned and this.object.isclass.station']/do_elseif[@value='this.station.iswharf']/set_value[@exact='table[{class.ship_l} = table[$wanted = 2], {class.ship_m} = table[$wanted = 3]]'][@name='$wantedtraders']" type="@chance">(this.owner != faction.xenon) * 100</add>
+  <add sel="/aiscript/attention/actions/do_if[@value='player.age gt 10s and (not $lastcheck or player.age gt $lastcheck + 5s)']/do_if[@value='not this.object.isplayerowned and this.object.isclass.station']/do_elseif[@value='this.station.iswharf']">
+    <set_value name="$wantedtraders" exact="table[{class.ship_m} = table[$wanted = 2]]" chance="(this.owner == faction.xenon) * 100"/>
+  </add>
+  <replace sel="/aiscript/attention/actions/do_if[@value='player.age gt 10s and (not $lastcheck or player.age gt $lastcheck + 5s)']/do_if[@value='not this.object.isplayerowned and this.object.isclass.station']/do_elseif[@value='this.station.isequipmentdock']/set_value[@exact='table[{class.ship_m} = table[$wanted = 1]]'][@name='$wantedtraders']/@exact">table[{class.ship_m} = table[$wanted = 2]]</replace>
+  <add sel="/aiscript/attention/actions/do_if[@value='player.age gt 10s and (not $lastcheck or player.age gt $lastcheck + 5s)']/do_if[@value='not this.object.isplayerowned and this.object.isclass.station']/do_elseif[@value='this.station.isequipmentdock']/set_value[@exact='table[{class.ship_m} = table[$wanted = 2]]'][@name='$wantedtraders']" type="@chance">(this.owner != faction.xenon) * 100</add>
+  <add sel="/aiscript/attention/actions/do_if[@value='player.age gt 10s and (not $lastcheck or player.age gt $lastcheck + 5s)']/do_if[@value='not this.object.isplayerowned and this.object.isclass.station']/do_elseif[@value='this.station.isequipmentdock']">
+    <set_value name="$wantedtraders" exact="table[{class.ship_m} = table[$wanted = 1]]" chance="(this.owner == faction.xenon) * 100"/>
+  </add>
+</diff>

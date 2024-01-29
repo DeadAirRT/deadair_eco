@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+	<replace sel="/macros/macro/properties/storage[@unit='20']/@unit">40</replace>
+</diff>

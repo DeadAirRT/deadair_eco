@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <add sel="/groups">
+    <group name="prod_gen_da_adv_schematics">
+      <select macro="prod_gen_da_adv_schematics_macro"/>
+    </group>
+  </add>
+  <add sel="/groups">
+    <group name="prod_gen_da_mil_schematics">
+      <select macro="prod_gen_da_mil_schematics_macro"/>
+    </group>
+  </add>
+  <add sel="/groups">
+    <group name="prod_gen_da_laborunion_contracts">
+      <select macro="prod_gen_da_laborunion_contracts_macro"/>
+    </group>
+  </add>
+</diff>

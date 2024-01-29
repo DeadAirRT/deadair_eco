@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/parameters/economy/modulelimits/@production">20</replace>
+  <replace sel="/parameters/loadout[@variation='0.3']/units/@min">0.7</replace>
+</diff>

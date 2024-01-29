@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/groups/group[@name='shipyard_arg']/select[@constructionplan='arg_shipyard']/@constructionplan">arg_shipyard_upgrade62da</replace>
+  <replace sel="/groups/group[@name='wharf_arg']/select[@constructionplan='arg_wharf']/@constructionplan">arg_wharf_upgrade62da</replace>
+  <replace sel="/groups/group[@name='shipyard_par']/select[@constructionplan='par_shipyard']/@constructionplan">par_shipyard_upgrade62da</replace>
+  <replace sel="/groups/group[@name='wharf_par']/select[@constructionplan='par_wharf']/@constructionplan">par_wharf_upgrade62da</replace>
+  <replace sel="/groups/group[@name='shipyard_tel']/select[@constructionplan='tel_shipyard']/@constructionplan">tel_shipyard_upgrade62da</replace>
+  <replace sel="/groups/group[@name='wharf_tel']/select[@constructionplan='tel_wharf']/@constructionplan">tel_wharf_upgrade62da</replace>
+  <replace sel="/groups/group[@name='shipyard_spl']/select[@constructionplan='spl_shipyard']/@constructionplan">spl_shipyard_upgrade62da</replace>
+  <replace sel="/groups/group[@name='wharf_spl']/select[@constructionplan='spl_wharf']/@constructionplan">spl_wharf_upgrade62da</replace>
+</diff>

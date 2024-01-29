@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<macros>
+  <macro name="landmarks_tel_tradestation_01_storage_01_macro" class="storage">
+    <component ref="landmarks_tel_tradestation_01_storage_01" />
+    <properties>
+      <identification name="{20104,101306}" makerrace="teladi" description="{20104,101302}" />
+      <cargo max="100000" tags="container liquid solid" />
+      <explosiondamage value="100000" />
+      <hull max="1000000" />
+      <secrecy level="1" />
+    </properties>
+  </macro>
+</macros>-->
+<diff>
+<replace sel="//cargo/@max">100000</replace>
+</diff>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<language>
+	<page id="33232473" title="DeadAir ECO T Files" descr="used in DeadAir ECO" voice="no">
+		<t id="0001">(4 Digits this time around)</t>
+		<t id="0010">Advanced Schematics</t>
+		<t id="0011">Consumable schematics used at factories that produce highly advanced wares. They are used to increase the production efficiency of a single production cycle. The amount used depends on the specific ware being produced.</t>
+		<t id="0012">Advanced Schematic Facility</t>
+		<t id="0013">Advanced Schematic Production</t>
+		<t id="0014">{20006,102}(No information available)</t>
+		<t id="0015">Military Schematics</t>
+		<t id="0016">Consumable schematics used at factories that produce militarized wares. They are used to increase the production efficiency of a single production cycle. The amount used depends on the specific ware being produced.</t>
+		<t id="0017">Military Schematic Facility</t>
+		<t id="0018">Military Schematic Production</t>
+		<t id="0019">{20006,102}(No information available)</t>
+		<t id="0020">Labor Union Contract</t>
+		<t id="0021">Consumable contracts used to improve conditions for an organized workforce. They are used to increase the production efficiency of a single production cycle. The amount used depends on the specific ware being produced.</t>
+		<t id="0022">Labor Union Facility</t>
+		<t id="0023">Labor Union Contract Production</t>
+		<t id="0024">{20006,102}(No information available)</t>
+	</page>
+</language>
