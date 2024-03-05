@@ -27,7 +27,7 @@
   <replace sel="/regions/region[@name='regionpart2_cluster_28_sector_001']/resources/resource[@ware='ore']/@yield">medlow</replace>
   <replace sel="/regions/region[@name='regionpart2_cluster_28_sector_001']/resources/resource[@ware='silicon']/@yield">medlow</replace>
   <replace sel="/regions/region[@name='regionpart2_cluster_28_sector_001']/resources/resource[@ware='ice']/@yield">medium</replace>
-  <replace sel="/regions/region[@name='region_cluster_31_sector_001']/resources/resource/@yield">high</replace>
+  <replace sel="/regions/region[@name='region_cluster_31_sector_001']/resources/resource[@ware='ore']/@yield">high</replace>
   <add sel="/regions/region[@name='region_cluster_33_sector_001']/fields">
     <asteroid groupref="asteroid_ore_xl" lodrule="asteroidxl" densityfactor="1" noisescale="10000" seed="1309" minnoisevalue="0.7" maxnoisevalue="1"/>
   </add>

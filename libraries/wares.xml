@@ -1665,7 +1665,6 @@
           <effect type="work" product="10.0" cycle="0.6"/>
         </effects>
       </production>
-      <!-- <icon active="ware_da_adv_schematics" video="ware_da_adv_schematics_macro"/> -->
       <icon active="ware_advancedelectronics" video="ware_advancedelectronics_macro"/>
     </ware>
   </add>
@@ -1676,6 +1675,13 @@
         <primary>
           <ware ware="claytronics" amount="642"/>
           <ware ware="energycells" amount="965"/>
+        </primary>
+      </production>
+      <production time="120" amount="1" method="terran" name="{20206,901}">
+        <primary>
+          <ware ware="computronicsubstrate" amount="238"/>
+          <ware ware="energycells" amount="688"/>
+          <ware ware="siliconcarbide" amount="155"/>
         </primary>
       </production>
       <component ref="prod_gen_da_adv_schematics_macro"/>
@@ -1699,17 +1705,23 @@
           <effect type="work" product="10.0" cycle="0.6"/>
         </effects>
       </production>
-      <!-- <icon active="ware_da_adv_schematics" video="ware_da_adv_schematics_macro"/> -->
-      <icon active="ware_advancedelectronics" video="ware_advancedelectronics_macro"/>
+      <icon active="ware_weaponcomponents" video="ware_weaponcomponents_macro"/>
     </ware>
   </add>
   <add sel="/wares">
     <ware id="module_gen_prod_da_mil_schematics_01" name="{33232473,0018}" description="{33232473,0019}" transport="container" volume="1" tags="module">
-      <price min="2622767" average="3085608" max="3548449"/>
+      <price min="2098213" average="2468468" max="2838759"/>
       <production time="120" amount="1" method="default" name="{20206,101}">
         <primary>
-          <ware ware="claytronics" amount="642"/>
-          <ware ware="energycells" amount="965"/>
+          <ware ware="claytronics" amount="513"/>
+          <ware ware="energycells" amount="772"/>
+        </primary>
+      </production>
+      <production time="120" amount="1" method="terran" name="{20206,901}">
+        <primary>
+          <ware ware="computronicsubstrate" amount="190"/>
+          <ware ware="energycells" amount="550"/>
+          <ware ware="siliconcarbide" amount="124"/>
         </primary>
       </production>
       <component ref="prod_gen_da_mil_schematics_macro"/>
@@ -1733,17 +1745,23 @@
           <effect type="work" product="10.0" cycle="0.6"/>
         </effects>
       </production>
-      <!-- <icon active="ware_da_adv_schematics" video="ware_da_adv_schematics_macro"/> -->
-      <icon active="ware_advancedelectronics" video="ware_advancedelectronics_macro"/>
+      <icon active="ware_energycells" video="ware_energycells_macro"/>
     </ware>
   </add>
   <add sel="/wares">
     <ware id="module_gen_prod_da_laborunion_contracts_01" name="{33232473,0023}" description="{33232473,0024}" transport="container" volume="1" tags="module">
-      <price min="2622767" average="3085608" max="3548449"/>
+      <price min="1678570" average="1974774" max="2271007"/>
       <production time="120" amount="1" method="default" name="{20206,101}">
         <primary>
-          <ware ware="claytronics" amount="642"/>
-          <ware ware="energycells" amount="965"/>
+          <ware ware="claytronics" amount="410"/>
+          <ware ware="energycells" amount="617"/>
+        </primary>
+      </production>
+      <production time="120" amount="1" method="terran" name="{20206,901}">
+        <primary>
+          <ware ware="computronicsubstrate" amount="152"/>
+          <ware ware="energycells" amount="440"/>
+          <ware ware="siliconcarbide" amount="99"/>
         </primary>
       </production>
       <component ref="prod_gen_da_laborunion_contracts_macro"/>

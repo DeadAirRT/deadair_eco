@@ -1,40 +1,72 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/set_value[@exact='3000'][@name='$TradeCapacity']/@exact">4500</replace>
+  <replace sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/cues/cue[@name='ConstructionSequenceCompleted']/actions/do_if[@value='$ConstructionSequence']/set_build_plot/@allowreduction">false</replace>
+  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/set_value[@exact='0.45f'][@name='$NonCapitalTradeRatio']/@exact">0.35f</replace>
+  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/set_value[@exact='3000'][@name='$TradeCapacity']/@exact">6000</replace>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_else[1]/set_value[@name='$weight'][@seed='$Station']/@min">1</replace>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_else[1]/set_value[@name='$weight'][@seed='$Station']/@max">100</replace>
   <remove sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_else[1]/set_value[@exact='($weight / 2.0f) * 100.0f'][@name='$weight']"/>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_if[@value='$ViableDockModules.count gt 0']/do_all[@exact='$ViableDockModules.count']/set_value[@exact='$DockArea.numdocks.{tag.dock_m}'][@name='$DockCountTable.{$DockArea}']/@exact">$DockArea.numdocks.{tag.dock_m} + $DockArea.numdocks.{tag.dock_s}</replace>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_if[@value='$ViableDockModules.count gt 0']/do_while[@value='($NumRequiredDocksMedium gt 0.5f) or ($NumRequiredDocksSmall gt 0.5f)']/do_all[@exact='$DockCountList.count']/do_if[@value='$chance le 65.0f and (($DockCounter == $DockCountList.count and $DockCountTable.{$Dock} lt $NumRequiredDocksMedium) or ($DockCounter gt 1 and $DockCountTable.{$Dock} ge $NumRequiredDocksMedium and $DockCountTable.{$DockCountList.{$DockCounter - 1}} lt $NumRequiredDocksMedium) or ($DockCounter gt 1 and $DockCountTable.{$Dock} ge $NumRequiredDocksMedium and $DockCountTable.{$DockCountList.{$DockCounter - 1}} == $DockCountTable.{$Dock}))']/@value">($DockCounter == $DockCountList.count) or (($Dock.numdocks.{tag.dock_m} ge 1) and ($NumRequiredDocksMedium gt 0.5f)) or (($Dock.numdocks.{tag.dock_s} ge 1) and ($NumRequiredDocksSmall gt 0.5f))</replace>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='17500'][@name='$TradeCapacity']/@exact">26250</replace>
+  <add sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_if[@value='$ViableDockModules.count gt 0']/do_while[@value='($NumRequiredDocksMedium gt 0.5f) or ($NumRequiredDocksSmall gt 0.5f)']" pos="before">
+    <do_if value="true">
+      <do_for_each name="$Dock" in="$DockCountList" reverse="true">
+        <do_if value="($NumRequiredDocksMedium gt 0) or ($NumRequiredDocksSmall gt 0)">
+          <do_if value="(($NumRequiredDocksMedium gt 0) and $Dock.numdocks.{tag.dock_m})">
+            <set_value name="$DAOrderAmount" exact="[$NumRequiredDocksMedium / $Dock.numdocks.{tag.dock_m},1].max"/>
+            <do_all exact="$DAOrderAmount">
+              <set_value name="$NumDocksAddedMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="add"/>
+              <set_value name="$NumRequiredDocksMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="subtract"/>
+              <set_value name="$AddModules.{$Dock}" operation="add"/>
+              <do_if value="$Dock.numdocks.{tag.dock_s}">
+                <set_value name="$NumDocksAddedSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="add"/>
+                <set_value name="$NumRequiredDocksSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="subtract"/>
+              </do_if>
+            </do_all>
+            <remove_value name="$DAOrderAmount"/>
+          </do_if>
+          <do_if value="(($NumRequiredDocksSmall gt 0) and $Dock.numdocks.{tag.dock_s})">
+            <set_value name="$DAOrderAmount" exact="[$NumRequiredDocksSmall / $Dock.numdocks.{tag.dock_s},1].max"/>
+            <do_all exact="$DAOrderAmount">
+              <set_value name="$NumDocksAddedSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="add"/>
+              <set_value name="$NumRequiredDocksSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="subtract"/>
+              <set_value name="$AddModules.{$Dock}" operation="add"/>
+              <do_if value="$Dock.numdocks.{tag.dock_m}">
+                <set_value name="$NumDocksAddedMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="add"/>
+                <set_value name="$NumRequiredDocksMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="subtract"/>
+              </do_if>
+            </do_all>
+            <remove_value name="$DAOrderAmount"/>
+          </do_if>
+        </do_if>
+        <do_else>
+          <break/>
+        </do_else>
+      </do_for_each>
+    </do_if>
+  </add>
+  <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='0.55f'][@name='$CapitalTradeRatio']/@exact">0.65f</replace>
+  <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='17500'][@name='$TradeCapacity']/@exact">30000</replace>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='1000 - (1000 - $NumRequiredPiers)i'][@name='$NumRequiredPiers']/@exact">[1000 - (1000 - $NumRequiredPiers)i,1].max</replace>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/do_if[@value='not $ExistingTradeLocationsCount']/do_if[@value='$ViableBasePierModules.count']/set_value[@name='$BasePier']">
-    <do_if value="true">
-      <sort_list list="$ViableBasePierModules" sortbyvalue="loop.element.numpierdocks" sortdescending="true"/>
-      <do_any>
-        <set_value name="$DAI" min="1" max="$ViableBasePierModules.count" weight="20"/>
-        <set_value name="$DAI" exact="1" weight="80"/>
-      </do_any>
-      <set_value name="$BasePier" exact="$ViableBasePierModules.{$DAI}"/>
-    </do_if>
-  </replace>
-  <add sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/do_if[@value='not $ExistingTradeLocationsCount']/do_if[@value='$ViableBasePierModules.count']">
-    <remove_value name="$DAI"/>
-  </add>
   <add sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/do_if[@value='$RemainingPiers']/do_if[@value='$ViableAdditionalPierModules.count']/do_while[@value='$RemainingPiers']" pos="before">
-    <sort_list list="$ViableAdditionalPierModules" sortbyvalue="loop.element.numpierdocks" sortdescending="true"/>
-  </add>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/do_if[@value='$RemainingPiers']/do_if[@value='$ViableAdditionalPierModules.count']/do_while[@value='$RemainingPiers']/set_value[@name='$AdditionalPier']">
     <do_if value="true">
-      <do_any>
-        <set_value name="$DAI" min="1" max="$ViableAdditionalPierModules.count" weight="20"/>
-        <set_value name="$DAI" exact="1" weight="80"/>
-      </do_any>
-      <set_value name="$AdditionalPier" exact="$ViableAdditionalPierModules.{$DAI}"/>
+      <sort_list list="$ViableAdditionalPierModules" sortbyvalue="loop.element.numpierdocks" sortdescending="true"/>
+      <do_for_each name="$AdditionalPier" in="$ViableAdditionalPierModules">
+        <do_if value="$RemainingPiers gt 0">
+          <do_if value="$AdditionalPier.numpierdocks">
+            <set_value name="$DAOrderAmount" exact="[$RemainingPiers / $AdditionalPier.numpierdocks,1].max"/>
+            <do_all exact="$DAOrderAmount">
+              <set_value name="$RemainingPiers" exact="$AdditionalPier.numpierdocks" operation="subtract"/>
+              <set_value name="$NumAdditionalPiersAdded" operation="add"/>
+              <set_value name="$AddModules.{$AdditionalPier}" operation="add"/>
+            </do_all>
+            <remove_value name="$DAOrderAmount"/>
+          </do_if>
+        </do_if>
+        <do_else>
+          <break/>
+        </do_else>
+      </do_for_each>
     </do_if>
-  </replace>
-  <add sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/do_if[@value='$RemainingPiers']/do_if[@value='$ViableAdditionalPierModules.count']/do_while[@value='$RemainingPiers']/do_if[@value='$NumConnections gt 0']" pos="before">
-    <remove_value name="$DAI"/>
   </add>
   <add sel="/mdscript/cues/library[@name='DefaultCalculateDefence']/actions/do_if[@value='$Station.owner != faction.xenon']/do_for_each[@name='$OpposingFaction']" pos="before">
     <set_value name="$DAhighestscore" exact="0"/>

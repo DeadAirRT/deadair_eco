@@ -33,12 +33,12 @@
 						<do_for_each name="$Station" in="$Stations">
 							<do_for_each name="$Ware" in="$WarestoRemove">
 								<do_if value="$Station.cargo.{$Ware}.count != 0">
-									<remove_cargo object="$Station" ware="$Ware" exact="$Station.cargo.{$Ware}.count"/>
+									<remove_cargo object="$Station" ware="$Ware" exact="$Station.cargo.{$Ware}.count / 2"/>
 								</do_if>
 							</do_for_each>
 						</do_for_each>
 						<set_value name="$HasRun" exact="true"/>
-						<debug_text text="'MOD: DA Eco -- Removed secondary wares from %1 stations.'.[$Stations.count]" context="false" filter="scripts"/>
+						<debug_text text="'MOD: DA Eco -- Removed 1/2 of secondary wares from %1 stations.'.[$Stations.count]" context="false" filter="scripts"/>
 						<remove_value name="$Stations"/>
 						<remove_value name="$WarestoRemove"/>
 						<remove_value name="$Station"/>
