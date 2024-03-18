@@ -58,7 +58,7 @@
     <add_tradeware object="$controllable" ware="ware.superfluidcoolant" allowbuy="true" allowsell="true" lockavgprice="true"/>
   </add>
   <replace sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='@$gamestartstation'][2]/do_if[@value='$controllable.canequipships']">
-    <add_default_production_wares object="$controllable" lowerlimit="62" upperlimit="70" extremechance="0"/>
+    <add_default_production_wares object="$controllable" lowerlimit="72" upperlimit="78" extremechance="0"/>
   </replace>
   <remove sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable?']/do_if[@value='@$gamestartstation'][2]/do_else"/>
 </diff>

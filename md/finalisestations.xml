@@ -1,6 +1,33 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
   <replace sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/cues/cue[@name='ConstructionSequenceCompleted']/actions/do_if[@value='$ConstructionSequence']/set_build_plot/@allowreduction">false</replace>
+  <add sel="/mdscript/cues/library[@name='DefaultCalculateHabitation']/actions/do_if[@value='$ShouldCalculateHabitation']/do_if[@value='$NecessaryWorkers']/do_if[@value='$ModuleScoreTable.keys.count']/do_while[@value='$WorkforceRemaining']" pos="before">
+    <do_if value="true">
+      <get_module_definition macro="$ViableHabModules" faction="$Station.owner" tags="[tag.habitation, tag.module]" set="$ModuleSet" multiple="true"/>
+      <do_if value="$ViableHabModules.count gt 1">
+        <sort_list list="$ViableHabModules" sortbyvalue="loop.element.workforce.capacity" sortdescending="true"/>
+      </do_if>
+      <do_for_each name="$LocHab" in="$ViableHabModules">
+        <do_if value="($WorkforceRemaining gt 0) and $LocHab">
+          <set_value name="$LocAmountToOrder" exact="[$WorkforceRemaining / $LocHab.workforce.capacity,1].max"/>
+          <do_if value="(($LocAmountToOrder * $LocHab.workforce.capacity) lt $WorkforceRemaining) and ((($LocAmountToOrder + 1) * $LocHab.workforce.capacity) ge $WorkforceRemaining)">
+            <!-- I want to minimize the number of total modules so there is less likely to be med/small habs now but performance is more important -->
+            <set_value name="$LocAmountToOrder" exact="1" operation="add"/>
+          </do_if>
+          <do_all exact="$LocAmountToOrder">
+            <set_value name="$HabitationModulesToBuild.{$LocHab}" exact="1" operation="add"/>
+            <set_value name="$WorkforceRemaining" exact="$LocHab.workforce.capacity" operation="subtract"/>
+            <set_value name="$dbg_str" exact="$dbg_str + 'Adding ' + $LocHab + '. Workforce remaining now at ' + $WorkforceRemaining + '\n'"/>
+          </do_all>
+          <remove_value name="this.$LocAmountToOrder"/>
+        </do_if>
+        <do_elseif value="$WorkforceRemaining le 0">
+          <break/>
+        </do_elseif>
+      </do_for_each>
+      <remove_value name="$ViableHabModules"/>
+    </do_if>
+  </add>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/set_value[@exact='0.45f'][@name='$NonCapitalTradeRatio']/@exact">0.35f</replace>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/set_value[@exact='3000'][@name='$TradeCapacity']/@exact">6000</replace>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_else[1]/set_value[@name='$weight'][@seed='$Station']/@min">1</replace>
@@ -77,6 +104,12 @@
     </do_if>
   </add>
   <add sel="/mdscript/cues/library[@name='DefaultCalculateDefence']/actions/do_if[@value='$Station.owner != faction.xenon']">
-    <set_value name="$Def_StationScore" min="($DAhighestscore)LF / 100 - 0.15" max="(($DAhighestscore)LF / 100) + 0.15" seed="$Station"/>
+    <do_if value="true">
+      <set_value name="$Def_StationScore" min="($DAhighestscore)LF / 100 - 0.15" max="(($DAhighestscore)LF / 100) + 0.15" seed="$Station"/>
+      <set_value name="$Def_StationScore" exact="[$Def_StationScore,0.4LF].max"/>
+    </do_if>
+  </add>
+  <add sel="/mdscript/cues/library[@name='DefaultCalculateDefence']/actions/do_if[@value='$Def_StationScore ge 0 and $Def_StationScore le $LowMaxBoundary']">
+    <set_value name="$NumDefenceModules" exact="1"/>
   </add>
 </diff>
