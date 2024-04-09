@@ -4,6 +4,24 @@
   <remove sel="/regions/region[@name='p1_40km_asteroid_field']/falloff/radial"/>
   <replace sel="/regions/region[@name='p1_40km_asteroid_field']/resources/resource[@ware='ore']/@yield">high</replace>
   <replace sel="/regions/region[@name='p1_40km_asteroid_field']/resources/resource[@ware='silicon']/@yield">high</replace>
+  <replace sel="/regions/region[@name='p1_40km_ice_field']/falloff/radial/step[@value='0.4']/@value">0.8</replace>
+  <replace sel="/regions/region[@name='p1_40km_hydrogen_field']/falloff/radial/step[@value='0.4']/@value">0.8</replace>
+  <replace sel="/regions/region[@name='p1_40km_hydrogen_field']/fields/nebula[@ref='fogvolume_small_macro']/@uniformdensity">0.4</replace>
+  <replace sel="/regions/region[@name='p1_80km_hydrogen_field']/falloff/radial/step[@value='0.3']/@value">0.8</replace>
+  <replace sel="/regions/region[@name='p1_40km_helium_field']/falloff/radial/step[@value='0.4']/@value">0.8</replace>
+  <replace sel="/regions/region[@name='p1_40km_helium_field']/fields/nebula[@ref='fogvolume_small_macro']/@uniformdensity">0.4</replace>
+  <replace sel="/regions/region[@name='p1_40km_helium_highyield_field']/falloff/radial/step[@value='0.4']/@value">0.8</replace>
+  <replace sel="/regions/region[@name='p1_40km_helium_highyield_field']/fields/nebula[@ref='fogvolume_small_macro']/@localdensity">1.0</replace>
+  <replace sel="/regions/region[@name='p1_40km_helium_highyield_field']/fields/nebula[@ref='fogvolume_small_macro']/@uniformdensity">0.6</replace>
+  <replace sel="/regions/region[@name='p1_40km_methane_field']/falloff/radial/step[@value='0.4']/@value">0.8</replace>
+  <replace sel="/regions/region[@name='p1_40km_methane_field']/fields/nebula[@ref='fogvolume_small_macro']/@uniformdensity">0.4</replace>
+  <replace sel="/regions/region[@name='p1_40km_methane_field']/resources/resource[@ware='methane']/@yield">medhigh</replace>
+  <replace sel="/regions/region[@name='p1_40km_methane_highyield_field']/falloff/radial/step[@value='0.4']/@value">0.8</replace>
+  <replace sel="/regions/region[@name='p1_40km_methane_highyield_field']/fields/nebula[@ref='fogvolume_small_macro']/@localdensity">1.0</replace>
+  <replace sel="/regions/region[@name='p1_40km_methane_highyield_field']/fields/nebula[@ref='fogvolume_small_macro']/@uniformdensity">0.6</replace>
+  <replace sel="/regions/region[@name='region_highyield_ore']/boundary[@class='cylinder']/size/@r">10000</replace>
+  <replace sel="/regions/region[@name='region_highyield_silicon']/boundary[@class='cylinder']/size/@r">10000</replace>
+  <replace sel="/regions/region[@name='region_highyield_nividium']/boundary[@class='cylinder']/size/@r">10000</replace>
   <replace sel="/regions/region[@name='region_cluster_14_sector_001']/resources/resource[@ware='ore']/@yield">medlow</replace>
   <replace sel="/regions/region[@name='region_cluster_14_sector_001']/resources/resource[@ware='silicon']/@yield">medlow</replace>
   <replace sel="/regions/region[@name='region_cluster_16_sector_001']/resources/resource[@ware='ore']/@yield">medium</replace>

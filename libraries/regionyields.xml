@@ -23,6 +23,10 @@
   <replace sel="/regionyields/resource[@ware='ice']/yield[@name='medhigh']/@replenishtime">240</replace>
   <replace sel="/regionyields/resource[@ware='ice']/yield[@name='high']/@replenishtime">240</replace>
   <replace sel="/regionyields/resource[@ware='ice']/yield[@name='veryhigh']/@replenishtime">240</replace>
+  <replace sel="/regionyields/resource[@ware='nividium']/yield[@name='low']/@replenishtime">1260</replace>
+  <replace sel="/regionyields/resource[@ware='nividium']/yield[@name='medium']/@replenishtime">2520</replace>
+  <replace sel="/regionyields/resource[@ware='nividium']/yield[@name='high']/@replenishtime">5040</replace>
+  <replace sel="/regionyields/resource[@ware='nividium']/yield[@name='veryhigh']/@replenishtime">10080</replace>
   <replace sel="/regionyields/resource[@ware='hydrogen']/yield[@name='low']/@replenishtime">60</replace>
   <replace sel="/regionyields/resource[@ware='hydrogen']/yield[@name='medium']/@replenishtime">120</replace>
   <replace sel="/regionyields/resource[@ware='hydrogen']/yield[@name='medium']/@gatherspeedfactor">2.0</replace>
