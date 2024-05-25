@@ -1,7 +1,30 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
-  <replace sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/cues/cue[@name='ConstructionSequenceCompleted']/actions/do_if[@value='$ConstructionSequence']/set_build_plot/@allowreduction">false</replace>
-  <add sel="/mdscript/cues/library[@name='DefaultCalculateHabitation']/actions/do_if[@value='$ShouldCalculateHabitation']/do_if[@value='$NecessaryWorkers']/do_if[@value='$ModuleScoreTable.keys.count']/do_while[@value='$WorkforceRemaining']" pos="before">
+  <add sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/actions/do_if[@value='$Station.owner != faction.xenon'][1]">
+    <include_actions ref="DAIncreaseStartingStorage"/>
+  </add>
+  <replace sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/actions/do_if[@value='$Conn_PlannedConnectors.count']/create_construction_sequence[@station='$Station'][@macros='$NewPlannedModules']">
+    <do_if value="true">
+      <do_if value="$Station.owner.primaryrace == race.argon">
+        <create_construction_sequence station="$Station" macros="$NewPlannedModules" connectors="$Conn_PlannedConnectors" base="$BaseSequence" constructionbias="5.0"/>
+      </do_if>
+      <do_else>
+        <create_construction_sequence station="$Station" macros="$NewPlannedModules" connectors="$Conn_PlannedConnectors" base="$BaseSequence"/>
+      </do_else>
+    </do_if>
+  </replace>
+  <replace sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/cues/cue[@name='ConstructionSequenceCompleted']/actions/do_if[@value='$ConstructionSequence']/set_build_plot[@object='$Station']/@allowreduction">false</replace>
+  <replace sel="/mdscript/cues/library[@name='NewStation_GenerateFactory']/actions/do_if[@value='$Conn_PlannedConnectors.count']/create_construction_sequence[@station='$Station'][@macros='$NewPlannedModules']">
+    <do_if value="true">
+      <do_if value="$Station.owner.primaryrace == race.argon">
+        <create_construction_sequence station="$Station" macros="$NewPlannedModules" connectors="$Conn_PlannedConnectors" base="$BaseSequence" constructionbias="5.0"/>
+      </do_if>
+      <do_else>
+        <create_construction_sequence station="$Station" macros="$NewPlannedModules" connectors="$Conn_PlannedConnectors" base="$BaseSequence"/>
+      </do_else>
+    </do_if>
+  </replace>
+  <add sel="/mdscript/cues/library[@name='DefaultCalculateHabitation']/actions/do_if[@value='$ShouldCalculateHabitation']/do_if[@value='$NecessaryWorkers'][@min='1']/do_if[@value='$ModuleScoreTable.keys.count'][@min='1']/do_while[@value='$WorkforceRemaining'][@min='0']" pos="before">
     <do_if value="true">
       <get_module_definition macro="$ViableHabModules" faction="$Station.owner" tags="[tag.habitation, tag.module]" set="$ModuleSet" multiple="true"/>
       <do_if value="$ViableHabModules.count gt 1">
@@ -11,7 +34,6 @@
         <do_if value="($WorkforceRemaining gt 0) and $LocHab">
           <set_value name="$LocAmountToOrder" exact="[$WorkforceRemaining / $LocHab.workforce.capacity,1].max"/>
           <do_if value="(($LocAmountToOrder * $LocHab.workforce.capacity) lt $WorkforceRemaining) and ((($LocAmountToOrder + 1) * $LocHab.workforce.capacity) ge $WorkforceRemaining)">
-            <!-- I want to minimize the number of total modules so there is less likely to be med/small habs now but performance is more important -->
             <set_value name="$LocAmountToOrder" exact="1" operation="add"/>
           </do_if>
           <do_all exact="$LocAmountToOrder">
@@ -21,6 +43,12 @@
           </do_all>
           <remove_value name="this.$LocAmountToOrder"/>
         </do_if>
+        <do_elseif value="($WorkforceRemaining le 0) and (not $HabitationModulesToBuild.{$LocHab}?) and $LocHab">
+          <!-- Adding in an extra of each size -->
+          <set_value name="$HabitationModulesToBuild.{$LocHab}" exact="1" operation="add"/>
+          <set_value name="$WorkforceRemaining" exact="$LocHab.workforce.capacity" operation="subtract"/>
+          <set_value name="$dbg_str" exact="$dbg_str + 'Adding ' + $LocHab + '. Workforce remaining now at ' + $WorkforceRemaining + '\n'"/>
+        </do_elseif>
         <do_elseif value="$WorkforceRemaining le 0">
           <break/>
         </do_elseif>
@@ -30,11 +58,11 @@
   </add>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/set_value[@exact='0.45f'][@name='$NonCapitalTradeRatio']/@exact">0.35f</replace>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/set_value[@exact='3000'][@name='$TradeCapacity']/@exact">6000</replace>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_else[1]/set_value[@name='$weight'][@seed='$Station']/@min">1</replace>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_else[1]/set_value[@name='$weight'][@seed='$Station']/@max">100</replace>
-  <remove sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_else[1]/set_value[@exact='($weight / 2.0f) * 100.0f'][@name='$weight']"/>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_if[@value='$ViableDockModules.count gt 0']/do_all[@exact='$ViableDockModules.count']/set_value[@exact='$DockArea.numdocks.{tag.dock_m}'][@name='$DockCountTable.{$DockArea}']/@exact">$DockArea.numdocks.{tag.dock_m} + $DockArea.numdocks.{tag.dock_s}</replace>
-  <add sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall']/do_if[@value='$ViableDockModules.count gt 0']/do_while[@value='($NumRequiredDocksMedium gt 0.5f) or ($NumRequiredDocksSmall gt 0.5f)']" pos="before">
+  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_else[1]/set_value[@name='$weight'][@min='($Sector.economy + $Sector.security) / 2'][@max='$Sector.economy + $Sector.security']/@min">1</replace>
+  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_else[1]/set_value[@name='$weight'][@min='1'][@max='$Sector.economy + $Sector.security']/@max">100</replace>
+  <remove sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_else[1]/set_value[@exact='($weight / 2.0f) * 100.0f'][@name='$weight']"/>
+  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_if[@value='$ViableDockModules.count gt 0']/do_all[@exact='$ViableDockModules.count']/set_value[@exact='$DockArea.numdocks.{tag.dock_m}'][@name='$DockCountTable.{$DockArea}']/@exact">$DockArea.numdocks.{tag.dock_m} + $DockArea.numdocks.{tag.dock_s}</replace>
+  <add sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_if[@value='$ViableDockModules.count gt 0']/do_while[@value='($NumRequiredDocksMedium gt 0.5f) or ($NumRequiredDocksSmall gt 0.5f)']" pos="before">
     <do_if value="true">
       <do_for_each name="$Dock" in="$DockCountList" reverse="true">
         <do_if value="($NumRequiredDocksMedium gt 0) or ($NumRequiredDocksSmall gt 0)">
@@ -72,29 +100,8 @@
     </do_if>
   </add>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='0.55f'][@name='$CapitalTradeRatio']/@exact">0.65f</replace>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='17500'][@name='$TradeCapacity']/@exact">30000</replace>
+  <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='17500'][@name='$TradeCapacity']/@exact">50000</replace>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='1000 - (1000 - $NumRequiredPiers)i'][@name='$NumRequiredPiers']/@exact">[1000 - (1000 - $NumRequiredPiers)i,1].max</replace>
-  <add sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/do_if[@value='$RemainingPiers']/do_if[@value='$ViableAdditionalPierModules.count']/do_while[@value='$RemainingPiers']" pos="before">
-    <do_if value="true">
-      <sort_list list="$ViableAdditionalPierModules" sortbyvalue="loop.element.numpierdocks" sortdescending="true"/>
-      <do_for_each name="$AdditionalPier" in="$ViableAdditionalPierModules">
-        <do_if value="$RemainingPiers gt 0">
-          <do_if value="$AdditionalPier.numpierdocks">
-            <set_value name="$DAOrderAmount" exact="[$RemainingPiers / $AdditionalPier.numpierdocks,1].max"/>
-            <do_all exact="$DAOrderAmount">
-              <set_value name="$RemainingPiers" exact="$AdditionalPier.numpierdocks" operation="subtract"/>
-              <set_value name="$NumAdditionalPiersAdded" operation="add"/>
-              <set_value name="$AddModules.{$AdditionalPier}" operation="add"/>
-            </do_all>
-            <remove_value name="$DAOrderAmount"/>
-          </do_if>
-        </do_if>
-        <do_else>
-          <break/>
-        </do_else>
-      </do_for_each>
-    </do_if>
-  </add>
   <add sel="/mdscript/cues/library[@name='DefaultCalculateDefence']/actions/do_if[@value='$Station.owner != faction.xenon']/do_for_each[@name='$OpposingFaction']" pos="before">
     <set_value name="$DAhighestscore" exact="0"/>
   </add>
@@ -110,6 +117,63 @@
     </do_if>
   </add>
   <add sel="/mdscript/cues/library[@name='DefaultCalculateDefence']/actions/do_if[@value='$Def_StationScore ge 0 and $Def_StationScore le $LowMaxBoundary']">
-    <set_value name="$NumDefenceModules" exact="1"/>
+    <set_value name="$NumDefenceModules" exact="2"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='DefaultCalculateDefence']/actions/do_elseif[@value='$Def_StationScore le $MidMaxBoundary']">
+    <set_value name="$NumDefenceModules" min="3" max="4" seed="$Station"/>
+  </add>
+  <add sel="/mdscript/cues/library[@name='DefaultCalculateDefence']/actions/do_elseif[@value='$Def_StationScore le $HighMaxBoundary']">
+    <set_value name="$NumDefenceModules" min="5" max="6"/>
+  </add>
+  <add sel="/mdscript/cues">
+    <library name="DAIncreaseStartingStorage">
+      <actions>
+        <set_value name="$PlannedContainerMacros" exact="[]"/>
+        <set_value name="$PlannedLiquidMacros" exact="[]"/>
+        <set_value name="$PlannedSolidMacros" exact="[]"/>
+        <set_value name="$PlannedUniversalMacros" exact="[]"/>
+        <do_all exact="$PlannedModules.count" counter="$ModuleCounter" comment="Check for existing storage modules">
+          <do_if value="$PlannedModules.{$ModuleCounter}.isclass.storage">
+            <do_if value="$PlannedModules.{$ModuleCounter}.cargo.capacity.container" min="1">
+              <append_to_list name="$PlannedContainerMacros" exact="$PlannedModules.{$ModuleCounter}"/>
+            </do_if>
+            <do_if value="$PlannedModules.{$ModuleCounter}.cargo.capacity.liquid" min="1">
+              <append_to_list name="$PlannedLiquidMacros" exact="$PlannedModules.{$ModuleCounter}"/>
+            </do_if>
+            <do_if value="$PlannedModules.{$ModuleCounter}.cargo.capacity.solid" min="1">
+              <append_to_list name="$PlannedSolidMacros" exact="$PlannedModules.{$ModuleCounter}"/>
+            </do_if>
+            <do_if value="$PlannedModules.{$ModuleCounter}.cargo.capacity.universal" min="1">
+              <append_to_list name="$PlannedUniversalMacros" exact="$PlannedModules.{$ModuleCounter}"/>
+            </do_if>
+          </do_if>
+        </do_all>
+        <!-- Doing a simple doubling for now -->
+        <do_if value="$PlannedContainerMacros.count" min="1">
+          <do_all exact="$PlannedContainerMacros.count" counter="$C">
+            <set_value name="$AddModules.{$PlannedContainerMacros.{$C}}" exact="1" operation="add"/>
+          </do_all>
+        </do_if>
+        <do_if value="$PlannedLiquidMacros.count" min="1">
+          <do_all exact="$PlannedLiquidMacros.count" counter="$C">
+            <set_value name="$AddModules.{$PlannedLiquidMacros.{$C}}" exact="1" operation="add"/>
+          </do_all>
+        </do_if>
+        <do_if value="$PlannedSolidMacros.count" min="1">
+          <do_all exact="$PlannedSolidMacros.count" counter="$C">
+            <set_value name="$AddModules.{$PlannedSolidMacros.{$C}}" exact="1" operation="add"/>
+          </do_all>
+        </do_if>
+        <do_if value="$PlannedUniversalMacros.count" min="1">
+          <do_all exact="$PlannedUniversalMacros.count" counter="$C">
+            <set_value name="$AddModules.{$PlannedUniversalMacros.{$C}}" exact="1" operation="add"/>
+          </do_all>
+        </do_if>
+        <remove_value name="$PlannedContainerMacros"/>
+        <remove_value name="$PlannedLiquidMacros"/>
+        <remove_value name="$PlannedSolidMacros"/>
+        <remove_value name="$PlannedUniversalMacros"/>
+      </actions>
+    </library>
   </add>
 </diff>

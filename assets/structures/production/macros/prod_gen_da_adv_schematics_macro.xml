@@ -16,7 +16,7 @@
       <production wares="da_adv_schematics">
         <queue ware="da_adv_schematics" />
       </production>
-      <workforce max="500" />
+      <workforce max="500"/>
     </properties>
   </macro>
 </macros>

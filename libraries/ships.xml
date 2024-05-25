@@ -18,6 +18,7 @@
   <replace sel="/ships/ship[@id='antigone_destroyer_l']/people[@ref='argon_military_crew']/@ref">argon_elite_military_crew</replace>
   <replace sel="/ships/ship[@id='antigone_frigate_m']/people[@ref='argon_military_crew']/@ref">argon_veteran_military_crew</replace>
   <replace sel="/ships/ship[@id='antigone_gunboat_m']/people[@ref='argon_military_crew']/@ref">argon_veteran_military_crew</replace>
+  <replace sel="/ships/ship[@id='xenon_corvette_m']/drop[@ref='ship_small_xenon']/@ref">ship_medium_xenon</replace>
   <replace sel="/ships/ship[@id='paranid_builder_xl']/people[@ref='paranid_freighter_crew']/@ref">paranid_elite_freighter_crew</replace>
   <replace sel="/ships/ship[@id='paranid_resupplier_xl']/people[@ref='paranid_freighter_crew']/@ref">paranid_elite_freighter_crew</replace>
   <replace sel="/ships/ship[@id='paranid_trader_container_l']/people[@ref='paranid_freighter_crew']/@ref">paranid_veteran_freighter_crew</replace>

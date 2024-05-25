@@ -1,447 +1,238 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
-  <replace sel="/modules/module[@id='prod_gen_advancedelectronics']/compatibilities/limits[@production='1']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_advancedelectronics']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_advancedelectronics']/compatibilities/production[@ware='advancedelectronics'][@chance='65']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_gen_advancedelectronics']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_antimattercells']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_antimattercells']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_antimattercells']/compatibilities/production[@ware='antimattercells'][@chance='50']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_gen_antimattercells']/compatibilities/production[@ware='energycells'][@chance='25']/@chance">0</replace>
+  <remove sel="/modules/module[@id='prod_gen_antimattercells']/compatibilities/production[@ware='energycells'][@chance='25']"/>
   <remove sel="/modules/module[@id='prod_gen_antimattercells']/compatibilities/production[@ware='graphene'][@chance='25']"/>
   <remove sel="/modules/module[@id='prod_gen_antimattercells']/compatibilities/production[@ware='superfluidcoolant'][@chance='25']"/>
-  <replace sel="/modules/module[@id='prod_gen_antimatterconverters']/compatibilities/limits[@production='1']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_antimatterconverters']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_antimatterconverters']/compatibilities/production[@ware='antimatterconverters'][@chance='65']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_gen_antimatterconverters']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_advancedcomposites']/compatibilities/limits[@production='1']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_advancedcomposites']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_advancedcomposites']/compatibilities/production[@ware='advancedcomposites'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_gen_advancedcomposites']/compatibilities/production[@ware='graphene'][@chance='25']/@ware">energycells</replace>
-  <replace sel="/modules/module[@id='prod_gen_advancedcomposites']/compatibilities/production[@ware='energycells'][@chance='25']/@chance">0</replace>
+  <remove sel="/modules/module[@id='prod_gen_advancedcomposites']/compatibilities/production[@ware='graphene'][@chance='25']"/>
   <replace sel="/modules/module[@id='prod_gen_claytronics']/compatibilities/production[@ware='claytronics'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_gen_claytronics']/compatibilities">
-    <production ware="energycells" chance="0"/>
+    <limits production="25"/>
   </add>
-  <add sel="/modules/module[@id='prod_gen_claytronics']/compatibilities">
-    <limits production="10"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_dronecomponents']/compatibilities/limits[@production='1']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_dronecomponents']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_dronecomponents']/compatibilities/production[@ware='dronecomponents'][@chance='65']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_gen_dronecomponents']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
   <add sel="/modules/module[@id='prod_gen_energycells']/category[@ware='energycells'][@race='[argon, paranid, split, teladi]'][@faction='[argon, paranid, teladi, antigone, holyorder, trinity, buccaneers, ministry, hatikvah, alliance]']">
     <extension faction="scaleplate"/>
   </add>
   <replace sel="/modules/module[@id='prod_gen_energycells']/compatibilities/production[@ware='energycells'][@chance='65']/@chance">100</replace>
   <replace sel="/modules/module[@id='prod_gen_energycells']/compatibilities/production[@ware='antimattercells'][@chance='25']">
-    <limits production="20"/>
+    <limits production="25"/>
   </replace>
   <remove sel="/modules/module[@id='prod_gen_energycells']/compatibilities/production[@ware='graphene'][@chance='25']"/>
   <remove sel="/modules/module[@id='prod_gen_energycells']/compatibilities/production[@ware='superfluidcoolant'][@chance='25']"/>
   <replace sel="/modules/module[@id='prod_gen_engineparts']/compatibilities/production[@ware='engineparts'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_gen_engineparts']/compatibilities">
-    <production ware="energycells" chance="0"/>
+    <limits production="25"/>
   </add>
-  <add sel="/modules/module[@id='prod_gen_engineparts']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_fieldcoils']/compatibilities/limits[@production='1']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_fieldcoils']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_fieldcoils']/compatibilities/production[@ware='fieldcoils'][@chance='0']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_gen_fieldcoils']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
   <replace sel="/modules/module[@id='prod_gen_hullparts']/compatibilities/production[@ware='hullparts'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_gen_hullparts']/compatibilities">
-    <production ware="energycells" chance="0"/>
+    <limits production="25"/>
   </add>
-  <add sel="/modules/module[@id='prod_gen_hullparts']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_graphene']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_graphene']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_graphene']/compatibilities/production[@ware='graphene'][@chance='50']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_gen_graphene']/compatibilities/production[@ware='antimattercells'][@chance='25']/@ware">energycells</replace>
-  <replace sel="/modules/module[@id='prod_gen_graphene']/compatibilities/production[@ware='energycells'][@chance='25'][1]/@chance">0</replace>
+  <remove sel="/modules/module[@id='prod_gen_graphene']/compatibilities/production[@ware='antimattercells'][@chance='25']"/>
   <remove sel="/modules/module[@id='prod_gen_graphene']/compatibilities/production[@ware='energycells'][@chance='25']"/>
   <remove sel="/modules/module[@id='prod_gen_graphene']/compatibilities/production[@ware='superfluidcoolant'][@chance='25']"/>
   <replace sel="/modules/module[@id='prod_gen_microchips']/compatibilities/production[@ware='microchips'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_gen_microchips']/compatibilities">
-    <production ware="energycells" chance="0"/>
+    <limits production="25"/>
   </add>
-  <add sel="/modules/module[@id='prod_gen_microchips']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_missilecomponents']/compatibilities/limits[@production='1']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_missilecomponents']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_missilecomponents']/compatibilities/production[@ware='missilecomponents'][@chance='65']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_gen_missilecomponents']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_superfluidcoolant']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_superfluidcoolant']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_superfluidcoolant']/compatibilities/production[@ware='superfluidcoolant'][@chance='50']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_gen_superfluidcoolant']/compatibilities/production[@ware='antimattercells'][@chance='25']/@ware">energycells</replace>
-  <replace sel="/modules/module[@id='prod_gen_superfluidcoolant']/compatibilities/production[@ware='energycells'][@chance='25'][1]/@chance">0</replace>
+  <remove sel="/modules/module[@id='prod_gen_superfluidcoolant']/compatibilities/production[@ware='antimattercells'][@chance='25']"/>
   <remove sel="/modules/module[@id='prod_gen_superfluidcoolant']/compatibilities/production[@ware='energycells'][@chance='25']"/>
   <remove sel="/modules/module[@id='prod_gen_superfluidcoolant']/compatibilities/production[@ware='graphene'][@chance='25']"/>
   <replace sel="/modules/module[@id='prod_gen_plasmaconductors']/compatibilities/production[@ware='plasmaconductors'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_gen_plasmaconductors']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_gen_plasmaconductors']/compatibilities">
-    <limits production="20"/>
+    <limits production="25"/>
   </add>
   <replace sel="/modules/module[@id='prod_gen_quantumtubes']/compatibilities/production[@ware='quantumtubes'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_gen_quantumtubes']/compatibilities">
-    <production ware="energycells" chance="0"/>
+    <limits production="25"/>
   </add>
-  <add sel="/modules/module[@id='prod_gen_quantumtubes']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_refinedmetals']/compatibilities/limits[@production='4']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_refinedmetals']/compatibilities/limits[@production='4']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_refinedmetals']/compatibilities/production[@ware='refinedmetals'][@chance='50']/@chance">100</replace>
-  <remove sel="/modules/module[@id='prod_gen_refinedmetals']/compatibilities/production[@ref='prod_gen_siliconwafers'][@chance='25']/@ref"/>
-  <replace sel="/modules/module[@id='prod_gen_refinedmetals']/compatibilities/production[@chance='25']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_gen_refinedmetals']/compatibilities/production[@chance='0']" type="@ware">energycells</add>
-  <replace sel="/modules/module[@id='prod_gen_scanningarrays']/compatibilities/limits[@production='1']/@production">20</replace>
+  <remove sel="/modules/module[@id='prod_gen_refinedmetals']/compatibilities/production[@ref='prod_gen_siliconwafers'][@chance='25']"/>
+  <replace sel="/modules/module[@id='prod_gen_scanningarrays']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_scanningarrays']/compatibilities/production[@ware='scanningarrays'][@chance='65']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_gen_scanningarrays']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_shieldcomponents']/compatibilities/limits[@production='1']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_shieldcomponents']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_shieldcomponents']/compatibilities/production[@ware='shieldcomponents'][@chance='0']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_gen_shieldcomponents']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_siliconwafers']/compatibilities/limits[@production='4']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_siliconwafers']/compatibilities/limits[@production='4']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_siliconwafers']/compatibilities/production[@ware='siliconwafers'][@chance='50']/@chance">100</replace>
-  <remove sel="/modules/module[@id='prod_gen_siliconwafers']/compatibilities/production[@ref='prod_gen_refinedmetals'][@chance='20']/@ref"/>
-  <replace sel="/modules/module[@id='prod_gen_siliconwafers']/compatibilities/production[@chance='20']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_gen_siliconwafers']/compatibilities/production[@chance='0']" type="@ware">energycells</add>
+  <remove sel="/modules/module[@id='prod_gen_siliconwafers']/compatibilities/production[@ref='prod_gen_refinedmetals'][@chance='20']"/>
   <replace sel="/modules/module[@id='prod_gen_smartchips']/compatibilities/production[@ware='smartchips'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_gen_smartchips']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_gen_smartchips']/compatibilities">
-    <limits production="20"/>
+    <limits production="25"/>
   </add>
   <replace sel="/modules/module[@id='prod_gen_spices']/compatibilities/production[@ware='spices'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_gen_spices']/compatibilities">
-    <production ware="energycells" chance="0"/>
+    <limits production="25"/>
   </add>
-  <add sel="/modules/module[@id='prod_gen_spices']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_turretcomponents']/compatibilities/limits[@production='1']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_turretcomponents']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_turretcomponents']/compatibilities/production[@ware='turretcomponents'][@chance='65']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_gen_turretcomponents']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_water']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_water']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_water']/compatibilities/production[@ware='water'][@chance='65']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_gen_water']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_gen_weaponcomponents']/compatibilities/limits[@production='1']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_gen_weaponcomponents']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_weaponcomponents']/compatibilities/production[@ware='weaponcomponents'][@chance='65']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_gen_weaponcomponents']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_arg_meat']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_arg_meat']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_arg_meat']/compatibilities/production[@ware='meat'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_arg_meat']/compatibilities/production[@ware='foodrations'][@chance='20']/@ware">spices</replace>
-  <replace sel="/modules/module[@id='prod_arg_meat']/compatibilities/production[@ware='spices'][@chance='20']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_arg_meat']/compatibilities/production[@ware='wheat'][@chance='10']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_arg_meat']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
+  <remove sel="/modules/module[@id='prod_arg_meat']/compatibilities/production[@ware='foodrations'][@chance='20']"/>
+  <remove sel="/modules/module[@id='prod_arg_meat']/compatibilities/production[@ware='wheat'][@chance='10']"/>
   <replace sel="/modules/module[@id='prod_arg_medicalsupplies']/compatibilities/production[@ware='medicalsupplies'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_arg_medicalsupplies']/compatibilities">
-    <production ware="spices" chance="0"/>
+    <limits production="25"/>
   </add>
-  <add sel="/modules/module[@id='prod_arg_medicalsupplies']/compatibilities">
-    <production ware="wheat" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_arg_medicalsupplies']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_arg_medicalsupplies']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_arg_foodrations']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_arg_foodrations']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_arg_foodrations']/compatibilities/production[@ware='foodrations'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_arg_foodrations']/compatibilities/production[@ware='meat'][@chance='20']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_arg_foodrations']/compatibilities/production[@ware='wheat'][@chance='10']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_arg_foodrations']/compatibilities">
-    <production ware="spices" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_arg_foodrations']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
+  <remove sel="/modules/module[@id='prod_arg_foodrations']/compatibilities/production[@ware='meat'][@chance='20']"/>
+  <remove sel="/modules/module[@id='prod_arg_foodrations']/compatibilities/production[@ware='wheat'][@chance='10']"/>
   <replace sel="/modules/module[@id='prod_arg_spacefuel']/compatibilities/production[@ware='spacefuel'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_arg_spacefuel']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_arg_spacefuel']/compatibilities">
     <limits production="5"/>
   </add>
-  <replace sel="/modules/module[@id='prod_arg_wheat']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_arg_wheat']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_arg_wheat']/compatibilities/production[@ware='wheat'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_arg_wheat']/compatibilities/production[@ware='meat'][@chance='20']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_arg_wheat']/compatibilities/production[@ware='foodrations'][@chance='10']/@ware">spices</replace>
-  <replace sel="/modules/module[@id='prod_arg_wheat']/compatibilities/production[@ware='spices'][@chance='10']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_arg_wheat']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
+  <remove sel="/modules/module[@id='prod_arg_wheat']/compatibilities/production[@ware='meat'][@chance='20']"/>
+  <remove sel="/modules/module[@id='prod_arg_wheat']/compatibilities/production[@ware='foodrations'][@chance='10']"/>
   <replace sel="/modules/module[@id='prod_par_majadust']/compatibilities/production[@ware='majadust'][@chance='65']/@chance">80</replace>
   <add sel="/modules/module[@id='prod_par_majadust']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_par_majadust']/compatibilities">
     <limits production="5"/>
   </add>
-  <replace sel="/modules/module[@id='prod_par_majasnails']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_par_majasnails']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_par_majasnails']/compatibilities/production[@ware='majasnails'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_par_majasnails']/compatibilities/production[@ware='sojabeans'][@chance='20']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_par_majasnails']/compatibilities/production[@ware='sojahusk'][@chance='10']/@ware">spices</replace>
-  <replace sel="/modules/module[@id='prod_par_majasnails']/compatibilities/production[@ware='spices'][@chance='10']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_par_majasnails']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
+  <remove sel="/modules/module[@id='prod_par_majasnails']/compatibilities/production[@ware='sojabeans'][@chance='20']"/>
+  <remove sel="/modules/module[@id='prod_par_majasnails']/compatibilities/production[@ware='sojahusk'][@chance='10']"/>
   <replace sel="/modules/module[@id='prod_par_medicalsupplies']/compatibilities/production[@ware='medicalsupplies'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_par_medicalsupplies']/compatibilities">
-    <production ware="sojabeans" chance="0"/>
+    <limits production="25"/>
   </add>
-  <add sel="/modules/module[@id='prod_par_medicalsupplies']/compatibilities">
-    <production ware="spices" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_par_medicalsupplies']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_par_medicalsupplies']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_par_sojabeans']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_par_sojabeans']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_par_sojabeans']/compatibilities/production[@ware='sojabeans'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_par_sojabeans']/compatibilities/production[@ware='majasnails'][@chance='20']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_par_sojabeans']/compatibilities/production[@ware='sojahusk'][@chance='10']/@ware">spices</replace>
-  <replace sel="/modules/module[@id='prod_par_sojabeans']/compatibilities/production[@ware='spices'][@chance='10']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_par_sojabeans']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_par_sojahusk']/compatibilities/limits[@production='2']/@production">20</replace>
+  <remove sel="/modules/module[@id='prod_par_sojabeans']/compatibilities/production[@ware='majasnails'][@chance='20']"/>
+  <remove sel="/modules/module[@id='prod_par_sojabeans']/compatibilities/production[@ware='sojahusk'][@chance='10']"/>
+  <replace sel="/modules/module[@id='prod_par_sojahusk']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_par_sojahusk']/compatibilities/production[@ware='sojahusk'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_par_sojahusk']/compatibilities/production[@ware='majasnails'][@chance='20']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_par_sojahusk']/compatibilities/production[@ware='sojabeans'][@chance='10']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_par_sojahusk']/compatibilities">
-    <production ware="spices" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_par_sojahusk']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_tel_advancedcomposites']/compatibilities/limits[@production='1']/@production">20</replace>
+  <remove sel="/modules/module[@id='prod_par_sojahusk']/compatibilities/production[@ware='majasnails'][@chance='20']"/>
+  <remove sel="/modules/module[@id='prod_par_sojahusk']/compatibilities/production[@ware='sojabeans'][@chance='10']"/>
+  <replace sel="/modules/module[@id='prod_tel_advancedcomposites']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_tel_advancedcomposites']/compatibilities/production[@ware='advancedcomposites'][@chance='65']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_tel_advancedcomposites']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
   <replace sel="/modules/module[@id='prod_tel_engineparts']/compatibilities/production[@ware='engineparts'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_tel_engineparts']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_tel_engineparts']/compatibilities">
-    <limits production="20"/>
+    <limits production="25"/>
   </add>
   <replace sel="/modules/module[@id='prod_tel_hullparts']/compatibilities/production[@ware='hullparts'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_tel_hullparts']/compatibilities">
-    <production ware="energycells" chance="0"/>
+    <limits production="25"/>
   </add>
-  <add sel="/modules/module[@id='prod_tel_hullparts']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_tel_scanningarrays']/compatibilities/limits[@production='1']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_tel_scanningarrays']/compatibilities/limits[@production='1']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_tel_scanningarrays']/compatibilities/production[@ware='scanningarrays'][@chance='65']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_tel_scanningarrays']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
   <replace sel="/modules/module[@id='prod_tel_medicalsupplies']/compatibilities/production[@ware='medicalsupplies'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_tel_medicalsupplies']/compatibilities">
-    <production ware="energycells" chance="0"/>
+    <limits production="25"/>
   </add>
-  <add sel="/modules/module[@id='prod_tel_medicalsupplies']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_tel_nostropoil']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_tel_nostropoil']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_tel_nostropoil']/compatibilities/production[@ware='nostropoil'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_tel_nostropoil']/compatibilities/production[@ware='sunriseflowers'][@chance='25']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_tel_nostropoil']/compatibilities/production[@ware='swampplant'][@chance='10']/@ware">spices</replace>
-  <replace sel="/modules/module[@id='prod_tel_nostropoil']/compatibilities/production[@ware='spices'][@chance='10']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_tel_nostropoil']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
+  <remove sel="/modules/module[@id='prod_tel_nostropoil']/compatibilities/production[@ware='sunriseflowers'][@chance='25']"/>
+  <remove sel="/modules/module[@id='prod_tel_nostropoil']/compatibilities/production[@ware='swampplant'][@chance='10']"/>
   <replace sel="/modules/module[@id='prod_tel_spaceweed']/compatibilities/production[@ware='spaceweed'][@chance='65']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_tel_spaceweed']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
   <add sel="/modules/module[@id='prod_tel_spaceweed']/compatibilities">
     <limits production="5"/>
   </add>
-  <replace sel="/modules/module[@id='prod_tel_sunriseflowers']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_tel_sunriseflowers']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_tel_sunriseflowers']/compatibilities/production[@ware='sunriseflowers'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_tel_sunriseflowers']/compatibilities/production[@ware='swampplant'][@chance='20']/@ware">spices</replace>
-  <replace sel="/modules/module[@id='prod_tel_sunriseflowers']/compatibilities/production[@ware='spices'][@chance='20']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_tel_sunriseflowers']/compatibilities/production[@ware='nostropoil'][@chance='10']/@ware">energycells</replace>
-  <replace sel="/modules/module[@id='prod_tel_sunriseflowers']/compatibilities/production[@ware='energycells'][@chance='10']/@chance">0</replace>
+  <remove sel="/modules/module[@id='prod_tel_sunriseflowers']/compatibilities/production[@ware='swampplant'][@chance='20']"/>
+  <remove sel="/modules/module[@id='prod_tel_sunriseflowers']/compatibilities/production[@ware='nostropoil'][@chance='10']"/>
   <replace sel="/modules/module[@id='prod_tel_swampplant']/compatibilities/limits[@production='2']/@production">5</replace>
   <replace sel="/modules/module[@id='prod_tel_swampplant']/compatibilities/production[@ware='swampplant'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_tel_swampplant']/compatibilities/production[@ware='nostropoil'][@chance='20']/@ware">energycells</replace>
-  <replace sel="/modules/module[@id='prod_tel_swampplant']/compatibilities/production[@ware='energycells'][@chance='20']/@chance">0</replace>
+  <remove sel="/modules/module[@id='prod_tel_swampplant']/compatibilities/production[@ware='nostropoil'][@chance='20']"/>
   <remove sel="/modules/module[@id='prod_tel_swampplant']/compatibilities/production[@ware='sunriseflowers'][@chance='10']"/>
   <replace sel="/modules/module[@id='prod_tel_teladianium']/compatibilities/production[@ware='teladianium'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_tel_teladianium']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_tel_teladianium']/compatibilities">
-    <limits production="20"/>
+    <limits production="25"/>
   </add>
   <replace sel="/modules/module[@id='prod_sca_majasnails']/compatibilities/production[@ware='majasnails'][@chance='20']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_sca_majasnails']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
   <add sel="/modules/module[@id='prod_sca_majasnails']/compatibilities">
     <limits production="5"/>
   </add>
   <replace sel="/modules/module[@id='prod_sca_foodrations']/compatibilities/production[@ware='foodrations'][@chance='20']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_sca_foodrations']/compatibilities">
-    <production ware="meat" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_sca_foodrations']/compatibilities">
-    <production ware="spices" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_sca_foodrations']/compatibilities">
-    <production ware="wheat" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_sca_foodrations']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_sca_foodrations']/compatibilities">
     <limits production="10"/>
   </add>
   <replace sel="/modules/module[@id='prod_sca_meat']/compatibilities/production[@ware='meat'][@chance='20']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_sca_meat']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
   <add sel="/modules/module[@id='prod_sca_meat']/compatibilities">
     <limits production="10"/>
   </add>
   <replace sel="/modules/module[@id='prod_sca_wheat']/compatibilities/production[@ware='wheat'][@chance='20']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_sca_wheat']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_sca_wheat']/compatibilities">
     <limits production="10"/>
   </add>
-  <replace sel="/modules/module[@id='prod_xen_energycells']/compatibilities/limits[@production='1']/@production">3</replace>
-  <replace sel="/modules/module[@id='prod_xen_energycells']/compatibilities/production[@ware='energycells'][@chance='75']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_xen_energycells']/compatibilities/production[@ware='energycells'][@chance='100']" type="@respectquota">false</add>
   <replace sel="/modules/module[@id='prod_spl_medicalsupplies']/compatibilities/production[@ware='medicalsupplies'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_spl_medicalsupplies']/compatibilities">
-    <production ware="scruffinfruits" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_spl_medicalsupplies']/compatibilities">
-    <production ware="spices" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_spl_medicalsupplies']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_spl_medicalsupplies']/compatibilities">
-    <limits production="20"/>
+    <limits production="25"/>
   </add>
   <replace sel="/modules/module[@id='prod_spl_scruffinfruits']/compatibilities/production[@ware='scruffinfruits'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_spl_scruffinfruits']/compatibilities/production[@ware='cheltmeat'][@chance='20']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_spl_scruffinfruits']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_spl_scruffinfruits']/compatibilities">
-    <limits production="20"/>
-  </add>
+  <replace sel="/modules/module[@id='prod_spl_scruffinfruits']/compatibilities/production[@ware='cheltmeat'][@chance='20']">
+    <limits production="25"/>
+  </replace>
   <replace sel="/modules/module[@id='prod_spl_cheltmeat']/compatibilities/production[@ware='cheltmeat'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_spl_cheltmeat']/compatibilities/production[@ware='scruffinfruits'][@chance='20']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_spl_cheltmeat']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_spl_cheltmeat']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_ter_computronicsubstrate']/compatibilities/limits[@production='1']/@production">6</replace>
+  <replace sel="/modules/module[@id='prod_spl_cheltmeat']/compatibilities/production[@ware='scruffinfruits'][@chance='20']">
+    <limits production="25"/>
+  </replace>
+  <replace sel="/modules/module[@id='prod_ter_computronicsubstrate']/compatibilities/limits[@production='1']/@production">10</replace>
   <replace sel="/modules/module[@id='prod_ter_computronicsubstrate']/compatibilities/production[@ware='computronicsubstrate'][@chance='20']/@chance">100</replace>
   <replace sel="/modules/module[@id='prod_ter_energycells']/compatibilities/production[@ware='energycells'][@chance='75']/@chance">100</replace>
   <replace sel="/modules/module[@id='prod_ter_medicalsupplies']/compatibilities/production[@ware='medicalsupplies'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_ter_medicalsupplies']/compatibilities">
-    <production ware="proteinpaste" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_ter_medicalsupplies']/compatibilities">
-    <limits production="20"/>
+    <limits production="25"/>
   </add>
   <replace sel="/modules/module[@id='prod_ter_metallicmicrolattice']/compatibilities/production[@ware='metallicmicrolattice'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_ter_metallicmicrolattice']/compatibilities">
     <limits production="15"/>
   </add>
-  <replace sel="/modules/module[@id='prod_ter_proteinpaste']/compatibilities/limits[@production='2']/@production">12</replace>
+  <replace sel="/modules/module[@id='prod_ter_proteinpaste']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_ter_proteinpaste']/compatibilities/production[@ware='proteinpaste'][@chance='65']/@chance">100</replace>
   <remove sel="/modules/module[@id='prod_ter_proteinpaste']/compatibilities/production[@ware='medicalsupplies'][@chance='25']"/>
   <remove sel="/modules/module[@id='prod_ter_proteinpaste']/compatibilities/production[@ware='terranmre'][@chance='10']"/>
-  <replace sel="/modules/module[@id='prod_ter_terranmre']/compatibilities/limits[@production='2']/@production">12</replace>
+  <replace sel="/modules/module[@id='prod_ter_terranmre']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_ter_terranmre']/compatibilities/production[@ware='terranmre'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_ter_terranmre']/compatibilities/production[@ware='proteinpaste'][@chance='10']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_ter_siliconcarbide']/compatibilities/limits[@production='3']/@production">18</replace>
+  <remove sel="/modules/module[@id='prod_ter_terranmre']/compatibilities/production[@ware='proteinpaste'][@chance='10']"/>
+  <replace sel="/modules/module[@id='prod_ter_siliconcarbide']/compatibilities/limits[@production='3']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_ter_siliconcarbide']/compatibilities/production[@ware='siliconcarbide'][@chance='50']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_ter_siliconcarbide']/compatibilities">
-    <production ware="metallicmicrolattice" chance="0"/>
-  </add>
   <replace sel="/modules/module[@id='prod_ter_stimulants']/compatibilities/production[@ware='stimulants'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_ter_stimulants']/compatibilities">
     <limits production="5"/>
   </add>
   <replace sel="/modules/module[@id='prod_bor_medicalsupplies']/compatibilities/production[@ware='medicalsupplies'][@chance='65']/@chance">100</replace>
   <add sel="/modules/module[@id='prod_bor_medicalsupplies']/compatibilities">
-    <production ware="plankton" chance="0"/>
+    <limits production="25"/>
   </add>
-  <add sel="/modules/module[@id='prod_bor_medicalsupplies']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_bor_medicalsupplies']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_bor_bofu']/compatibilities/limits[@production='2']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_bor_bofu']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_bor_bofu']/compatibilities/production[@ware='bofu'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_bor_bofu']/compatibilities/production[@ware='bogas'][@chance='20']/@ware">plankton</replace>
-  <replace sel="/modules/module[@id='prod_bor_bofu']/compatibilities/production[@ware='plankton'][@chance='20']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_bor_bofu']/compatibilities/production[@ware='plankton'][@chance='10']/@ware">energycells</replace>
-  <replace sel="/modules/module[@id='prod_bor_bofu']/compatibilities/production[@ware='energycells'][@chance='10']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_bor_bogas']/compatibilities/limits[@production='2']/@production">20</replace>
+  <remove sel="/modules/module[@id='prod_bor_bofu']/compatibilities/production[@ware='bogas'][@chance='20']"/>
+  <remove sel="/modules/module[@id='prod_bor_bofu']/compatibilities/production[@ware='plankton'][@chance='10']"/>
+  <replace sel="/modules/module[@id='prod_bor_bogas']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_bor_bogas']/compatibilities/production[@ware='bogas'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_bor_bogas']/compatibilities/production[@ware='bofu'][@chance='25']/@ware">plankton</replace>
-  <replace sel="/modules/module[@id='prod_bor_bogas']/compatibilities/production[@ware='plankton'][@chance='25']/@chance">0</replace>
-  <replace sel="/modules/module[@id='prod_bor_bogas']/compatibilities/production[@ware='plankton'][@chance='10']/@ware">energycells</replace>
-  <replace sel="/modules/module[@id='prod_bor_bogas']/compatibilities/production[@ware='energycells'][@chance='10']/@chance">0</replace>
+  <remove sel="/modules/module[@id='prod_bor_bogas']/compatibilities/production[@ware='bofu'][@chance='25']"/>
+  <remove sel="/modules/module[@id='prod_bor_bogas']/compatibilities/production[@ware='plankton'][@chance='10']"/>
   <replace sel="/modules/module[@id='prod_bor_plankton']/compatibilities/production[@ware='plankton'][@chance='65']/@chance">100</replace>
-  <replace sel="/modules/module[@id='prod_bor_plankton']/compatibilities/production[@ware='bofu'][@chance='20']/@ware">bogas</replace>
-  <replace sel="/modules/module[@id='prod_bor_plankton']/compatibilities/production[@ware='bogas'][@chance='20']/@chance">0</replace>
-  <add sel="/modules/module[@id='prod_bor_plankton']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <add sel="/modules/module[@id='prod_bor_plankton']/compatibilities">
-    <limits production="20"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_bor_refinedmetals']/compatibilities/limits[@production='4']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_bor_plankton']/compatibilities/production[@ware='bofu'][@chance='20']">
+    <limits production="25"/>
+  </replace>
+  <replace sel="/modules/module[@id='prod_bor_refinedmetals']/compatibilities/limits[@production='4']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_bor_refinedmetals']/compatibilities/production[@ware='refinedmetals'][@chance='50']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_bor_refinedmetals']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
-  <replace sel="/modules/module[@id='prod_bor_siliconwafers']/compatibilities/limits[@production='4']/@production">20</replace>
+  <replace sel="/modules/module[@id='prod_bor_siliconwafers']/compatibilities/limits[@production='4']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_bor_siliconwafers']/compatibilities/production[@ware='siliconwafers'][@chance='50']/@chance">100</replace>
-  <add sel="/modules/module[@id='prod_bor_siliconwafers']/compatibilities">
-    <production ware="energycells" chance="0"/>
-  </add>
   <add sel="/modules">
     <module id="prod_gen_da_adv_schematics" group="prod_gen_da_adv_schematics">
       <category ware="da_adv_schematics" tags="[production, module]" race="[argon, paranid, split, teladi]" faction="[argon, paranid, teladi, antigone, holyorder, trinity, buccaneers, ministry, hatikvah, alliance, scaleplate]">
@@ -449,11 +240,8 @@
         <extension race="boron" faction="boron"/>
       </category>
       <compatibilities>
-        <limits production="20"/>
+        <limits production="25"/>
         <production ware="da_adv_schematics" chance="100"/>
-        <production ware="da_mil_schematics" chance="0"/>
-        <production ware="da_laborunion_contracts" chance="0"/>
-        <production ware="energycells" chance="0"/>
       </compatibilities>
     </module>
   </add>
@@ -464,11 +252,8 @@
         <extension race="boron" faction="boron"/>
       </category>
       <compatibilities>
-        <limits production="20"/>
+        <limits production="25"/>
         <production ware="da_mil_schematics" chance="100"/>
-        <production ware="da_adv_schematics" chance="0"/>
-        <production ware="da_laborunion_contracts" chance="0"/>
-        <production ware="energycells" chance="0"/>
       </compatibilities>
     </module>
   </add>
@@ -479,11 +264,8 @@
         <extension race="boron" faction="boron"/>
       </category>
       <compatibilities>
-        <limits production="20"/>
+        <limits production="25"/>
         <production ware="da_laborunion_contracts" chance="100"/>
-        <production ware="da_adv_schematics" chance="0"/>
-        <production ware="da_mil_schematics" chance="0"/>
-        <production ware="energycells" chance="0"/>
       </compatibilities>
     </module>
   </add>
@@ -491,10 +273,8 @@
     <module id="prod_gen_da_adv_schematics_terran" group="prod_gen_da_adv_schematics">
       <category ware="da_adv_schematics" tags="[production, module]" race="[terran]" faction="[terran, pioneers]"/>
       <compatibilities>
-        <limits production="20"/>
+        <limits production="25"/>
         <production ware="da_adv_schematics" chance="100"/>
-        <production ware="da_mil_schematics" chance="0"/>
-        <production ware="da_laborunion_contracts" chance="0"/>
       </compatibilities>
     </module>
   </add>
@@ -502,10 +282,8 @@
     <module id="prod_gen_da_mil_schematics_terran" group="prod_gen_da_mil_schematics">
       <category ware="da_mil_schematics" tags="[production, module]" race="[terran]" faction="[terran, pioneers]"/>
       <compatibilities>
-        <limits production="20"/>
+        <limits production="25"/>
         <production ware="da_mil_schematics" chance="100"/>
-        <production ware="da_adv_schematics" chance="0"/>
-        <production ware="da_laborunion_contracts" chance="0"/>
       </compatibilities>
     </module>
   </add>
@@ -513,10 +291,8 @@
     <module id="prod_gen_da_laborunion_contracts_terran" group="prod_gen_da_laborunion_contracts">
       <category ware="da_laborunion_contracts" tags="[production, module]" race="[terran]" faction="[terran, pioneers]"/>
       <compatibilities>
-        <limits production="20"/>
+        <limits production="25"/>
         <production ware="da_laborunion_contracts" chance="100"/>
-        <production ware="da_adv_schematics" chance="0"/>
-        <production ware="da_mil_schematics" chance="0"/>
       </compatibilities>
     </module>
   </add>

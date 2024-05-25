@@ -16,7 +16,7 @@
       <production wares="da_laborunion_contracts">
         <queue ware="da_laborunion_contracts" />
       </production>
-      <workforce max="500" />
+      <workforce max="500"/>
     </properties>
   </macro>
 </macros>

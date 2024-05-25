@@ -262,4 +262,29 @@
 			</wares>
 		</basket>
 	</add>
+	<add sel="/baskets/basket[@id='all_container_argon_da']/wares" silent="true">
+		<ware ware="da_adv_schematics"/>
+		<ware ware="da_mil_schematics"/>
+		<ware ware="da_laborunion_contracts"/>
+	</add>
+	<add sel="/baskets/basket[@id='all_container_paranid_da']/wares" silent="true">
+		<ware ware="da_adv_schematics"/>
+		<ware ware="da_mil_schematics"/>
+		<ware ware="da_laborunion_contracts"/>
+	</add>
+	<add sel="/baskets/basket[@id='all_container_teladi_da']/wares" silent="true">
+		<ware ware="da_adv_schematics"/>
+		<ware ware="da_mil_schematics"/>
+		<ware ware="da_laborunion_contracts"/>
+	</add>
+	<add sel="/baskets/basket[@id='all_container_split_da']/wares" silent="true">
+		<ware ware="da_adv_schematics"/>
+		<ware ware="da_mil_schematics"/>
+		<ware ware="da_laborunion_contracts"/>
+	</add>
+	<add sel="/baskets/basket[@id='all_container_boron_da']/wares" silent="true">
+		<ware ware="da_adv_schematics"/>
+		<ware ware="da_mil_schematics"/>
+		<ware ware="da_laborunion_contracts"/>
+	</add>
 </diff>

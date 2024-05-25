@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
   <replace sel="/god/stations/defaults/location/@coreboundaryzoneheight">20000</replace>
-  <replace sel="/god/stations/defaults/modules[@production='5']/@production">20</replace>
-  <replace sel="/god/stations/defaults/modules[@production='20']/@storage">14</replace>
+  <replace sel="/god/stations/defaults/modules[@production='5']/@production">25</replace>
+  <replace sel="/god/stations/defaults/modules[@production='25']/@storage">15</replace>
   <remove sel="/god/stations/station[@id='wharf_split_02'][@owner='split'][@race='split'][@type='factory']"/>
   <remove sel="/god/stations/station[@id='arg_defence_cluster_416_sector001'][@owner='argon'][@race='argon'][@type='factory']"/>
   <remove sel="/god/stations/station[@id='arg_defence_cluster_416_sector002'][@owner='argon'][@race='argon'][@type='factory']"/>
@@ -12,6 +12,23 @@
   <remove sel="/god/stations/station[@id='par_defence_cluster_423_sector002'][@owner='paranid'][@race='paranid'][@type='factory']"/>
   <remove sel="/god/stations/station[@id='par_defence_cluster_422_sector001'][@owner='paranid'][@race='paranid'][@type='factory']"/>
   <remove sel="/god/stations/station[@id='par_wharf_cluster_422_sector001'][@owner='paranid'][@race='paranid'][@type='factory']"/>
+  <add sel="/god/products/product[@id='tel_advancedelectronics_new'][@ware='advancedelectronics'][@owner='teladi'][@type='factory']/module/select[@ware='advancedelectronics'][@race='teladi']" type="@faction">teladi</add>
+  <add sel="/god/products/product[@id='tel_antimattercells_new'][@ware='antimattercells'][@owner='teladi'][@type='factory']/module/select[@ware='antimattercells'][@race='teladi']" type="@faction">teladi</add>
+  <add sel="/god/products/product[@id='tel_teladianium_new'][@ware='teladianium'][@owner='teladi'][@type='factory']/module/select[@ware='teladianium'][@race='teladi']" type="@faction">teladi</add>
+  <add sel="/god/products/product[@id='tel_claytronics_new'][@ware='claytronics'][@owner='teladi'][@type='factory']/module/select[@ware='claytronics'][@race='teladi']" type="@faction">teladi</add>
+  <add sel="/god/products/product[@id='tel_smartchips_new'][@ware='smartchips'][@owner='teladi'][@type='factory']/module/select[@ware='smartchips'][@race='teladi']" type="@faction">teladi</add>
+  <add sel="/god/products/product[@id='tel_medicalsupplies_new'][@ware='medicalsupplies'][@owner='teladi'][@type='factory']/module/select[@ware='medicalsupplies'][@race='teladi']" type="@faction">teladi</add>
+  <add sel="/god/products/product[@id='tel_nostropoil_new'][@ware='nostropoil'][@owner='teladi'][@type='factory']/module/select[@ware='nostropoil'][@race='teladi']" type="@faction">teladi</add>
+  <add sel="/god/products/product[@id='tel_graphene_new'][@ware='graphene'][@owner='teladi'][@type='factory']/module/select[@ware='graphene'][@race='teladi']" type="@faction">teladi</add>
+  <add sel="/god/products/product[@id='tel_energycells_new'][@ware='energycells'][@owner='teladi'][@type='factory']/module/select[@ware='energycells'][@race='teladi']" type="@faction">teladi</add>
+  <add sel="/god/products/product[@id='par_advancedcomposites_new'][@ware='advancedcomposites'][@owner='paranid'][@type='factory']/module/select[@ware='advancedcomposites'][@race='paranid']" type="@faction">paranid</add>
+  <add sel="/god/products/product[@id='par_advancedelectronics_new'][@ware='advancedelectronics'][@owner='paranid'][@type='factory']/module/select[@ware='advancedelectronics'][@race='paranid']" type="@faction">paranid</add>
+  <add sel="/god/products/product[@id='par_antimattercells_new'][@ware='antimattercells'][@owner='paranid'][@type='factory']/module/select[@ware='antimatterconverters'][@race='paranid']" type="@faction">paranid</add>
+  <add sel="/god/products/product[@id='par_scanningarrays_new'][@ware='scanningarrays'][@owner='paranid'][@type='factory']/module/select[@ware='scanningarrays'][@race='paranid']" type="@faction">paranid</add>
+  <add sel="/god/products/product[@id='par_siliconwafers_new'][@ware='siliconwafers'][@owner='paranid'][@type='factory']/module/select[@ware='siliconwafers'][@race='paranid']" type="@faction">paranid</add>
+  <add sel="/god/products/product[@id='par_graphene_new'][@ware='graphene'][@owner='paranid'][@type='factory']/module/select[@ware='graphene'][@race='paranid']" type="@faction">paranid</add>
+  <add sel="/god/products/product[@id='par_medicalsupplies_new'][@ware='medicalsupplies'][@owner='paranid'][@type='factory']/module/select[@ware='medicalsupplies'][@race='paranid']" type="@faction">paranid</add>
+  <add sel="/god/products/product[@id='par_majasnails_new'][@ware='majasnails'][@owner='paranid'][@type='factory']/module/select[@ware='majasnails'][@race='paranid']" type="@faction">paranid</add>
   <replace sel="/god/products/product[@id='arg_advancedcomposites'][@ware='advancedcomposites'][@owner='argon'][@type='factory']/location[@faction='[argon, hatikvah]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[argon]</replace>
   <remove sel="/god/products/product[@id='arg_advancedcomposites'][@ware='advancedcomposites'][@owner='argon'][@type='factory']/location[@faction='[argon]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
   <replace sel="/god/products/product[@id='arg_advancedelectronics'][@ware='advancedelectronics'][@owner='argon'][@type='factory']/location[@faction='[argon, hatikvah]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[argon]</replace>
@@ -63,6 +80,7 @@
   <replace sel="/god/products/product[@id='arg_quantumtubes'][@ware='quantumtubes'][@owner='argon'][@type='factory']/location[@faction='[argon, hatikvah]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[argon]</replace>
   <remove sel="/god/products/product[@id='arg_quantumtubes'][@ware='quantumtubes'][@owner='argon'][@type='factory']/location[@faction='[argon]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <add sel="/god/products/product[@id='arg_quantumtubes'][@ware='quantumtubes'][@owner='argon'][@type='factory']/module/select[@ware='quantumtubes'][@race='argon']" type="@faction">argon</add>
+  <remove sel="/god/products/product[@id='arg_refinedmetals'][@ware='refinedmetals'][@owner='argon'][@type='factory']/quotas/quota[@galaxy='6'][@sector='4']/@sector"/>
   <replace sel="/god/products/product[@id='arg_refinedmetals'][@ware='refinedmetals'][@owner='argon'][@type='factory']/location[@faction='[argon, hatikvah]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[argon]</replace>
   <remove sel="/god/products/product[@id='arg_refinedmetals'][@ware='refinedmetals'][@owner='argon'][@type='factory']/location[@faction='[argon]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <add sel="/god/products/product[@id='arg_refinedmetals'][@ware='refinedmetals'][@owner='argon'][@type='factory']/module/select[@ware='refinedmetals'][@race='argon']" type="@faction">argon</add>
@@ -72,6 +90,7 @@
   <replace sel="/god/products/product[@id='arg_shieldcomponents'][@ware='shieldcomponents'][@owner='argon'][@type='factory']/location[@faction='[argon, hatikvah]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[argon]</replace>
   <remove sel="/god/products/product[@id='arg_shieldcomponents'][@ware='shieldcomponents'][@owner='argon'][@type='factory']/location[@faction='[argon]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
   <add sel="/god/products/product[@id='arg_shieldcomponents'][@ware='shieldcomponents'][@owner='argon'][@type='factory']/module/select[@ware='shieldcomponents'][@race='argon']" type="@faction">argon</add>
+  <remove sel="/god/products/product[@id='arg_siliconwafers'][@ware='siliconwafers'][@owner='argon'][@type='factory']/quotas/quota[@galaxy='6'][@sector='4']/@sector"/>
   <replace sel="/god/products/product[@id='arg_siliconwafers'][@ware='siliconwafers'][@owner='argon'][@type='factory']/location[@faction='[argon, hatikvah]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[argon]</replace>
   <remove sel="/god/products/product[@id='arg_siliconwafers'][@ware='siliconwafers'][@owner='argon'][@type='factory']/location[@faction='[argon]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <add sel="/god/products/product[@id='arg_siliconwafers'][@ware='siliconwafers'][@owner='argon'][@type='factory']/module/select[@ware='siliconwafers'][@race='argon']" type="@faction">argon</add>
@@ -129,6 +148,7 @@
   <add sel="/god/products/product[@id='ant_plasmaconductors'][@ware='plasmaconductors'][@owner='antigone'][@type='factory']/module/select[@ware='plasmaconductors'][@race='argon']" type="@faction">antigone</add>
   <remove sel="/god/products/product[@id='ant_quantumtubes'][@ware='quantumtubes'][@owner='antigone'][@type='factory']/location[@faction='antigone'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <add sel="/god/products/product[@id='ant_quantumtubes'][@ware='quantumtubes'][@owner='antigone'][@type='factory']/module/select[@ware='quantumtubes'][@race='argon']" type="@faction">antigone</add>
+  <remove sel="/god/products/product[@id='ant_refinedmetals'][@ware='refinedmetals'][@owner='antigone'][@type='factory']/quotas/quota[@galaxy='6'][@sector='4']/@sector"/>
   <remove sel="/god/products/product[@id='ant_refinedmetals'][@ware='refinedmetals'][@owner='antigone'][@type='factory']/location[@faction='antigone'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <add sel="/god/products/product[@id='ant_refinedmetals'][@ware='refinedmetals'][@owner='antigone'][@type='factory']/module/select[@ware='refinedmetals'][@race='argon']" type="@faction">antigone</add>
   <remove sel="/god/products/product[@id='ant_scanningarrays'][@ware='scanningarrays'][@owner='antigone'][@type='factory']/location[@faction='antigone'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
@@ -136,6 +156,7 @@
   <remove sel="/god/products/product[@id='ant_shieldcomponents'][@ware='shieldcomponents'][@owner='antigone'][@type='factory']/location[@faction='antigone'][@class='galaxy'][@macro='xu_ep2_universe_macro']/region[@ware='silicon'][@max='100000']"/>
   <remove sel="/god/products/product[@id='ant_shieldcomponents'][@ware='shieldcomponents'][@owner='antigone'][@type='factory']/location[@faction='antigone'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <add sel="/god/products/product[@id='ant_shieldcomponents'][@ware='shieldcomponents'][@owner='antigone'][@type='factory']/module/select[@ware='shieldcomponents'][@race='argon']" type="@faction">antigone</add>
+  <remove sel="/god/products/product[@id='ant_siliconwafers'][@ware='siliconwafers'][@owner='antigone'][@type='factory']/quotas/quota[@galaxy='4'][@sector='2']/@sector"/>
   <remove sel="/god/products/product[@id='ant_siliconwafers'][@ware='siliconwafers'][@owner='antigone'][@type='factory']/location[@faction='antigone'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <add sel="/god/products/product[@id='ant_siliconwafers'][@ware='siliconwafers'][@owner='antigone'][@type='factory']/module/select[@ware='siliconwafers'][@race='argon']" type="@faction">antigone</add>
   <remove sel="/god/products/product[@id='ant_smartchips'][@ware='smartchips'][@owner='antigone'][@type='factory']/location[@faction='antigone'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
@@ -175,6 +196,7 @@
   <add sel="/god/products/product[@id='par_dronecomponents'][@ware='dronecomponents'][@owner='paranid'][@type='factory']/module/select[@ware='dronecomponents'][@race='paranid']" type="@faction">paranid</add>
   <replace sel="/god/products/product[@id='hol_dronecomponents'][@ware='dronecomponents'][@owner='holyorder'][@type='factory']/location[@faction='[holyorder, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[holyorder]</replace>
   <add sel="/god/products/product[@id='hol_dronecomponents'][@ware='dronecomponents'][@owner='holyorder'][@type='factory']/module/select[@ware='dronecomponents'][@race='paranid']" type="@faction">holyorder</add>
+  <remove sel="/god/products/product[@id='par_energycells'][@ware='energycells'][@owner='paranid'][@type='factory']/quotas/quota[@galaxy='12'][@sector='2']/@sector"/>
   <replace sel="/god/products/product[@id='par_energycells'][@ware='energycells'][@owner='paranid'][@type='factory']/location[@faction='[paranid, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[paranid]</replace>
   <add sel="/god/products/product[@id='par_energycells'][@ware='energycells'][@owner='paranid'][@type='factory']/module/select[@ware='energycells'][@race='paranid']" type="@faction">paranid</add>
   <replace sel="/god/products/product[@id='hol_energycells'][@ware='energycells'][@owner='holyorder'][@type='factory']/location[@faction='[holyorder, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[holyorder]</replace>
@@ -187,6 +209,7 @@
   <add sel="/god/products/product[@id='par_fieldcoils'][@ware='fieldcoils'][@owner='paranid'][@type='factory']/module/select[@ware='fieldcoils'][@race='paranid']" type="@faction">paranid</add>
   <replace sel="/god/products/product[@id='hol_fieldcoils'][@ware='fieldcoils'][@owner='holyorder'][@type='factory']/location[@faction='[holyorder, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[holyorder]</replace>
   <add sel="/god/products/product[@id='hol_fieldcoils'][@ware='fieldcoils'][@owner='holyorder'][@type='factory']/module/select[@ware='fieldcoils'][@race='paranid']" type="@faction">holyorder</add>
+  <remove sel="/god/products/product[@id='par_graphene'][@ware='graphene'][@owner='paranid'][@type='factory']/quotas/quota[@galaxy='7'][@sector='3']/@sector"/>
   <replace sel="/god/products/product[@id='par_graphene'][@ware='graphene'][@owner='paranid'][@type='factory']/location[@faction='[paranid, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[paranid]</replace>
   <add sel="/god/products/product[@id='par_graphene'][@ware='graphene'][@owner='paranid'][@type='factory']/module/select[@ware='graphene'][@race='paranid']" type="@faction">paranid</add>
   <replace sel="/god/products/product[@id='hol_graphene'][@ware='graphene'][@owner='holyorder'][@type='factory']/location[@faction='[holyorder, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[holyorder]</replace>
@@ -219,8 +242,10 @@
   <add sel="/god/products/product[@id='par_quantumtubes'][@ware='quantumtubes'][@owner='paranid'][@type='factory']/module/select[@ware='quantumtubes'][@race='paranid']" type="@faction">paranid</add>
   <replace sel="/god/products/product[@id='hol_quantumtubes'][@ware='quantumtubes'][@owner='holyorder'][@type='factory']/location[@faction='[holyorder, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[holyorder]</replace>
   <add sel="/god/products/product[@id='hol_quantumtubes'][@ware='quantumtubes'][@owner='holyorder'][@type='factory']/module/select[@ware='quantumtubes'][@race='paranid']" type="@faction">holyorder</add>
+  <remove sel="/god/products/product[@id='par_refinedmetals'][@ware='refinedmetals'][@owner='paranid'][@type='factory']/quotas/quota[@galaxy='8'][@sector='4']/@sector"/>
   <replace sel="/god/products/product[@id='par_refinedmetals'][@ware='refinedmetals'][@owner='paranid'][@type='factory']/location[@faction='[paranid, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[paranid]</replace>
   <add sel="/god/products/product[@id='par_refinedmetals'][@ware='refinedmetals'][@owner='paranid'][@type='factory']/module/select[@ware='refinedmetals'][@race='paranid']" type="@faction">paranid</add>
+  <remove sel="/god/products/product[@id='hol_refinedmetals'][@ware='refinedmetals'][@owner='holyorder'][@type='factory']/quotas/quota[@galaxy='9'][@sector='5']/@sector"/>
   <replace sel="/god/products/product[@id='hol_refinedmetals'][@ware='refinedmetals'][@owner='holyorder'][@type='factory']/location[@faction='[holyorder, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[holyorder]</replace>
   <add sel="/god/products/product[@id='hol_refinedmetals'][@ware='refinedmetals'][@owner='holyorder'][@type='factory']/module/select[@ware='refinedmetals'][@race='paranid']" type="@faction">holyorder</add>
   <replace sel="/god/products/product[@id='par_scanningarrays'][@ware='scanningarrays'][@owner='paranid'][@type='factory']/location[@faction='[paranid, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[paranid]</replace>
@@ -231,8 +256,10 @@
   <add sel="/god/products/product[@id='par_shieldcomponents'][@ware='shieldcomponents'][@owner='paranid'][@type='factory']/module/select[@ware='shieldcomponents'][@race='paranid']" type="@faction">paranid</add>
   <replace sel="/god/products/product[@id='hol_shieldcomponents'][@ware='shieldcomponents'][@owner='holyorder'][@type='factory']/location[@faction='[holyorder, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[holyorder]</replace>
   <add sel="/god/products/product[@id='hol_shieldcomponents'][@ware='shieldcomponents'][@owner='holyorder'][@type='factory']/module/select[@ware='shieldcomponents'][@race='paranid']" type="@faction">holyorder</add>
+  <remove sel="/god/products/product[@id='par_siliconwafers'][@ware='siliconwafers'][@owner='paranid'][@type='factory']/quotas/quota[@galaxy='7'][@sector='2']/@sector"/>
   <replace sel="/god/products/product[@id='par_siliconwafers'][@ware='siliconwafers'][@owner='paranid'][@type='factory']/location[@faction='[paranid, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[paranid]</replace>
   <add sel="/god/products/product[@id='par_siliconwafers'][@ware='siliconwafers'][@owner='paranid'][@type='factory']/module/select[@ware='siliconwafers'][@race='paranid']" type="@faction">paranid</add>
+  <remove sel="/god/products/product[@id='hol_siliconwafers'][@ware='siliconwafers'][@owner='holyorder'][@type='factory']/quotas/quota[@galaxy='4'][@sector='2']/@sector"/>
   <replace sel="/god/products/product[@id='hol_siliconwafers'][@ware='siliconwafers'][@owner='holyorder'][@type='factory']/location[@faction='[holyorder, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[holyorder]</replace>
   <add sel="/god/products/product[@id='hol_siliconwafers'][@ware='siliconwafers'][@owner='holyorder'][@type='factory']/module/select[@ware='siliconwafers'][@race='paranid']" type="@faction">holyorder</add>
   <replace sel="/god/products/product[@id='par_smartchips'][@ware='smartchips'][@owner='paranid'][@type='factory']/location[@faction='[paranid, alliance]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[paranid]</replace>
@@ -322,6 +349,7 @@
   <replace sel="/god/products/product[@id='tel_shieldcomponents'][@ware='shieldcomponents'][@owner='teladi'][@type='factory']/location[@faction='[teladi, scaleplate]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[teladi]</replace>
   <remove sel="/god/products/product[@id='tel_shieldcomponents'][@ware='shieldcomponents'][@owner='teladi'][@type='factory']/location[@faction='[teladi]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
   <add sel="/god/products/product[@id='tel_shieldcomponents'][@ware='shieldcomponents'][@owner='teladi'][@type='factory']/module/select[@ware='shieldcomponents'][@race='teladi']" type="@faction">teladi</add>
+  <remove sel="/god/products/product[@id='tel_siliconwafers'][@ware='siliconwafers'][@owner='teladi'][@type='factory']/quotas/quota[@galaxy='8'][@sector='4']/@sector"/>
   <replace sel="/god/products/product[@id='tel_siliconwafers'][@ware='siliconwafers'][@owner='teladi'][@type='factory']/location[@faction='[teladi, scaleplate]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[teladi]</replace>
   <remove sel="/god/products/product[@id='tel_siliconwafers'][@ware='siliconwafers'][@owner='teladi'][@type='factory']/location[@faction='[teladi]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
   <add sel="/god/products/product[@id='tel_siliconwafers'][@ware='siliconwafers'][@owner='teladi'][@type='factory']/module/select[@ware='siliconwafers'][@race='teladi']" type="@faction">teladi</add>
@@ -353,8 +381,6 @@
   <replace sel="/god/products/product[@id='tel_weaponcomponents'][@ware='weaponcomponents'][@owner='teladi'][@type='factory']/location[@faction='[teladi, scaleplate]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/@faction">[teladi]</replace>
   <remove sel="/god/products/product[@id='tel_weaponcomponents'][@ware='weaponcomponents'][@owner='teladi'][@type='factory']/location[@faction='[teladi]'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
   <add sel="/god/products/product[@id='tel_weaponcomponents'][@ware='weaponcomponents'][@owner='teladi'][@type='factory']/module/select[@ware='weaponcomponents'][@race='teladi']" type="@faction">teladi</add>
-  <replace sel="/god/products/product[@id='xen_energycells'][@ware='energycells'][@owner='xenon'][@type='factory']/quotas/quota[@galaxy='12'][@cluster='3']/@galaxy">21</replace>
-  <remove sel="/god/products/product[@id='xen_energycells'][@ware='energycells'][@owner='xenon'][@type='factory']/location[@faction='xenon'][@class='galaxy'][@macro='xu_ep2_universe_macro']/security[@min='0.75']"/>
   <remove sel="/god/products/product[@id='spl_advancedcomposites'][@ware='advancedcomposites'][@owner='split'][@type='factory']/location[@faction='split'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
   <replace sel="/god/products/product[@id='spl_advancedcomposites'][@ware='advancedcomposites'][@owner='split'][@type='factory']/module/select[@ware='advancedcomposites'][@race='argon']/@race">split</replace>
   <add sel="/god/products/product[@id='spl_advancedcomposites'][@ware='advancedcomposites'][@owner='split'][@type='factory']/module/select[@ware='advancedcomposites'][@race='split']" type="@faction">split</add>
@@ -402,6 +428,7 @@
   <remove sel="/god/products/product[@id='spl_quantumtubes'][@ware='quantumtubes'][@owner='split'][@type='factory']/location[@faction='split'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <replace sel="/god/products/product[@id='spl_quantumtubes'][@ware='quantumtubes'][@owner='split'][@type='factory']/module/select[@ware='quantumtubes'][@race='argon']/@race">split</replace>
   <add sel="/god/products/product[@id='spl_quantumtubes'][@ware='quantumtubes'][@owner='split'][@type='factory']/module/select[@ware='quantumtubes'][@race='split']" type="@faction">split</add>
+  <remove sel="/god/products/product[@id='spl_refinedmetals'][@ware='refinedmetals'][@owner='split'][@type='factory']/quotas/quota[@galaxy='8'][@sector='4']/@sector"/>
   <remove sel="/god/products/product[@id='spl_refinedmetals'][@ware='refinedmetals'][@owner='split'][@type='factory']/location[@faction='split'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
   <replace sel="/god/products/product[@id='spl_refinedmetals'][@ware='refinedmetals'][@owner='split'][@type='factory']/module/select[@ware='refinedmetals'][@race='argon']/@race">split</replace>
   <add sel="/god/products/product[@id='spl_refinedmetals'][@ware='refinedmetals'][@owner='split'][@type='factory']/module/select[@ware='refinedmetals'][@race='split']" type="@faction">split</add>
@@ -413,6 +440,7 @@
   <remove sel="/god/products/product[@id='spl_shieldcomponents'][@ware='shieldcomponents'][@owner='split'][@type='factory']/location[@faction='split'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
   <replace sel="/god/products/product[@id='spl_shieldcomponents'][@ware='shieldcomponents'][@owner='split'][@type='factory']/module/select[@ware='shieldcomponents'][@race='argon']/@race">split</replace>
   <add sel="/god/products/product[@id='spl_shieldcomponents'][@ware='shieldcomponents'][@owner='split'][@type='factory']/module/select[@ware='shieldcomponents'][@race='split']" type="@faction">split</add>
+  <remove sel="/god/products/product[@id='spl_siliconwafers'][@ware='siliconwafers'][@owner='split'][@type='factory']/quotas/quota[@galaxy='6'][@sector='4']/@sector"/>
   <remove sel="/god/products/product[@id='spl_siliconwafers'][@ware='siliconwafers'][@owner='split'][@type='factory']/location[@faction='split'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <replace sel="/god/products/product[@id='spl_siliconwafers'][@ware='siliconwafers'][@owner='split'][@type='factory']/module/select[@ware='siliconwafers'][@race='argon']/@race">split</replace>
   <add sel="/god/products/product[@id='spl_siliconwafers'][@ware='siliconwafers'][@owner='split'][@type='factory']/module/select[@ware='siliconwafers'][@race='split']" type="@faction">split</add>
@@ -479,6 +507,7 @@
   <remove sel="/god/products/product[@id='frf_quantumtubes'][@ware='quantumtubes'][@owner='freesplit'][@type='factory']/location[@faction='freesplit'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <replace sel="/god/products/product[@id='frf_quantumtubes'][@ware='quantumtubes'][@owner='freesplit'][@type='factory']/module/select[@ware='quantumtubes'][@race='argon']/@race">split</replace>
   <add sel="/god/products/product[@id='frf_quantumtubes'][@ware='quantumtubes'][@owner='freesplit'][@type='factory']/module/select[@ware='quantumtubes'][@race='split']" type="@faction">freesplit</add>
+  <remove sel="/god/products/product[@id='frf_refinedmetals'][@ware='refinedmetals'][@owner='freesplit'][@type='factory']/quotas/quota[@galaxy='6'][@sector='4']/@sector"/>
   <remove sel="/god/products/product[@id='frf_refinedmetals'][@ware='refinedmetals'][@owner='freesplit'][@type='factory']/location[@faction='freesplit'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <replace sel="/god/products/product[@id='frf_refinedmetals'][@ware='refinedmetals'][@owner='freesplit'][@type='factory']/module/select[@ware='refinedmetals'][@race='argon']/@race">split</replace>
   <add sel="/god/products/product[@id='frf_refinedmetals'][@ware='refinedmetals'][@owner='freesplit'][@type='factory']/module/select[@ware='refinedmetals'][@race='split']" type="@faction">freesplit</add>
@@ -490,6 +519,7 @@
   <remove sel="/god/products/product[@id='frf_shieldcomponents'][@ware='shieldcomponents'][@owner='freesplit'][@type='factory']/location[@faction='freesplit'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
   <replace sel="/god/products/product[@id='frf_shieldcomponents'][@ware='shieldcomponents'][@owner='freesplit'][@type='factory']/module/select[@ware='shieldcomponents'][@race='argon']/@race">split</replace>
   <add sel="/god/products/product[@id='frf_shieldcomponents'][@ware='shieldcomponents'][@owner='freesplit'][@type='factory']/module/select[@ware='shieldcomponents'][@race='split']" type="@faction">freesplit</add>
+  <remove sel="/god/products/product[@id='frf_siliconwafers'][@ware='siliconwafers'][@owner='freesplit'][@type='factory']/quotas/quota[@galaxy='6'][@sector='4']/@sector"/>
   <remove sel="/god/products/product[@id='frf_siliconwafers'][@ware='siliconwafers'][@owner='freesplit'][@type='factory']/location[@faction='freesplit'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.5']"/>
   <replace sel="/god/products/product[@id='frf_siliconwafers'][@ware='siliconwafers'][@owner='freesplit'][@type='factory']/module/select[@ware='siliconwafers'][@race='argon']/@race">split</replace>
   <add sel="/god/products/product[@id='frf_siliconwafers'][@ware='siliconwafers'][@owner='freesplit'][@type='factory']/module/select[@ware='siliconwafers'][@race='split']" type="@faction">freesplit</add>
@@ -569,8 +599,6 @@
   <add sel="/god/products/product[@id='pio_computronicsubstrate_oortcloud'][@ware='computronicsubstrate'][@owner='pioneers'][@type='factory']/module/select[@ware='computronicsubstrate'][@race='terran']" type="@faction">pioneers</add>
   <add sel="/god/products/product[@id='pio_metallicmicrolattice_oortcloud'][@ware='metallicmicrolattice'][@owner='pioneers'][@type='factory']/module/select[@ware='metallicmicrolattice'][@race='terran']" type="@faction">pioneers</add>
   <add sel="/god/products/product[@id='pio_siliconcarbide_oortcloud'][@ware='siliconcarbide'][@owner='pioneers'][@type='factory']/module/select[@ware='siliconcarbide'][@race='terran']" type="@faction">pioneers</add>
-  <remove sel="/god/products/product[@id='xen_dlc_terran_energycells_cluster_112_sector001'][@ware='energycells'][@owner='xenon'][@type='factory']/location[@faction='xenon'][@class='sector'][@macro='cluster_112_sector001_macro']/security[@min='0.25']"/>
-  <remove sel="/god/products/product[@id='xen_dlc_terran_energycells_cluster_112_sector002'][@ware='energycells'][@owner='xenon'][@type='factory']/location[@faction='xenon'][@class='sector'][@macro='cluster_112_sector002_macro']/security[@min='0.25']"/>
   <replace sel="/god/products/product[@id='bor_advancedcomposites'][@ware='advancedcomposites'][@owner='boron'][@type='factory']/module/select[@ware='advancedcomposites'][@race='boron'][@faction='argon']/@faction">boron</replace>
   <add sel="/god/products/product[@id='bor_advancedelectronics'][@ware='advancedelectronics'][@owner='boron'][@type='factory']/module/select[@ware='advancedelectronics'][@race='boron']" type="@faction">boron</add>
   <add sel="/god/products/product[@id='bor_antimattercells'][@ware='antimattercells'][@owner='boron'][@type='factory']/module/select[@ware='antimattercells'][@race='boron']" type="@faction">boron</add>

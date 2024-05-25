@@ -2,11 +2,21 @@
 <diff>
   <replace sel="/defaults/dataset[@class='ship_xl']/properties/threatscore/purpose[@value='14'][@purpose='trade']/@value">9</replace>
   <replace sel="/defaults/dataset[@class='ship_xl']/properties/threatscore/purpose[@value='12'][@purpose='build']/@value">10</replace>
-  <replace sel="/defaults/dataset[@class='ship_xl']/properties/threatscore/purpose[@value='14']/@value">9</replace>
+  <replace sel="/defaults/dataset[@class='ship_xl']/properties/threatscore/purpose[@value='14'][@purpose='mine']/@value">9</replace>
+  <replace sel="/defaults/dataset[@class='ship_xl']/properties/threatscore/purpose[@value='12'][@purpose='salvage']/@value">9</replace>
+  <replace sel="/defaults/dataset[@class='ship_xl']/properties/threatscore/purpose[@value='12'][@purpose='dismantling']/@value">9</replace>
   <replace sel="/defaults/dataset[@class='ship_l']/properties/threatscore/purpose[@value='8'][@purpose='trade']/@value">6</replace>
-  <replace sel="/defaults/dataset[@class='ship_l']/properties/threatscore/purpose[@value='8']/@value">6</replace>
+  <replace sel="/defaults/dataset[@class='ship_l']/properties/threatscore/purpose[@value='8'][@purpose='mine']/@value">6</replace>
+  <replace sel="/defaults/dataset[@class='ship_l']/properties/threatscore/purpose[@value='7'][@purpose='salvage']/@value">6</replace>
+  <replace sel="/defaults/dataset[@class='ship_l']/properties/threatscore/purpose[@value='7'][@purpose='dismantling']/@value">6</replace>
+  <add sel="/defaults/dataset[@class='ship_m']/properties/threatscore">
+    <purpose purpose="trade" value="1"/>
+  </add>
+  <add sel="/defaults/dataset[@class='ship_m']/properties/threatscore">
+    <purpose purpose="mine" value="1"/>
+  </add>
   <replace sel="/defaults/dataset[@class='station']/properties/build/@plotsize">20000</replace>
   <replace sel="/defaults/dataset[@class='station']/properties/threatscore/@default">20</replace>
   <replace sel="/defaults/dataset[@class='module']/properties/threatscore/@default">3</replace>
-  <replace sel="/defaults/dataset[@class='module']/properties/threatscore/purpose[@value='3']/@value">20</replace>
+  <replace sel="/defaults/dataset[@class='module']/properties/threatscore/purpose[@value='3'][@purpose='defence']/@value">20</replace>
 </diff>

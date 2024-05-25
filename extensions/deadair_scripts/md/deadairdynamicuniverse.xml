@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
 	<add sel="//library[@name='LibraryGodSetDefaultQuota']/actions/do_if[@value='true'][@comment='EasyDiffAddMarker']">
-		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_adv_schematics}" exact="4"/>
-		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_mil_schematics}" exact="8"/>
-		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_laborunion_contracts}" exact="16"/>
+		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_adv_schematics}" exact="21"/>
+		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_mil_schematics}" exact="6"/>
+		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_laborunion_contracts}" exact="24"/>
 	</add>
 </diff>
