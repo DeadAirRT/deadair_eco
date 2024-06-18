@@ -79,7 +79,7 @@
   <replace sel="/ships/ship[@id='terran_miner_solid_l']/people[@ref='terran_freighter_crew']/@ref">terran_veteran_freighter_crew</replace>
   <replace sel="/ships/ship[@id='terran_miner_liquid_l']/people[@ref='terran_freighter_crew']/@ref">terran_veteran_freighter_crew</replace>
   <replace sel="/ships/ship[@id='terran_carrier_xl']/people[@ref='terran_military_crew']/@ref">terran_elite_military_crew</replace>
-  <replace sel="/ships/ship[@id='terran_battleship_atf_xl']/people[@ref='terran_military_crew']/@ref">terran_elite_military_crew</replace>
+  <replace sel="/ships/ship[@id='terran_battleship_atf_xl']/people[@ref='terran_asgard_crew']/@ref">terran_elite_military_crew</replace>
   <replace sel="/ships/ship[@id='terran_destroyer_atf_l']/people[@ref='terran_military_crew']/@ref">terran_elite_military_crew</replace>
   <replace sel="/ships/ship[@id='terran_destroyer_mixed_l']/people[@ref='terran_military_crew']/@ref">terran_elite_military_crew</replace>
   <replace sel="/ships/ship[@id='terran_destroyer_l']/people[@ref='terran_military_crew']/@ref">terran_elite_military_crew</replace>

@@ -23,7 +23,7 @@
   <add sel="/god/products/product[@id='tel_energycells_new'][@ware='energycells'][@owner='teladi'][@type='factory']/module/select[@ware='energycells'][@race='teladi']" type="@faction">teladi</add>
   <add sel="/god/products/product[@id='par_advancedcomposites_new'][@ware='advancedcomposites'][@owner='paranid'][@type='factory']/module/select[@ware='advancedcomposites'][@race='paranid']" type="@faction">paranid</add>
   <add sel="/god/products/product[@id='par_advancedelectronics_new'][@ware='advancedelectronics'][@owner='paranid'][@type='factory']/module/select[@ware='advancedelectronics'][@race='paranid']" type="@faction">paranid</add>
-  <add sel="/god/products/product[@id='par_antimattercells_new'][@ware='antimattercells'][@owner='paranid'][@type='factory']/module/select[@ware='antimatterconverters'][@race='paranid']" type="@faction">paranid</add>
+  <add sel="/god/products/product[@id='par_antimattercells_new'][@ware='antimattercells'][@owner='paranid'][@type='factory']/module/select[@ware='antimattercells'][@race='paranid']" type="@faction">paranid</add>
   <add sel="/god/products/product[@id='par_scanningarrays_new'][@ware='scanningarrays'][@owner='paranid'][@type='factory']/module/select[@ware='scanningarrays'][@race='paranid']" type="@faction">paranid</add>
   <add sel="/god/products/product[@id='par_siliconwafers_new'][@ware='siliconwafers'][@owner='paranid'][@type='factory']/module/select[@ware='siliconwafers'][@race='paranid']" type="@faction">paranid</add>
   <add sel="/god/products/product[@id='par_graphene_new'][@ware='graphene'][@owner='paranid'][@type='factory']/module/select[@ware='graphene'][@race='paranid']" type="@faction">paranid</add>

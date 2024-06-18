@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
-  <replace sel="/modules/module[@id='prod_gen_advancedelectronics']/compatibilities/limits[@production='1']/@production">25</replace>
-  <replace sel="/modules/module[@id='prod_gen_advancedelectronics']/compatibilities/production[@ware='advancedelectronics'][@chance='65']/@chance">100</replace>
+  <replace sel="/modules/module[@id='prod_gen_advancedelectronics']/compatibilities/limits[@production='2']/@production">25</replace>
+  <replace sel="/modules/module[@id='prod_gen_advancedelectronics']/compatibilities/production[@ware='advancedelectronics'][@chance='15']/@chance">100</replace>
   <replace sel="/modules/module[@id='prod_gen_antimattercells']/compatibilities/limits[@production='2']/@production">25</replace>
   <replace sel="/modules/module[@id='prod_gen_antimattercells']/compatibilities/production[@ware='antimattercells'][@chance='50']/@chance">100</replace>
   <remove sel="/modules/module[@id='prod_gen_antimattercells']/compatibilities/production[@ware='energycells'][@chance='25']"/>

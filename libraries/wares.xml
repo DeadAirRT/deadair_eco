@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
-  <replace sel="/wares/ware[@id='advancedcomposites']/price[@min='432'][@average='540'][@max='648']/@min">275</replace>
-  <replace sel="/wares/ware[@id='advancedcomposites']/price[@min='275'][@average='540'][@max='648']/@max">1075</replace>
+  <replace sel="/wares/ware[@id='advancedcomposites']/price[@min='432'][@average='540'][@max='648']/@min">408</replace>
+  <replace sel="/wares/ware[@id='advancedcomposites']/price[@min='408'][@average='540'][@max='648']/@average">640</replace>
+  <replace sel="/wares/ware[@id='advancedcomposites']/price[@min='408'][@average='640'][@max='648']/@max">1208</replace>
   <replace sel="/wares/ware[@id='advancedcomposites']/production[@method='default'][@amount='54'][@time='300']">
     <production time="600" amount="108" method="default" name="{20206,101}">
       <primary>
@@ -34,8 +35,9 @@
       </secondary>
     </production>
   </replace>
-  <replace sel="/wares/ware[@id='advancedelectronics']/price[@min='710'][@average='1014'][@max='1318']/@min">792</replace>
-  <replace sel="/wares/ware[@id='advancedelectronics']/price[@min='792'][@average='1014'][@max='1318']/@max">1542</replace>
+  <replace sel="/wares/ware[@id='advancedelectronics']/price[@min='710'][@average='1014'][@max='1318']/@min">814</replace>
+  <replace sel="/wares/ware[@id='advancedelectronics']/price[@min='814'][@average='1014'][@max='1318']/@average">1050</replace>
+  <replace sel="/wares/ware[@id='advancedelectronics']/price[@min='814'][@average='1050'][@max='1318']/@max">1864</replace>
   <replace sel="/wares/ware[@id='advancedelectronics']/production[@method='default'][@amount='54'][@time='720']/@time">600</replace>
   <replace sel="/wares/ware[@id='advancedelectronics']/production[@method='default'][@amount='54'][@time='600']/@amount">45</replace>
   <replace sel="/wares/ware[@id='advancedelectronics']/production[@method='default'][@amount='45'][@time='600']/primary/ware[@ware='energycells'][@amount='60']/@amount">50</replace>
@@ -52,8 +54,9 @@
       <ware ware="da_adv_schematics" amount="5"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='antimattercells']/price[@min='121'][@average='202'][@max='282']/@min">83</replace>
-  <replace sel="/wares/ware[@id='antimattercells']/price[@min='83'][@average='202'][@max='282']/@max">443</replace>
+  <replace sel="/wares/ware[@id='antimattercells']/price[@min='121'][@average='202'][@max='282']/@min">108</replace>
+  <replace sel="/wares/ware[@id='antimattercells']/price[@min='108'][@average='202'][@max='282']/@average">216</replace>
+  <replace sel="/wares/ware[@id='antimattercells']/price[@min='108'][@average='216'][@max='282']/@max">468</replace>
   <replace sel="/wares/ware[@id='antimattercells']/production[@method='default'][@amount='99'][@time='120']/@time">150</replace>
   <replace sel="/wares/ware[@id='antimattercells']/production[@method='default'][@amount='99'][@time='150']/@amount">130</replace>
   <replace sel="/wares/ware[@id='antimattercells']/production[@method='default'][@amount='130'][@time='150']/primary/ware[@ware='energycells'][@amount='100']/@amount">125</replace>
@@ -68,8 +71,9 @@
       <ware ware="da_laborunion_contracts" amount="14"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='antimatterconverters']/price[@min='248'][@average='354'][@max='461']/@min">265</replace>
-  <replace sel="/wares/ware[@id='antimatterconverters']/price[@min='265'][@average='354'][@max='461']/@max">515</replace>
+  <replace sel="/wares/ware[@id='antimatterconverters']/price[@min='248'][@average='354'][@max='461']/@min">312</replace>
+  <replace sel="/wares/ware[@id='antimatterconverters']/price[@min='312'][@average='354'][@max='461']/@average">360</replace>
+  <replace sel="/wares/ware[@id='antimatterconverters']/price[@min='312'][@average='360'][@max='461']/@max">612</replace>
   <replace sel="/wares/ware[@id='antimatterconverters']/production[@method='default'][@amount='133'][@time='300']/@time">600</replace>
   <replace sel="/wares/ware[@id='antimatterconverters']/production[@method='default'][@amount='133'][@time='600']/@amount">266</replace>
   <replace sel="/wares/ware[@id='antimatterconverters']/production[@method='default'][@amount='266'][@time='600']/primary/ware[@ware='advancedcomposites'][@amount='20']/@amount">40</replace>
@@ -85,8 +89,8 @@
       <ware ware="da_adv_schematics" amount="11"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='claytronics']/price[@min='1734'][@average='2040'][@max='2346']/@min">1842</replace>
-  <replace sel="/wares/ware[@id='claytronics']/price[@min='1842'][@average='2040'][@max='2346']/@max">2442</replace>
+  <replace sel="/wares/ware[@id='claytronics']/price[@min='1734'][@average='2040'][@max='2346']/@min">1778</replace>
+  <replace sel="/wares/ware[@id='claytronics']/price[@min='1778'][@average='2040'][@max='2346']/@max">2858</replace>
   <replace sel="/wares/ware[@id='claytronics']/production[@method='default'][@amount='108'][@time='900']/@time">600</replace>
   <replace sel="/wares/ware[@id='claytronics']/production[@method='default'][@amount='108'][@time='600']/@amount">100</replace>
   <replace sel="/wares/ware[@id='claytronics']/production[@method='default'][@amount='100'][@time='600']/primary/ware[@ware='antimattercells'][@amount='100']/@amount">67</replace>
@@ -106,8 +110,9 @@
   <replace sel="/wares/ware[@id='claytronics']/production[@method='recycling'][@amount='60'][@time='300']/@amount">80</replace>
   <replace sel="/wares/ware[@id='claytronics']/production[@method='recycling'][@amount='80'][@time='300']/effects/effect[@type='work'][@product='0.34']/@product">1.0</replace>
   <add sel="/wares/ware[@id='claytronics']/production[@method='recycling'][@amount='80'][@time='300']/effects/effect[@type='work'][@product='1.0']" type="@cycle">0.3</add>
-  <replace sel="/wares/ware[@id='dronecomponents']/price[@min='685'][@average='914'][@max='1142']/@min">631</replace>
-  <replace sel="/wares/ware[@id='dronecomponents']/price[@min='631'][@average='914'][@max='1142']/@max">1381</replace>
+  <replace sel="/wares/ware[@id='dronecomponents']/price[@min='685'][@average='914'][@max='1142']/@min">655</replace>
+  <replace sel="/wares/ware[@id='dronecomponents']/price[@min='655'][@average='914'][@max='1142']/@average">930</replace>
+  <replace sel="/wares/ware[@id='dronecomponents']/price[@min='655'][@average='930'][@max='1142']/@max">1705</replace>
   <replace sel="/wares/ware[@id='dronecomponents']/production[@method='default'][@amount='105'][@time='1200']/@time">600</replace>
   <replace sel="/wares/ware[@id='dronecomponents']/production[@method='default'][@amount='105'][@time='600']/@amount">53</replace>
   <replace sel="/wares/ware[@id='dronecomponents']/production[@method='default'][@amount='53'][@time='600']/primary/ware[@ware='energycells'][@amount='60']/@amount">30</replace>
@@ -125,8 +130,8 @@
       <ware ware="da_mil_schematics" amount="13"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='energycells']/price[@min='10'][@average='16'][@max='22']/@min">9</replace>
-  <replace sel="/wares/ware[@id='energycells']/price[@min='9'][@average='16'][@max='22']/@max">29</replace>
+  <replace sel="/wares/ware[@id='energycells']/price[@min='10'][@average='16'][@max='22']/@min">8</replace>
+  <replace sel="/wares/ware[@id='energycells']/price[@min='8'][@average='16'][@max='22']/@max">33</replace>
   <replace sel="/wares/ware[@id='energycells']/production[@method='default'][@amount='175'][@time='60']/effects/effect[@type='work'][@product='0.43']/@product">1.0</replace>
   <add sel="/wares/ware[@id='energycells']/production[@method='default'][@amount='175'][@time='60']/effects/effect[@type='work'][@product='1.0']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='energycells']/production[@method='default'][@amount='175'][@time='60']/effects">
@@ -154,8 +159,9 @@
       </effects>
     </production>
   </add>
-  <replace sel="/wares/ware[@id='engineparts']/price[@min='128'][@average='182'][@max='237']/@min">54</replace>
-  <replace sel="/wares/ware[@id='engineparts']/price[@min='54'][@average='182'][@max='237']/@max">429</replace>
+  <replace sel="/wares/ware[@id='engineparts']/price[@min='128'][@average='182'][@max='237']/@min">98</replace>
+  <replace sel="/wares/ware[@id='engineparts']/price[@min='98'][@average='182'][@max='237']/@average">195</replace>
+  <replace sel="/wares/ware[@id='engineparts']/price[@min='98'][@average='195'][@max='237']/@max">548</replace>
   <replace sel="/wares/ware[@id='engineparts']/production[@method='default'][@amount='208'][@time='900']/@time">600</replace>
   <replace sel="/wares/ware[@id='engineparts']/production[@method='default'][@amount='208'][@time='600']/@amount">139</replace>
   <replace sel="/wares/ware[@id='engineparts']/production[@method='default'][@amount='139'][@time='600']/primary/ware[@ware='antimattercells'][@amount='80']/@amount">53</replace>
@@ -186,8 +192,9 @@
       <ware ware="da_mil_schematics" amount="4"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='fieldcoils']/price[@min='247'][@average='412'][@max='576']/@min">286</replace>
-  <replace sel="/wares/ware[@id='fieldcoils']/price[@min='286'][@average='412'][@max='576']/@max">661</replace>
+  <replace sel="/wares/ware[@id='fieldcoils']/price[@min='247'][@average='412'][@max='576']/@min">309</replace>
+  <replace sel="/wares/ware[@id='fieldcoils']/price[@min='309'][@average='412'][@max='576']/@average">420</replace>
+  <replace sel="/wares/ware[@id='fieldcoils']/price[@min='309'][@average='420'][@max='576']/@max">759</replace>
   <replace sel="/wares/ware[@id='fieldcoils']/production[@method='default'][@amount='175'][@time='600']/effects/effect[@type='work'][@product='0.43']/@product">0.5</replace>
   <add sel="/wares/ware[@id='fieldcoils']/production[@method='default'][@amount='175'][@time='600']/effects/effect[@type='work'][@product='0.5']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='fieldcoils']/production[@method='default'][@amount='175'][@time='600']/effects">
@@ -198,8 +205,7 @@
       <ware ware="da_adv_schematics" amount="10"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='foodrations']/price[@min='12'][@average='21'][@max='29']/@min">14</replace>
-  <replace sel="/wares/ware[@id='foodrations']/price[@min='14'][@average='21'][@max='29']/@max">34</replace>
+  <replace sel="/wares/ware[@id='foodrations']/price[@min='12'][@average='21'][@max='29']/@max">42</replace>
   <replace sel="/wares/ware[@id='foodrations']/production[@method='default'][@amount='460'][@time='240']/@time">300</replace>
   <replace sel="/wares/ware[@id='foodrations']/production[@method='default'][@amount='460'][@time='300']/@amount">575</replace>
   <replace sel="/wares/ware[@id='foodrations']/production[@method='default'][@amount='575'][@time='300']/primary/ware[@ware='energycells'][@amount='100']/@amount">125</replace>
@@ -216,9 +222,9 @@
       <ware ware="da_laborunion_contracts" amount="9"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='graphene']/@volume">18</replace>
-  <replace sel="/wares/ware[@id='graphene']/price[@min='100'][@average='166'][@max='233']/@min">41</replace>
-  <replace sel="/wares/ware[@id='graphene']/price[@min='41'][@average='166'][@max='233']/@max">401</replace>
+  <replace sel="/wares/ware[@id='graphene']/price[@min='100'][@average='166'][@max='233']/@min">120</replace>
+  <replace sel="/wares/ware[@id='graphene']/price[@min='120'][@average='166'][@max='233']/@average">240</replace>
+  <replace sel="/wares/ware[@id='graphene']/price[@min='120'][@average='240'][@max='233']/@max">520</replace>
   <replace sel="/wares/ware[@id='graphene']/production[@method='default'][@amount='96'][@time='240']/@time">150</replace>
   <replace sel="/wares/ware[@id='graphene']/production[@method='default'][@amount='96'][@time='150']/@amount">65</replace>
   <replace sel="/wares/ware[@id='graphene']/production[@method='default'][@amount='65'][@time='150']/primary/ware[@ware='energycells'][@amount='80']/@amount">50</replace>
@@ -233,10 +239,12 @@
       <ware ware="da_laborunion_contracts" amount="4"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='helium']/price[@min='37'][@average='44'][@max='51']/@min">22</replace>
-  <replace sel="/wares/ware[@id='helium']/price[@min='22'][@average='44'][@max='51']/@max">94</replace>
-  <replace sel="/wares/ware[@id='hullparts']/price[@min='146'][@average='209'][@max='272']/@min">96</replace>
-  <replace sel="/wares/ware[@id='hullparts']/price[@min='96'][@average='209'][@max='272']/@max">396</replace>
+  <replace sel="/wares/ware[@id='helium']/price[@min='37'][@average='44'][@max='51']/@min">27</replace>
+  <replace sel="/wares/ware[@id='helium']/price[@min='27'][@average='44'][@max='51']/@average">54</replace>
+  <replace sel="/wares/ware[@id='helium']/price[@min='27'][@average='54'][@max='51']/@max">117</replace>
+  <replace sel="/wares/ware[@id='hullparts']/price[@min='146'][@average='209'][@max='272']/@min">108</replace>
+  <replace sel="/wares/ware[@id='hullparts']/price[@min='108'][@average='209'][@max='272']/@average">216</replace>
+  <replace sel="/wares/ware[@id='hullparts']/price[@min='108'][@average='216'][@max='272']/@max">468</replace>
   <replace sel="/wares/ware[@id='hullparts']/production[@method='default'][@amount='294'][@time='900']/@time">600</replace>
   <replace sel="/wares/ware[@id='hullparts']/production[@method='default'][@amount='294'][@time='600']/@amount">196</replace>
   <replace sel="/wares/ware[@id='hullparts']/production[@method='default'][@amount='196'][@time='600']/primary/ware[@ware='energycells'][@amount='80']/@amount">53</replace>
@@ -269,14 +277,16 @@
       <ware ware="da_mil_schematics" amount="10"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='hydrogen']/price[@min='49'][@average='58'][@max='67']/@min">35</replace>
-  <replace sel="/wares/ware[@id='hydrogen']/price[@min='35'][@average='58'][@max='67']/@max">107</replace>
+  <replace sel="/wares/ware[@id='hydrogen']/price[@min='49'][@average='58'][@max='67']/@min">30</replace>
+  <replace sel="/wares/ware[@id='hydrogen']/price[@min='30'][@average='58'][@max='67']/@average">60</replace>
+  <replace sel="/wares/ware[@id='hydrogen']/price[@min='30'][@average='60'][@max='67']/@max">120</replace>
   <replace sel="/wares/ware[@id='ice']/@volume">6</replace>
-  <replace sel="/wares/ware[@id='ice']/price[@min='26'][@average='30'][@max='35']/@min">14</replace>
-  <replace sel="/wares/ware[@id='ice']/price[@min='14'][@average='30'][@max='35']/@max">86</replace>
+  <replace sel="/wares/ware[@id='ice']/price[@min='26'][@average='30'][@max='35']/@min">21</replace>
+  <replace sel="/wares/ware[@id='ice']/price[@min='21'][@average='30'][@max='35']/@average">42</replace>
+  <replace sel="/wares/ware[@id='ice']/price[@min='21'][@average='42'][@max='35']/@max">111</replace>
   <replace sel="/wares/ware[@id='majadust']/@volume">1</replace>
-  <replace sel="/wares/ware[@id='majadust']/price[@min='94'][@average='208'][@max='323']/@min">184</replace>
-  <replace sel="/wares/ware[@id='majadust']/price[@min='184'][@average='208'][@max='323']/@max">264</replace>
+  <replace sel="/wares/ware[@id='majadust']/price[@min='94'][@average='208'][@max='323']/@min">111</replace>
+  <replace sel="/wares/ware[@id='majadust']/price[@min='111'][@average='208'][@max='323']/@max">411</replace>
   <add sel="/wares/ware[@id='majadust']/production[@method='default'][@amount='64'][@time='600']/effects/effect[@type='work'][@product='0.75']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='majadust']/production[@method='default'][@amount='64'][@time='600']/effects">
     <effect type="secondaryresource" product="1.0"/>
@@ -288,7 +298,7 @@
   </add>
   <replace sel="/wares/ware[@id='majasnails']/@volume">2</replace>
   <replace sel="/wares/ware[@id='majasnails']/price[@min='35'][@average='58'][@max='81']/@min">46</replace>
-  <replace sel="/wares/ware[@id='majasnails']/price[@min='46'][@average='58'][@max='81']/@max">82</replace>
+  <replace sel="/wares/ware[@id='majasnails']/price[@min='46'][@average='58'][@max='81']/@max">86</replace>
   <replace sel="/wares/ware[@id='majasnails']/production[@method='default'][@amount='146'][@time='450']/@time">300</replace>
   <replace sel="/wares/ware[@id='majasnails']/production[@method='default'][@amount='146'][@time='300']/@amount">97</replace>
   <replace sel="/wares/ware[@id='majasnails']/production[@method='default'][@amount='97'][@time='300']/primary/ware[@ware='energycells'][@amount='40']/@amount">27</replace>
@@ -304,8 +314,8 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='meat']/@volume">2</replace>
-  <replace sel="/wares/ware[@id='meat']/price[@min='29'][@average='48'][@max='68']/@min">35</replace>
-  <replace sel="/wares/ware[@id='meat']/price[@min='35'][@average='48'][@max='68']/@max">71</replace>
+  <replace sel="/wares/ware[@id='meat']/price[@min='29'][@average='48'][@max='68']/@min">36</replace>
+  <replace sel="/wares/ware[@id='meat']/price[@min='36'][@average='48'][@max='68']/@max">76</replace>
   <replace sel="/wares/ware[@id='meat']/production[@method='default'][@amount='290'][@time='450']/@time">300</replace>
   <replace sel="/wares/ware[@id='meat']/production[@method='default'][@amount='290'][@time='300']/@amount">193</replace>
   <replace sel="/wares/ware[@id='meat']/production[@method='default'][@amount='193'][@time='300']/primary/ware[@ware='energycells'][@amount='80']/@amount">53</replace>
@@ -320,8 +330,8 @@
       <ware ware="da_laborunion_contracts" amount="8"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='medicalsupplies']/price[@min='43'][@average='66'][@max='89']/@min">53</replace>
-  <replace sel="/wares/ware[@id='medicalsupplies']/price[@min='53'][@average='66'][@max='89']/@max">93</replace>
+  <replace sel="/wares/ware[@id='medicalsupplies']/price[@min='43'][@average='66'][@max='89']/@min">50</replace>
+  <replace sel="/wares/ware[@id='medicalsupplies']/price[@min='50'][@average='66'][@max='89']/@max">110</replace>
   <replace sel="/wares/ware[@id='medicalsupplies']/production[@method='default'][@amount='208'][@time='300']/effects/effect[@type='work'][@product='0.28']/@product">1.0</replace>
   <add sel="/wares/ware[@id='medicalsupplies']/production[@method='default'][@amount='208'][@time='300']/effects/effect[@type='work'][@product='1.0']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='medicalsupplies']/production[@method='default'][@amount='208'][@time='300']/effects">
@@ -382,10 +392,12 @@
       <ware ware="da_laborunion_contracts" amount="12"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='methane']/price[@min='41'][@average='48'][@max='55']/@min">24</replace>
-  <replace sel="/wares/ware[@id='methane']/price[@min='24'][@average='48'][@max='55']/@max">96</replace>
-  <replace sel="/wares/ware[@id='microchips']/price[@min='805'][@average='948'][@max='1090']/@min">799</replace>
-  <replace sel="/wares/ware[@id='microchips']/price[@min='799'][@average='948'][@max='1090']/@max">1239</replace>
+  <replace sel="/wares/ware[@id='methane']/price[@min='41'][@average='48'][@max='55']/@min">38</replace>
+  <replace sel="/wares/ware[@id='methane']/price[@min='38'][@average='48'][@max='55']/@average">66</replace>
+  <replace sel="/wares/ware[@id='methane']/price[@min='38'][@average='66'][@max='55']/@max">128</replace>
+  <replace sel="/wares/ware[@id='microchips']/price[@min='805'][@average='948'][@max='1090']/@min">762</replace>
+  <replace sel="/wares/ware[@id='microchips']/price[@min='762'][@average='948'][@max='1090']/@average">968</replace>
+  <replace sel="/wares/ware[@id='microchips']/price[@min='762'][@average='968'][@max='1090']/@max">1422</replace>
   <replace sel="/wares/ware[@id='microchips']/production[@method='default'][@amount='72'][@time='600']/effects/effect[@type='work'][@product='0.36']/@product">0.75</replace>
   <add sel="/wares/ware[@id='microchips']/production[@method='default'][@amount='72'][@time='600']/effects/effect[@type='work'][@product='0.75']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='microchips']/production[@method='default'][@amount='72'][@time='600']/effects">
@@ -396,9 +408,9 @@
       <ware ware="da_adv_schematics" amount="9"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='missilecomponents']/@volume">1</replace>
-  <replace sel="/wares/ware[@id='missilecomponents']/price[@min='6'][@average='9'][@max='13']/@min">3</replace>
-  <replace sel="/wares/ware[@id='missilecomponents']/price[@min='3'][@average='9'][@max='13']/@max">28</replace>
+  <replace sel="/wares/ware[@id='missilecomponents']/price[@min='6'][@average='9'][@max='13']/@min">15</replace>
+  <replace sel="/wares/ware[@id='missilecomponents']/price[@min='15'][@average='9'][@max='13']/@average">20</replace>
+  <replace sel="/wares/ware[@id='missilecomponents']/price[@min='15'][@average='20'][@max='13']/@max">75</replace>
   <replace sel="/wares/ware[@id='missilecomponents']/production[@method='default'][@amount='281'][@time='900']/@time">600</replace>
   <replace sel="/wares/ware[@id='missilecomponents']/production[@method='default'][@amount='281'][@time='600']/@amount">400</replace>
   <replace sel="/wares/ware[@id='missilecomponents']/production[@method='default'][@amount='400'][@time='600']/primary/ware[@ware='advancedcomposites'][@amount='2']/@amount">1</replace>
@@ -902,9 +914,10 @@
   <replace sel="/wares/ware[@id='module_tel_tradestation_stor_storage_ring_01']/production[@method='default'][@amount='1'][@time='1550']/primary/ware[@ware='claytronics'][@amount='672']/@amount">839</replace>
   <remove sel="/wares/ware[@id='module_tel_tradestation_stor_storage_ring_01']/production[@method='default'][@amount='1'][@time='1550']/primary/ware[@ware='hullparts'][@amount='1841']"/>
   <replace sel="/wares/ware[@id='module_xen_prod_energycells_01']/production[@method='default'][@amount='1'][@time='378']/@time">180</replace>
-  <replace sel="/wares/ware[@id='nividium']/price[@min='434'][@average='510'][@max='587']/@max">684</replace>
-  <replace sel="/wares/ware[@id='nostropoil']/price[@min='20'][@average='34'][@max='47']/@min">28</replace>
-  <replace sel="/wares/ware[@id='nostropoil']/price[@min='28'][@average='34'][@max='47']/@max">48</replace>
+  <replace sel="/wares/ware[@id='nividium']/price[@min='434'][@average='510'][@max='587']/@min">258</replace>
+  <replace sel="/wares/ware[@id='nividium']/price[@min='258'][@average='510'][@max='587']/@max">1018</replace>
+  <replace sel="/wares/ware[@id='nostropoil']/price[@min='20'][@average='34'][@max='47']/@min">29</replace>
+  <replace sel="/wares/ware[@id='nostropoil']/price[@min='29'][@average='34'][@max='47']/@max">59</replace>
   <replace sel="/wares/ware[@id='nostropoil']/production[@method='default'][@amount='500'][@time='300']/effects/effect[@type='work'][@product='0.2']/@product">1.0</replace>
   <add sel="/wares/ware[@id='nostropoil']/production[@method='default'][@amount='500'][@time='300']/effects/effect[@type='work'][@product='1.0']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='nostropoil']/production[@method='default'][@amount='500'][@time='300']/effects">
@@ -916,10 +929,12 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='ore']/@volume">7</replace>
-  <replace sel="/wares/ware[@id='ore']/price[@min='43'][@average='50'][@max='58']/@min">23</replace>
-  <replace sel="/wares/ware[@id='ore']/price[@min='23'][@average='50'][@max='58']/@max">107</replace>
-  <replace sel="/wares/ware[@id='plasmaconductors']/price[@min='769'][@average='1026'][@max='1282']/@min">809</replace>
-  <replace sel="/wares/ware[@id='plasmaconductors']/price[@min='809'][@average='1026'][@max='1282']/@max">1449</replace>
+  <replace sel="/wares/ware[@id='ore']/price[@min='43'][@average='50'][@max='58']/@min">28</replace>
+  <replace sel="/wares/ware[@id='ore']/price[@min='28'][@average='50'][@max='58']/@average">56</replace>
+  <replace sel="/wares/ware[@id='ore']/price[@min='28'][@average='56'][@max='58']/@max">133</replace>
+  <replace sel="/wares/ware[@id='plasmaconductors']/price[@min='769'][@average='1026'][@max='1282']/@min">1044</replace>
+  <replace sel="/wares/ware[@id='plasmaconductors']/price[@min='1044'][@average='1026'][@max='1282']/@average">1120</replace>
+  <replace sel="/wares/ware[@id='plasmaconductors']/price[@min='1044'][@average='1120'][@max='1282']/@max">1844</replace>
   <replace sel="/wares/ware[@id='plasmaconductors']/production[@method='default'][@amount='44'][@time='900']/@time">600</replace>
   <replace sel="/wares/ware[@id='plasmaconductors']/production[@method='default'][@amount='44'][@time='600']/@amount">29</replace>
   <replace sel="/wares/ware[@id='plasmaconductors']/production[@method='default'][@amount='29'][@time='600']/primary/ware[@ware='energycells'][@amount='60']/@amount">40</replace>
@@ -935,8 +950,9 @@
       <ware ware="da_adv_schematics" amount="4"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='quantumtubes']/price[@min='225'][@average='300'][@max='375']/@min">148</replace>
-  <replace sel="/wares/ware[@id='quantumtubes']/price[@min='148'][@average='300'][@max='375']/@max">588</replace>
+  <replace sel="/wares/ware[@id='quantumtubes']/price[@min='225'][@average='300'][@max='375']/@min">193</replace>
+  <replace sel="/wares/ware[@id='quantumtubes']/price[@min='193'][@average='300'][@max='375']/@average">374</replace>
+  <replace sel="/wares/ware[@id='quantumtubes']/price[@min='193'][@average='374'][@max='375']/@max">743</replace>
   <replace sel="/wares/ware[@id='quantumtubes']/production[@method='default'][@amount='94'][@time='720']/@time">600</replace>
   <replace sel="/wares/ware[@id='quantumtubes']/production[@method='default'][@amount='94'][@time='600']/@amount">78</replace>
   <replace sel="/wares/ware[@id='quantumtubes']/production[@method='default'][@amount='78'][@time='600']/primary/ware[@ware='energycells'][@amount='40']/@amount">33</replace>
@@ -952,8 +968,9 @@
       <ware ware="da_adv_schematics" amount="3"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='refinedmetals']/price[@min='89'][@average='148'][@max='207']/@min">34</replace>
-  <replace sel="/wares/ware[@id='refinedmetals']/price[@min='34'][@average='148'][@max='207']/@max">314</replace>
+  <replace sel="/wares/ware[@id='refinedmetals']/price[@min='89'][@average='148'][@max='207']/@min">91</replace>
+  <replace sel="/wares/ware[@id='refinedmetals']/price[@min='91'][@average='148'][@max='207']/@average">182</replace>
+  <replace sel="/wares/ware[@id='refinedmetals']/price[@min='91'][@average='182'][@max='207']/@max">371</replace>
   <replace sel="/wares/ware[@id='refinedmetals']/production[@method='default'][@amount='88'][@time='150']/@amount">95</replace>
   <replace sel="/wares/ware[@id='refinedmetals']/production[@method='default'][@amount='95'][@time='150']/effects/effect[@type='work'][@product='0.43']/@product">1.0</replace>
   <add sel="/wares/ware[@id='refinedmetals']/production[@method='default'][@amount='95'][@time='150']/effects/effect[@type='work'][@product='1.0']" type="@cycle">0.3</add>
@@ -965,8 +982,9 @@
       <ware ware="da_laborunion_contracts" amount="7"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='scanningarrays']/price[@min='842'][@average='1053'][@max='1264']/@min">736</replace>
-  <replace sel="/wares/ware[@id='scanningarrays']/price[@min='736'][@average='1053'][@max='1264']/@max">1686</replace>
+  <replace sel="/wares/ware[@id='scanningarrays']/price[@min='842'][@average='1053'][@max='1264']/@min">887</replace>
+  <replace sel="/wares/ware[@id='scanningarrays']/price[@min='887'][@average='1053'][@max='1264']/@average">1064</replace>
+  <replace sel="/wares/ware[@id='scanningarrays']/price[@min='887'][@average='1064'][@max='1264']/@max">1837</replace>
   <replace sel="/wares/ware[@id='scanningarrays']/production[@method='default'][@amount='36'][@time='600']/@amount">40</replace>
   <replace sel="/wares/ware[@id='scanningarrays']/production[@method='default'][@amount='40'][@time='600']/effects/effect[@type='work'][@product='0.38']/@product">0.5</replace>
   <add sel="/wares/ware[@id='scanningarrays']/production[@method='default'][@amount='40'][@time='600']/effects/effect[@type='work'][@product='0.5']" type="@cycle">0.3</add>
@@ -990,8 +1008,9 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='scrapmetal']/production[@method='processing'][@amount='1'][@time='60']/@time">20</replace>
-  <replace sel="/wares/ware[@id='shieldcomponents']/price[@min='113'][@average='188'][@max='264']/@min">105</replace>
-  <replace sel="/wares/ware[@id='shieldcomponents']/price[@min='105'][@average='188'][@max='264']/@max">355</replace>
+  <replace sel="/wares/ware[@id='shieldcomponents']/price[@min='113'][@average='188'][@max='264']/@min">95</replace>
+  <replace sel="/wares/ware[@id='shieldcomponents']/price[@min='95'][@average='188'][@max='264']/@average">190</replace>
+  <replace sel="/wares/ware[@id='shieldcomponents']/price[@min='95'][@average='190'][@max='264']/@max">395</replace>
   <replace sel="/wares/ware[@id='shieldcomponents']/production[@method='default'][@amount='193'][@time='1200']/@time">600</replace>
   <replace sel="/wares/ware[@id='shieldcomponents']/production[@method='default'][@amount='193'][@time='600']/@amount">97</replace>
   <replace sel="/wares/ware[@id='shieldcomponents']/production[@method='default'][@amount='97'][@time='600']/primary/ware[@ware='energycells'][@amount='70']/@amount">35</replace>
@@ -1010,10 +1029,11 @@
   <add sel="/wares/ware[@id='ship_par_s_heavyfighter_01_a']">
     <owner faction="paranid"/>
   </add>
-  <replace sel="/wares/ware[@id='silicon']/price[@min='111'][@average='130'][@max='150']/@min">91</replace>
-  <replace sel="/wares/ware[@id='silicon']/price[@min='91'][@average='130'][@max='150']/@max">211</replace>
-  <replace sel="/wares/ware[@id='siliconwafers']/price[@min='180'][@average='299'][@max='419']/@min">179</replace>
-  <replace sel="/wares/ware[@id='siliconwafers']/price[@min='179'][@average='299'][@max='419']/@max">539</replace>
+  <replace sel="/wares/ware[@id='silicon']/price[@min='111'][@average='130'][@max='150']/@min">90</replace>
+  <replace sel="/wares/ware[@id='silicon']/price[@min='90'][@average='130'][@max='150']/@max">240</replace>
+  <replace sel="/wares/ware[@id='siliconwafers']/price[@min='180'][@average='299'][@max='419']/@min">207</replace>
+  <replace sel="/wares/ware[@id='siliconwafers']/price[@min='207'][@average='299'][@max='419']/@average">306</replace>
+  <replace sel="/wares/ware[@id='siliconwafers']/price[@min='207'][@average='306'][@max='419']/@max">567</replace>
   <replace sel="/wares/ware[@id='siliconwafers']/production[@method='default'][@amount='107'][@time='180']/@time">150</replace>
   <replace sel="/wares/ware[@id='siliconwafers']/production[@method='default'][@amount='107'][@time='150']/@amount">95</replace>
   <replace sel="/wares/ware[@id='siliconwafers']/production[@method='default'][@amount='95'][@time='150']/primary/ware[@ware='energycells'][@amount='90']/@amount">75</replace>
@@ -1028,8 +1048,9 @@
       <ware ware="da_laborunion_contracts" amount="22"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='smartchips']/price[@min='46'][@average='57'][@max='69']/@min">40</replace>
-  <replace sel="/wares/ware[@id='smartchips']/price[@min='40'][@average='57'][@max='69']/@max">90</replace>
+  <replace sel="/wares/ware[@id='smartchips']/price[@min='46'][@average='57'][@max='69']/@min">44</replace>
+  <replace sel="/wares/ware[@id='smartchips']/price[@min='44'][@average='57'][@max='69']/@average">58</replace>
+  <replace sel="/wares/ware[@id='smartchips']/price[@min='44'][@average='58'][@max='69']/@max">104</replace>
   <replace sel="/wares/ware[@id='smartchips']/production[@method='default'][@amount='143'][@time='600']/@amount">150</replace>
   <replace sel="/wares/ware[@id='smartchips']/production[@method='default'][@amount='150'][@time='600']/effects/effect[@type='work'][@product='0.37']/@product">0.5</replace>
   <add sel="/wares/ware[@id='smartchips']/production[@method='default'][@amount='150'][@time='600']/effects/effect[@type='work'][@product='0.5']" type="@cycle">0.3</add>
@@ -1042,8 +1063,9 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='sojabeans']/@volume">2</replace>
-  <replace sel="/wares/ware[@id='sojabeans']/price[@min='40'][@average='67'][@max='93']/@min">56</replace>
-  <replace sel="/wares/ware[@id='sojabeans']/price[@min='56'][@average='67'][@max='93']/@max">92</replace>
+  <replace sel="/wares/ware[@id='sojabeans']/price[@min='40'][@average='67'][@max='93']/@min">57</replace>
+  <replace sel="/wares/ware[@id='sojabeans']/price[@min='57'][@average='67'][@max='93']/@average">68</replace>
+  <replace sel="/wares/ware[@id='sojabeans']/price[@min='57'][@average='68'][@max='93']/@max">97</replace>
   <replace sel="/wares/ware[@id='sojabeans']/production[@method='default'][@amount='104'][@time='300']/effects/effect[@type='work'][@product='0.48']/@product">0.75</replace>
   <add sel="/wares/ware[@id='sojabeans']/production[@method='default'][@amount='104'][@time='300']/effects/effect[@type='work'][@product='0.75']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='sojabeans']/production[@method='default'][@amount='104'][@time='300']/effects">
@@ -1055,7 +1077,7 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='sojahusk']/price[@min='19'][@average='32'][@max='45']/@min">26</replace>
-  <replace sel="/wares/ware[@id='sojahusk']/price[@min='26'][@average='32'][@max='45']/@max">46</replace>
+  <replace sel="/wares/ware[@id='sojahusk']/price[@min='26'][@average='32'][@max='45']/@max">56</replace>
   <replace sel="/wares/ware[@id='sojahusk']/production[@method='default'][@amount='350'][@time='300']/effects/effect[@type='work'][@product='0.37']/@product">1.0</replace>
   <add sel="/wares/ware[@id='sojahusk']/production[@method='default'][@amount='350'][@time='300']/effects/effect[@type='work'][@product='1.0']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='sojahusk']/production[@method='default'][@amount='350'][@time='300']/effects">
@@ -1067,8 +1089,8 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='spacefuel']/@volume">1</replace>
-  <replace sel="/wares/ware[@id='spacefuel']/price[@min='60'][@average='133'][@max='207']/@min">106</replace>
-  <replace sel="/wares/ware[@id='spacefuel']/price[@min='106'][@average='133'][@max='207']/@max">186</replace>
+  <replace sel="/wares/ware[@id='spacefuel']/price[@min='60'][@average='133'][@max='207']/@min">67</replace>
+  <replace sel="/wares/ware[@id='spacefuel']/price[@min='67'][@average='133'][@max='207']/@max">367</replace>
   <replace sel="/wares/ware[@id='spacefuel']/production[@method='default'][@amount='98'][@time='480']/@time">600</replace>
   <replace sel="/wares/ware[@id='spacefuel']/production[@method='default'][@amount='98'][@time='600']/@amount">123</replace>
   <replace sel="/wares/ware[@id='spacefuel']/production[@method='default'][@amount='123'][@time='600']/primary/ware[@ware='energycells'][@amount='40']/@amount">50</replace>
@@ -1085,8 +1107,8 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='spaceweed']/@volume">1</replace>
-  <replace sel="/wares/ware[@id='spaceweed']/price[@min='75'][@average='166'][@max='257']/@min">139</replace>
-  <replace sel="/wares/ware[@id='spaceweed']/price[@min='139'][@average='166'][@max='257']/@max">219</replace>
+  <replace sel="/wares/ware[@id='spaceweed']/price[@min='75'][@average='166'][@max='257']/@min">83</replace>
+  <replace sel="/wares/ware[@id='spaceweed']/price[@min='83'][@average='166'][@max='257']/@max">383</replace>
   <replace sel="/wares/ware[@id='spaceweed']/production[@method='default'][@amount='183'][@time='600']/effects/effect[@type='work'][@product='0.7']/@product">0.75</replace>
   <add sel="/wares/ware[@id='spaceweed']/production[@method='default'][@amount='183'][@time='600']/effects/effect[@type='work'][@product='0.75']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='spaceweed']/production[@method='default'][@amount='183'][@time='600']/effects">
@@ -1098,8 +1120,8 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='spices']/@volume">2</replace>
-  <replace sel="/wares/ware[@id='spices']/price[@min='12'][@average='20'][@max='28']/@min">6</replace>
-  <replace sel="/wares/ware[@id='spices']/price[@min='6'][@average='20'][@max='28']/@max">42</replace>
+  <replace sel="/wares/ware[@id='spices']/price[@min='12'][@average='20'][@max='28']/@min">10</replace>
+  <replace sel="/wares/ware[@id='spices']/price[@min='10'][@average='20'][@max='28']/@max">50</replace>
   <replace sel="/wares/ware[@id='spices']/production[@method='default'][@amount='500'][@time='600']/@time">300</replace>
   <replace sel="/wares/ware[@id='spices']/production[@method='default'][@amount='500'][@time='300']/@amount">250</replace>
   <replace sel="/wares/ware[@id='spices']/production[@method='default'][@amount='250'][@time='300']/primary/ware[@ware='energycells'][@amount='40']/@amount">20</replace>
@@ -1115,8 +1137,8 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='sunriseflowers']/@volume">2</replace>
-  <replace sel="/wares/ware[@id='sunriseflowers']/price[@min='48'][@average='80'][@max='112']/@min">68</replace>
-  <replace sel="/wares/ware[@id='sunriseflowers']/price[@min='68'][@average='80'][@max='112']/@max">104</replace>
+  <replace sel="/wares/ware[@id='sunriseflowers']/price[@min='48'][@average='80'][@max='112']/@min">71</replace>
+  <replace sel="/wares/ware[@id='sunriseflowers']/price[@min='71'][@average='80'][@max='112']/@max">111</replace>
   <replace sel="/wares/ware[@id='sunriseflowers']/production[@method='default'][@amount='100'][@time='300']/effects/effect[@type='work'][@product='0.28']/@product">0.75</replace>
   <add sel="/wares/ware[@id='sunriseflowers']/production[@method='default'][@amount='100'][@time='300']/effects/effect[@type='work'][@product='0.75']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='sunriseflowers']/production[@method='default'][@amount='100'][@time='300']/effects">
@@ -1127,8 +1149,9 @@
       <ware ware="da_laborunion_contracts" amount="7"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='superfluidcoolant']/price[@min='90'][@average='150'][@max='211']/@min">40</replace>
-  <replace sel="/wares/ware[@id='superfluidcoolant']/price[@min='40'][@average='150'][@max='211']/@max">360</replace>
+  <replace sel="/wares/ware[@id='superfluidcoolant']/price[@min='90'][@average='150'][@max='211']/@min">88</replace>
+  <replace sel="/wares/ware[@id='superfluidcoolant']/price[@min='88'][@average='150'][@max='211']/@average">176</replace>
+  <replace sel="/wares/ware[@id='superfluidcoolant']/price[@min='88'][@average='176'][@max='211']/@max">408</replace>
   <replace sel="/wares/ware[@id='superfluidcoolant']/production[@method='default'][@amount='95'][@time='240']/@time">150</replace>
   <replace sel="/wares/ware[@id='superfluidcoolant']/production[@method='default'][@amount='95'][@time='150']/@amount">65</replace>
   <replace sel="/wares/ware[@id='superfluidcoolant']/production[@method='default'][@amount='65'][@time='150']/primary/ware[@ware='energycells'][@amount='60']/@amount">38</replace>
@@ -1144,8 +1167,8 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='swampplant']/@volume">2</replace>
-  <replace sel="/wares/ware[@id='swampplant']/price[@min='50'][@average='84'][@max='117']/@min">72</replace>
-  <replace sel="/wares/ware[@id='swampplant']/price[@min='72'][@average='84'][@max='117']/@max">108</replace>
+  <replace sel="/wares/ware[@id='swampplant']/price[@min='50'][@average='84'][@max='117']/@min">76</replace>
+  <replace sel="/wares/ware[@id='swampplant']/price[@min='76'][@average='84'][@max='117']/@max">116</replace>
   <replace sel="/wares/ware[@id='swampplant']/production[@method='default'][@amount='120'][@time='450']/@time">300</replace>
   <replace sel="/wares/ware[@id='swampplant']/production[@method='default'][@amount='120'][@time='300']/@amount">80</replace>
   <replace sel="/wares/ware[@id='swampplant']/production[@method='default'][@amount='80'][@time='300']/primary/ware[@ware='energycells'][@amount='40']/@amount">27</replace>
@@ -1160,8 +1183,8 @@
       <ware ware="da_laborunion_contracts" amount="6"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='teladianium']/price[@min='121'][@average='202'][@max='283']/@min">88</replace>
-  <replace sel="/wares/ware[@id='teladianium']/price[@min='88'][@average='202'][@max='283']/@max">408</replace>
+  <replace sel="/wares/ware[@id='teladianium']/price[@min='121'][@average='202'][@max='283']/@average">224</replace>
+  <replace sel="/wares/ware[@id='teladianium']/price[@min='121'][@average='224'][@max='283']/@max">441</replace>
   <replace sel="/wares/ware[@id='teladianium']/production[@method='default'][@amount='70'][@time='120']/@time">150</replace>
   <replace sel="/wares/ware[@id='teladianium']/production[@method='default'][@amount='70'][@time='150']/@amount">95</replace>
   <replace sel="/wares/ware[@id='teladianium']/production[@method='default'][@amount='95'][@time='150']/primary/ware[@ware='energycells'][@amount='45']/@amount">56</replace>
@@ -1176,8 +1199,9 @@
       <ware ware="da_laborunion_contracts" amount="12"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='turretcomponents']/price[@min='164'][@average='273'][@max='383']/@min">105</replace>
-  <replace sel="/wares/ware[@id='turretcomponents']/price[@min='105'][@average='273'][@max='383']/@max">605</replace>
+  <replace sel="/wares/ware[@id='turretcomponents']/price[@min='164'][@average='273'][@max='383']/@min">140</replace>
+  <replace sel="/wares/ware[@id='turretcomponents']/price[@min='140'][@average='273'][@max='383']/@average">280</replace>
+  <replace sel="/wares/ware[@id='turretcomponents']/price[@min='140'][@average='280'][@max='383']/@max">740</replace>
   <replace sel="/wares/ware[@id='turretcomponents']/production[@method='default'][@amount='170'][@time='1800']/@time">600</replace>
   <replace sel="/wares/ware[@id='turretcomponents']/production[@method='default'][@amount='170'][@time='600']/@amount">62</replace>
   <replace sel="/wares/ware[@id='turretcomponents']/production[@method='default'][@amount='62'][@time='600']/primary/ware[@ware='energycells'][@amount='60']/@amount">20</replace>
@@ -1194,8 +1218,9 @@
       <ware ware="da_mil_schematics" amount="3"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='water']/price[@min='32'][@average='53'][@max='74']/@min">18</replace>
-  <replace sel="/wares/ware[@id='water']/price[@min='18'][@average='53'][@max='74']/@max">126</replace>
+  <replace sel="/wares/ware[@id='water']/price[@min='32'][@average='53'][@max='74']/@min">36</replace>
+  <replace sel="/wares/ware[@id='water']/price[@min='36'][@average='53'][@max='74']/@average">72</replace>
+  <replace sel="/wares/ware[@id='water']/price[@min='36'][@average='72'][@max='74']/@max">156</replace>
   <replace sel="/wares/ware[@id='water']/production[@method='default'][@amount='193'][@time='120']/@time">150</replace>
   <replace sel="/wares/ware[@id='water']/production[@method='default'][@amount='193'][@time='150']/@amount">255</replace>
   <replace sel="/wares/ware[@id='water']/production[@method='default'][@amount='255'][@time='150']/primary/ware[@ware='energycells'][@amount='60']/@amount">75</replace>
@@ -1210,8 +1235,9 @@
       <ware ware="da_laborunion_contracts" amount="5"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='weaponcomponents']/price[@min='171'][@average='285'][@max='399']/@min">120</replace>
-  <replace sel="/wares/ware[@id='weaponcomponents']/price[@min='120'][@average='285'][@max='399']/@max">620</replace>
+  <replace sel="/wares/ware[@id='weaponcomponents']/price[@min='171'][@average='285'][@max='399']/@min">150</replace>
+  <replace sel="/wares/ware[@id='weaponcomponents']/price[@min='150'][@average='285'][@max='399']/@average">300</replace>
+  <replace sel="/wares/ware[@id='weaponcomponents']/price[@min='150'][@average='300'][@max='399']/@max">750</replace>
   <replace sel="/wares/ware[@id='weaponcomponents']/production[@method='default'][@amount='170'][@time='1800']/@time">600</replace>
   <replace sel="/wares/ware[@id='weaponcomponents']/production[@method='default'][@amount='170'][@time='600']/@amount">62</replace>
   <replace sel="/wares/ware[@id='weaponcomponents']/production[@method='default'][@amount='62'][@time='600']/primary/ware[@ware='energycells'][@amount='60']/@amount">20</replace>
@@ -1228,7 +1254,9 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='wheat']/@volume">2</replace>
-  <replace sel="/wares/ware[@id='wheat']/price[@min='19'][@average='31'][@max='44']/@max">55</replace>
+  <replace sel="/wares/ware[@id='wheat']/price[@min='19'][@average='31'][@max='44']/@min">24</replace>
+  <replace sel="/wares/ware[@id='wheat']/price[@min='24'][@average='31'][@max='44']/@average">32</replace>
+  <replace sel="/wares/ware[@id='wheat']/price[@min='24'][@average='32'][@max='44']/@max">64</replace>
   <replace sel="/wares/ware[@id='wheat']/production[@method='default'][@amount='310'][@time='300']/effects/effect[@type='work'][@product='0.28']/@product">0.75</replace>
   <add sel="/wares/ware[@id='wheat']/production[@method='default'][@amount='310'][@time='300']/effects/effect[@type='work'][@product='0.75']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='wheat']/production[@method='default'][@amount='310'][@time='300']/effects">
@@ -1240,8 +1268,9 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='cheltmeat']/@volume">2</replace>
-  <replace sel="/wares/ware[@id='cheltmeat']/price[@min='31'][@average='51'][@max='72']/@min">38</replace>
-  <replace sel="/wares/ware[@id='cheltmeat']/price[@min='38'][@average='51'][@max='72']/@max">78</replace>
+  <replace sel="/wares/ware[@id='cheltmeat']/price[@min='31'][@average='51'][@max='72']/@min">36</replace>
+  <replace sel="/wares/ware[@id='cheltmeat']/price[@min='36'][@average='51'][@max='72']/@average">52</replace>
+  <replace sel="/wares/ware[@id='cheltmeat']/price[@min='36'][@average='52'][@max='72']/@max">96</replace>
   <replace sel="/wares/ware[@id='cheltmeat']/production[@method='default'][@amount='209'][@time='450']/@time">300</replace>
   <replace sel="/wares/ware[@id='cheltmeat']/production[@method='default'][@amount='209'][@time='300']/@amount">160</replace>
   <replace sel="/wares/ware[@id='cheltmeat']/production[@method='default'][@amount='160'][@time='300']/primary/ware[@ware='energycells'][@amount='50']/@amount">33</replace>
@@ -1349,7 +1378,7 @@
   <remove sel="/wares/ware[@id='module_spl_stor_solid_s_01']/production[@method='default'][@amount='1'][@time='60']/primary/ware[@ware='hullparts'][@amount='222']"/>
   <replace sel="/wares/ware[@id='scruffinfruits']/@volume">2</replace>
   <replace sel="/wares/ware[@id='scruffinfruits']/price[@min='17'][@average='28'][@max='40']/@min">14</replace>
-  <replace sel="/wares/ware[@id='scruffinfruits']/price[@min='14'][@average='28'][@max='40']/@max">54</replace>
+  <replace sel="/wares/ware[@id='scruffinfruits']/price[@min='14'][@average='28'][@max='40']/@max">74</replace>
   <replace sel="/wares/ware[@id='scruffinfruits']/production[@method='default'][@amount='255'][@time='300']/@amount">275</replace>
   <replace sel="/wares/ware[@id='scruffinfruits']/production[@method='default'][@amount='275'][@time='300']/effects/effect[@type='work'][@product='0.53']/@product">1.0</replace>
   <add sel="/wares/ware[@id='scruffinfruits']/production[@method='default'][@amount='275'][@time='300']/effects/effect[@type='work'][@product='1.0']" type="@cycle">0.3</add>
@@ -1361,8 +1390,9 @@
       <ware ware="da_laborunion_contracts" amount="4"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='computronicsubstrate']/price[@min='7452'][@average='8280'][@max='9108']/@min">8069</replace>
-  <replace sel="/wares/ware[@id='computronicsubstrate']/price[@min='8069'][@average='8280'][@max='9108']/@max">9319</replace>
+  <replace sel="/wares/ware[@id='computronicsubstrate']/price[@min='7452'][@average='8280'][@max='9108']/@min">7877</replace>
+  <replace sel="/wares/ware[@id='computronicsubstrate']/price[@min='7877'][@average='8280'][@max='9108']/@average">8300</replace>
+  <replace sel="/wares/ware[@id='computronicsubstrate']/price[@min='7877'][@average='8300'][@max='9108']/@max">9627</replace>
   <replace sel="/wares/ware[@id='computronicsubstrate']/production[@method='default'][@amount='98'][@time='600']/@time">300</replace>
   <replace sel="/wares/ware[@id='computronicsubstrate']/production[@method='default'][@amount='98'][@time='300']/@amount">50</replace>
   <replace sel="/wares/ware[@id='computronicsubstrate']/production[@method='default'][@amount='50'][@time='300']/primary/ware[@ware='energycells'][@amount='4000']/@amount">2000</replace>
@@ -1381,8 +1411,9 @@
   </add>
   <replace sel="/wares/ware[@id='computronicsubstrate']/production[@method='recycling'][@amount='50'][@time='300']/effects/effect[@type='work'][@product='0.1']/@product">1.0</replace>
   <add sel="/wares/ware[@id='computronicsubstrate']/production[@method='recycling'][@amount='50'][@time='300']/effects/effect[@type='work'][@product='1.0']" type="@cycle">0.3</add>
-  <replace sel="/wares/ware[@id='metallicmicrolattice']/price[@min='42'][@average='50'][@max='57']/@min">44</replace>
-  <replace sel="/wares/ware[@id='metallicmicrolattice']/price[@min='44'][@average='50'][@max='57']/@max">69</replace>
+  <replace sel="/wares/ware[@id='metallicmicrolattice']/price[@min='42'][@average='50'][@max='57']/@min">50</replace>
+  <replace sel="/wares/ware[@id='metallicmicrolattice']/price[@min='50'][@average='50'][@max='57']/@average">55</replace>
+  <replace sel="/wares/ware[@id='metallicmicrolattice']/price[@min='50'][@average='55'][@max='57']/@max">75</replace>
   <replace sel="/wares/ware[@id='metallicmicrolattice']/production[@method='default'][@amount='190'][@time='180']/@time">300</replace>
   <replace sel="/wares/ware[@id='metallicmicrolattice']/production[@method='default'][@amount='190'][@time='300']/@amount">325</replace>
   <replace sel="/wares/ware[@id='metallicmicrolattice']/production[@method='default'][@amount='325'][@time='300']/primary/ware[@ware='energycells'][@amount='50']/@amount">83</replace>
@@ -1461,7 +1492,7 @@
   <replace sel="/wares/ware[@id='module_ter_stor_solid_m_01']/production[@method='default'][@amount='1'][@time='450']/@time">90</replace>
   <replace sel="/wares/ware[@id='module_ter_stor_solid_s_01']/production[@method='default'][@amount='1'][@time='260']/@time">60</replace>
   <replace sel="/wares/ware[@id='proteinpaste']/price[@min='57'][@average='96'][@max='134']/@min">72</replace>
-  <replace sel="/wares/ware[@id='proteinpaste']/price[@min='72'][@average='96'][@max='134']/@max">144</replace>
+  <replace sel="/wares/ware[@id='proteinpaste']/price[@min='72'][@average='96'][@max='134']/@max">152</replace>
   <replace sel="/wares/ware[@id='proteinpaste']/production[@method='default'][@amount='219'][@time='300']/effects/effect[@type='work'][@product='0.3']/@product">0.75</replace>
   <add sel="/wares/ware[@id='proteinpaste']/production[@method='default'][@amount='219'][@time='300']/effects/effect[@type='work'][@product='0.75']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='proteinpaste']/production[@method='default'][@amount='219'][@time='300']/effects">
@@ -1472,8 +1503,9 @@
       <ware ware="da_laborunion_contracts" amount="17"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='siliconcarbide']/price[@min='1202'][@average='1414'][@max='1627']/@min">1270</replace>
-  <replace sel="/wares/ware[@id='siliconcarbide']/price[@min='1270'][@average='1414'][@max='1627']/@max">1770</replace>
+  <replace sel="/wares/ware[@id='siliconcarbide']/price[@min='1202'][@average='1414'][@max='1627']/@min">1321</replace>
+  <replace sel="/wares/ware[@id='siliconcarbide']/price[@min='1321'][@average='1414'][@max='1627']/@average">1420</replace>
+  <replace sel="/wares/ware[@id='siliconcarbide']/price[@min='1321'][@average='1420'][@max='1627']/@max">1921</replace>
   <replace sel="/wares/ware[@id='siliconcarbide']/production[@method='default'][@amount='48'][@time='300']/@amount">50</replace>
   <replace sel="/wares/ware[@id='siliconcarbide']/production[@method='default'][@amount='50'][@time='300']/effects/effect[@type='work'][@product='0.2']/@product">0.5</replace>
   <add sel="/wares/ware[@id='siliconcarbide']/production[@method='default'][@amount='50'][@time='300']/effects/effect[@type='work'][@product='0.5']" type="@cycle">0.3</add>
@@ -1488,8 +1520,8 @@
   <replace sel="/wares/ware[@id='siliconcarbide']/production[@method='recycling'][@amount='60'][@time='300']/effects/effect[@type='work'][@product='0.2']/@product">1.0</replace>
   <add sel="/wares/ware[@id='siliconcarbide']/production[@method='recycling'][@amount='60'][@time='300']/effects/effect[@type='work'][@product='1.0']" type="@cycle">0.3</add>
   <replace sel="/wares/ware[@id='stimulants']/@volume">1</replace>
-  <replace sel="/wares/ware[@id='stimulants']/price[@min='153'][@average='340'][@max='527']/@min">322</replace>
-  <replace sel="/wares/ware[@id='stimulants']/price[@min='322'][@average='340'][@max='527']/@max">402</replace>
+  <replace sel="/wares/ware[@id='stimulants']/price[@min='153'][@average='340'][@max='527']/@min">217</replace>
+  <replace sel="/wares/ware[@id='stimulants']/price[@min='217'][@average='340'][@max='527']/@max">642</replace>
   <replace sel="/wares/ware[@id='stimulants']/production[@method='default'][@amount='98'][@time='300']/effects/effect[@type='work'][@product='0.65']/@product">0.75</replace>
   <add sel="/wares/ware[@id='stimulants']/production[@method='default'][@amount='98'][@time='300']/effects/effect[@type='work'][@product='0.75']" type="@cycle">0.3</add>
   <add sel="/wares/ware[@id='stimulants']/production[@method='default'][@amount='98'][@time='300']/effects">
@@ -1501,8 +1533,8 @@
     </secondary>
   </add>
   <replace sel="/wares/ware[@id='terranmre']/@volume">1</replace>
-  <replace sel="/wares/ware[@id='terranmre']/price[@min='32'][@average='54'][@max='75']/@min">48</replace>
-  <replace sel="/wares/ware[@id='terranmre']/price[@min='48'][@average='54'][@max='75']/@max">68</replace>
+  <replace sel="/wares/ware[@id='terranmre']/price[@min='32'][@average='54'][@max='75']/@min">47</replace>
+  <replace sel="/wares/ware[@id='terranmre']/price[@min='47'][@average='54'][@max='75']/@max">77</replace>
   <replace sel="/wares/ware[@id='terranmre']/production[@method='default'][@amount='175'][@time='240']/@time">300</replace>
   <replace sel="/wares/ware[@id='terranmre']/production[@method='default'][@amount='175'][@time='300']/@amount">219</replace>
   <replace sel="/wares/ware[@id='terranmre']/production[@method='default'][@amount='219'][@time='300']/primary/ware[@ware='energycells'][@amount='60']/@amount">75</replace>
@@ -1535,8 +1567,9 @@
   <replace sel="/wares/ware[@id='module_pir_stor_condensate_s_01']/production[@method='default'][@amount='1'][@time='327']/@time">163</replace>
   <replace sel="/wares/ware[@id='module_pir_stor_condensate_s_01']/production[@method='default'][@amount='1'][@time='163']/primary/ware[@ware='claytronics'][@amount='92']/@amount">126</replace>
   <remove sel="/wares/ware[@id='module_pir_stor_condensate_s_01']/production[@method='default'][@amount='1'][@time='163']/primary/ware[@ware='hullparts'][@amount='379']"/>
-  <replace sel="/wares/ware[@id='bofu']/price[@min='61'][@average='101'][@max='142']/@min">74</replace>
-  <replace sel="/wares/ware[@id='bofu']/price[@min='74'][@average='101'][@max='142']/@max">154</replace>
+  <replace sel="/wares/ware[@id='bofu']/price[@min='61'][@average='101'][@max='142']/@min">72</replace>
+  <replace sel="/wares/ware[@id='bofu']/price[@min='72'][@average='101'][@max='142']/@average">104</replace>
+  <replace sel="/wares/ware[@id='bofu']/price[@min='72'][@average='104'][@max='142']/@max">192</replace>
   <replace sel="/wares/ware[@id='bofu']/production[@method='default'][@amount='82'][@time='240']/@time">300</replace>
   <replace sel="/wares/ware[@id='bofu']/production[@method='default'][@amount='82'][@time='300']/@amount">103</replace>
   <replace sel="/wares/ware[@id='bofu']/production[@method='default'][@amount='103'][@time='300']/primary/ware[@ware='bogas'][@amount='40']/@amount">50</replace>
@@ -1552,8 +1585,9 @@
       <ware ware="da_laborunion_contracts" amount="8"/>
     </secondary>
   </add>
-  <replace sel="/wares/ware[@id='bogas']/price[@min='44'][@average='73'][@max='102']/@min">49</replace>
-  <replace sel="/wares/ware[@id='bogas']/price[@min='49'][@average='73'][@max='102']/@max">121</replace>
+  <replace sel="/wares/ware[@id='bogas']/price[@min='44'][@average='73'][@max='102']/@min">57</replace>
+  <replace sel="/wares/ware[@id='bogas']/price[@min='57'][@average='73'][@max='102']/@average">76</replace>
+  <replace sel="/wares/ware[@id='bogas']/price[@min='57'][@average='76'][@max='102']/@max">137</replace>
   <replace sel="/wares/ware[@id='bogas']/production[@method='default'][@amount='110'][@time='150']/@time">300</replace>
   <replace sel="/wares/ware[@id='bogas']/production[@method='default'][@amount='110'][@time='300']/@amount">220</replace>
   <replace sel="/wares/ware[@id='bogas']/production[@method='default'][@amount='220'][@time='300']/primary/ware[@ware='energycells'][@amount='40']/@amount">80</replace>
@@ -1675,8 +1709,8 @@
   <remove sel="/wares/ware[@id='module_bor_stor_solid_m_01']/production[@method='default'][@amount='1'][@time='423']/primary/ware[@ware='hullparts'][@amount='372']"/>
   <replace sel="/wares/ware[@id='module_bor_stor_solid_s_01']/production[@method='default'][@amount='1'][@time='268']/primary/ware[@ware='claytronics'][@amount='32']/@amount">54</replace>
   <remove sel="/wares/ware[@id='module_bor_stor_solid_s_01']/production[@method='default'][@amount='1'][@time='268']/primary/ware[@ware='hullparts'][@amount='236']"/>
-  <replace sel="/wares/ware[@id='plankton']/price[@min='11'][@average='18'][@max='25']/@min">12</replace>
-  <replace sel="/wares/ware[@id='plankton']/price[@min='12'][@average='18'][@max='25']/@max">30</replace>
+  <replace sel="/wares/ware[@id='plankton']/price[@min='11'][@average='18'][@max='25']/@min">13</replace>
+  <replace sel="/wares/ware[@id='plankton']/price[@min='13'][@average='18'][@max='25']/@max">33</replace>
   <replace sel="/wares/ware[@id='plankton']/production[@method='default'][@amount='275'][@time='400']/@time">300</replace>
   <replace sel="/wares/ware[@id='plankton']/production[@method='default'][@amount='275'][@time='300']/@amount">206</replace>
   <replace sel="/wares/ware[@id='plankton']/production[@method='default'][@amount='206'][@time='300']/primary/ware[@ware='energycells'][@amount='20']/@amount">15</replace>
@@ -1695,7 +1729,7 @@
   <remove sel="/wares/ware[@id='welfare_bor_artacademy_01']/production[@method='default'][@amount='1'][@time='1155']/primary/ware[@ware='hullparts'][@amount='3775']"/>
   <add sel="/wares">
     <ware id="da_adv_schematics" name="{33232473,0010}" description="{33232473,0011}" factoryname="{33232473,0012}" group="pharmaceutical" transport="container" volume="100" tags="container economy">
-      <price min="1850" average="2500" max="3650"/>
+      <price min="1938" average="2500" max="4438"/>
       <production time="900" amount="10" method="default" name="{20206,201}">
         <effects>
           <effect type="work" product="10.0" cycle="0.6"/>
@@ -1743,7 +1777,7 @@
   </add>
   <add sel="/wares">
     <ware id="da_mil_schematics" name="{33232473,0015}" description="{33232473,0016}" factoryname="{33232473,0017}" group="pharmaceutical" transport="container" volume="50" tags="container economy">
-      <price min="925" average="1250" max="1825"/>
+      <price min="969" average="1250" max="2219"/>
       <production time="900" amount="20" method="default" name="{20206,201}">
         <effects>
           <effect type="work" product="10.0" cycle="0.6"/>
@@ -1791,7 +1825,7 @@
   </add>
   <add sel="/wares">
     <ware id="da_laborunion_contracts" name="{33232473,0020}" description="{33232473,0021}" factoryname="{33232473,0022}" group="pharmaceutical" transport="container" volume="25" tags="container economy">
-      <price min="465" average="625" max="915"/>
+      <price min="485" average="625" max="1110"/>
       <production time="900" amount="40" method="default" name="{20206,201}">
         <effects>
           <effect type="work" product="10.0" cycle="0.6"/>

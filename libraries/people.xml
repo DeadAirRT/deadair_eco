@@ -55,6 +55,8 @@
   <replace sel="/peopledefinitions/people[@id='freesplit_elite_military_crew']/fillpercent[@min='90'][@max='75']/@max">100</replace>
   <replace sel="/peopledefinitions/people[@id='terran_freighter_crew']/fillpercent[@min='20'][@max='75']/@min">50</replace>
   <replace sel="/peopledefinitions/people[@id='terran_military_crew']/fillpercent[@min='20'][@max='75']/@min">50</replace>
+  <replace sel="/peopledefinitions/people[@id='terran_asgard_crew']/fillpercent[@min='50'][@max='75']/@min">90</replace>
+  <replace sel="/peopledefinitions/people[@id='terran_asgard_crew']/fillpercent[@min='90'][@max='75']/@max">100</replace>
   <replace sel="/peopledefinitions/people[@id='terran_veteran_freighter_crew']/fillpercent[@min='20'][@max='75']/@min">75</replace>
   <replace sel="/peopledefinitions/people[@id='terran_veteran_freighter_crew']/fillpercent[@min='75'][@max='75']/@max">100</replace>
   <replace sel="/peopledefinitions/people[@id='terran_veteran_military_crew']/fillpercent[@min='20'][@max='75']/@min">75</replace>

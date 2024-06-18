@@ -7,7 +7,6 @@
   </add>
   <add sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Request_Production_Module']/actions/do_else/do_elseif[@value='$Station']/do_if[@value='$ProductionMacro']">
     <do_if value="true">
-      <!-- Add 2 - 3 modules -->
       <set_value name="$DALocCount" min="1" max="2"/>
       <do_all exact="$DALocCount">
         <append_to_list name="$WantedProductions" exact="$ProductionMacro"/>
