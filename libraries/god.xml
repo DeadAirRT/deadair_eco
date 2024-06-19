@@ -3,15 +3,15 @@
   <replace sel="/god/stations/defaults/location/@coreboundaryzoneheight">20000</replace>
   <replace sel="/god/stations/defaults/modules[@production='5']/@production">25</replace>
   <replace sel="/god/stations/defaults/modules[@production='25']/@storage">15</replace>
-  <remove sel="/god/stations/station[@id='wharf_split_02'][@owner='split'][@race='split'][@type='factory']"/>
-  <remove sel="/god/stations/station[@id='arg_defence_cluster_416_sector001'][@owner='argon'][@race='argon'][@type='factory']"/>
-  <remove sel="/god/stations/station[@id='arg_defence_cluster_416_sector002'][@owner='argon'][@race='argon'][@type='factory']"/>
-  <remove sel="/god/stations/station[@id='arg_wharf_cluster_416_sector002'][@owner='argon'][@race='argon'][@type='factory']"/>
-  <remove sel="/god/stations/station[@id='arg_defence_cluster_417_sector001'][@owner='argon'][@race='argon'][@type='factory']"/>
-  <remove sel="/god/stations/station[@id='par_defence_cluster_423_sector001'][@owner='paranid'][@race='paranid'][@type='factory']"/>
-  <remove sel="/god/stations/station[@id='par_defence_cluster_423_sector002'][@owner='paranid'][@race='paranid'][@type='factory']"/>
-  <remove sel="/god/stations/station[@id='par_defence_cluster_422_sector001'][@owner='paranid'][@race='paranid'][@type='factory']"/>
-  <remove sel="/god/stations/station[@id='par_wharf_cluster_422_sector001'][@owner='paranid'][@race='paranid'][@type='factory']"/>
+  <add sel="/god/stations/station[@id='wharf_split_02'][@owner='split'][@race='split'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/stations/station[@id='arg_defence_cluster_416_sector001'][@owner='argon'][@race='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/stations/station[@id='arg_defence_cluster_416_sector002'][@owner='argon'][@race='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/stations/station[@id='arg_wharf_cluster_416_sector002'][@owner='argon'][@race='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/stations/station[@id='arg_defence_cluster_417_sector001'][@owner='argon'][@race='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/stations/station[@id='par_defence_cluster_423_sector001'][@owner='paranid'][@race='paranid'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/stations/station[@id='par_defence_cluster_423_sector002'][@owner='paranid'][@race='paranid'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/stations/station[@id='par_defence_cluster_422_sector001'][@owner='paranid'][@race='paranid'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/stations/station[@id='par_wharf_cluster_422_sector001'][@owner='paranid'][@race='paranid'][@type='factory']" type="@startactive">false</add>
   <add sel="/god/products/product[@id='tel_advancedelectronics_new'][@ware='advancedelectronics'][@owner='teladi'][@type='factory']/module/select[@ware='advancedelectronics'][@race='teladi']" type="@faction">teladi</add>
   <add sel="/god/products/product[@id='tel_antimattercells_new'][@ware='antimattercells'][@owner='teladi'][@type='factory']/module/select[@ware='antimattercells'][@race='teladi']" type="@faction">teladi</add>
   <add sel="/god/products/product[@id='tel_teladianium_new'][@ware='teladianium'][@owner='teladi'][@type='factory']/module/select[@ware='teladianium'][@race='teladi']" type="@faction">teladi</add>
@@ -539,25 +539,25 @@
   <remove sel="/god/products/product[@id='frf_weaponcomponents'][@ware='weaponcomponents'][@owner='freesplit'][@type='factory']/location[@faction='freesplit'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
   <replace sel="/god/products/product[@id='frf_weaponcomponents'][@ware='weaponcomponents'][@owner='freesplit'][@type='factory']/module/select[@ware='weaponcomponents'][@race='argon']/@race">split</replace>
   <add sel="/god/products/product[@id='frf_weaponcomponents'][@ware='weaponcomponents'][@owner='freesplit'][@type='factory']/module/select[@ware='weaponcomponents'][@race='split']" type="@faction">freesplit</add>
-  <remove sel="/god/products/product[@id='arg_dlc_split_energycells'][@ware='energycells'][@owner='argon'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='arg_dlc_split_foodrations'][@ware='foodrations'][@owner='argon'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='arg_dlc_split_meat'][@ware='meat'][@owner='argon'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='arg_dlc_split_medicalsupplies'][@ware='medicalsupplies'][@owner='argon'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='arg_dlc_split_spacefuel'][@ware='spacefuel'][@owner='argon'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='arg_dlc_split_spices'][@ware='spices'][@owner='argon'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='arg_dlc_split_water'][@ware='water'][@owner='argon'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='arg_dlc_split_wheat'][@ware='wheat'][@owner='argon'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='par_dlc_split_antimatterconverters'][@ware='antimatterconverters'][@owner='paranid'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='par_dlc_split_energycells'][@ware='energycells'][@owner='paranid'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='par_dlc_split_engineparts'][@ware='engineparts'][@owner='paranid'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='par_dlc_split_hullparts'][@ware='hullparts'][@owner='paranid'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='par_dlc_split_shieldcomponents'][@ware='shieldcomponents'][@owner='paranid'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='par_dlc_split_turretcomponents'][@ware='turretcomponents'][@owner='paranid'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='par_dlc_split_weaponcomponents'][@ware='weaponcomponents'][@owner='paranid'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='tel_dlc_split_advancedelectronics'][@ware='advancedelectronics'][@owner='teladi'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='tel_dlc_split_weaponcomponents'][@ware='weaponcomponents'][@owner='teladi'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='tel_dlc_split_teladianium'][@ware='teladianium'][@owner='teladi'][@type='factory']"/>
-  <remove sel="/god/products/product[@id='tel_dlc_split_siliconwafers'][@ware='siliconwafers'][@owner='teladi'][@type='factory']"/>
+  <add sel="/god/products/product[@id='arg_dlc_split_energycells'][@ware='energycells'][@owner='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='arg_dlc_split_foodrations'][@ware='foodrations'][@owner='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='arg_dlc_split_meat'][@ware='meat'][@owner='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='arg_dlc_split_medicalsupplies'][@ware='medicalsupplies'][@owner='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='arg_dlc_split_spacefuel'][@ware='spacefuel'][@owner='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='arg_dlc_split_spices'][@ware='spices'][@owner='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='arg_dlc_split_water'][@ware='water'][@owner='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='arg_dlc_split_wheat'][@ware='wheat'][@owner='argon'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='par_dlc_split_antimatterconverters'][@ware='antimatterconverters'][@owner='paranid'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='par_dlc_split_energycells'][@ware='energycells'][@owner='paranid'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='par_dlc_split_engineparts'][@ware='engineparts'][@owner='paranid'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='par_dlc_split_hullparts'][@ware='hullparts'][@owner='paranid'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='par_dlc_split_shieldcomponents'][@ware='shieldcomponents'][@owner='paranid'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='par_dlc_split_turretcomponents'][@ware='turretcomponents'][@owner='paranid'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='par_dlc_split_weaponcomponents'][@ware='weaponcomponents'][@owner='paranid'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='tel_dlc_split_advancedelectronics'][@ware='advancedelectronics'][@owner='teladi'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='tel_dlc_split_weaponcomponents'][@ware='weaponcomponents'][@owner='teladi'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='tel_dlc_split_teladianium'][@ware='teladianium'][@owner='teladi'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='tel_dlc_split_siliconwafers'][@ware='siliconwafers'][@owner='teladi'][@type='factory']" type="@startactive">false</add>
   <add sel="/god/products/product[@id='ter_metallicmicrolattice'][@ware='metallicmicrolattice'][@owner='terran'][@type='factory']/module/select[@ware='metallicmicrolattice'][@race='terran']" type="@faction">terran</add>
   <add sel="/god/products/product[@id='ter_computronicsubstrate'][@ware='computronicsubstrate'][@owner='terran'][@type='factory']/module/select[@ware='computronicsubstrate'][@race='terran']" type="@faction">terran</add>
   <add sel="/god/products/product[@id='ter_siliconcarbide'][@ware='siliconcarbide'][@owner='terran'][@type='factory']/module/select[@ware='siliconcarbide'][@race='terran']" type="@faction">terran</add>

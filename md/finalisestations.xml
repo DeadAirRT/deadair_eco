@@ -1,12 +1,54 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
+  <add sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/actions/set_value[@name='md.$NumBuilds']" pos="before">
+    <set_value name="$DeadAirEco"/>
+  </add>
   <add sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/actions/do_if[@value='$Station.owner != faction.xenon'][1]">
     <include_actions ref="DAIncreaseStartingStorage"/>
+  </add>
+  <add sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/actions/set_value[@name='$dbg_str']" pos="before">
+    <do_if value="true">
+      <do_if value="$PlannedModules.count" min="20" comment="this restricts changes to larger stations only">
+        <do_if value="$Station.owner.primaryrace == race.argon">
+          <set_value name="$ProductionConnectors" exact="[macro.struct_arg_base_02_macro,macro.struct_arg_cross_01_macro]"/>
+          <set_value name="$HabitationConnectors" exact="[macro.struct_arg_base_01_macro,macro.struct_arg_cross_01_macro]"/>
+        </do_if>
+        <do_elseif value="$Station.owner.primaryrace == race.paranid">
+          <set_value name="$ProductionConnectors" exact="[macro.struct_par_base_02_macro,macro.struct_par_cross_02_macro]"/>
+          <set_value name="$HabitationConnectors" exact="[macro.struct_par_base_02_macro,macro.struct_par_cross_02_macro]"/>
+        </do_elseif>
+        <do_elseif value="$Station.owner.primaryrace == race.teladi">
+          <set_value name="$ProductionConnectors" exact="[macro.struct_tel_base_02_macro,macro.struct_tel_cross_01_macro]"/>
+          <set_value name="$HabitationConnectors" exact="[macro.struct_tel_base_01_macro,macro.struct_tel_cross_01_macro]"/>
+        </do_elseif>
+        <do_if value="$NewPlannedModules.count" min="1">
+          <do_if value="$ProductionConnectors? and $HabitationConnectors?">
+            <set_value name="$DAPlannedModules" exact="[]"/>
+            <do_all exact="$NewPlannedModules.count" counter="$B">
+              <do_if value="$NewPlannedModules.{$B}.isclass.production">
+                <append_list_elements name="$DAPlannedModules" other="$ProductionConnectors"/>
+                <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
+              </do_if>
+              <do_elseif value="$NewPlannedModules.{$B}.isclass.habitation">
+                <append_list_elements name="$DAPlannedModules" other="$HabitationConnectors"/>
+                <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
+              </do_elseif>
+              <do_else>
+                <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
+              </do_else>
+            </do_all>
+            <do_if value="$DAPlannedModules.count gt $NewPlannedModules.count">
+              <set_value name="$NewPlannedModules" exact="$DAPlannedModules"/>
+            </do_if>
+          </do_if>
+        </do_if>
+      </do_if>
+    </do_if>
   </add>
   <replace sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/actions/do_if[@value='$Conn_PlannedConnectors.count']/create_construction_sequence[@station='$Station'][@macros='$NewPlannedModules']">
     <do_if value="true">
       <do_if value="$Station.owner.primaryrace != race.xenon">
-        <create_construction_sequence station="$Station" macros="$NewPlannedModules" connectors="$Conn_PlannedConnectors" base="$BaseSequence" constructionbias="5.0"/>
+        <create_construction_sequence station="$Station" macros="$NewPlannedModules" connectors="$Conn_PlannedConnectors" base="$BaseSequence" constructionbias="10.0"/>
       </do_if>
       <do_else>
         <create_construction_sequence station="$Station" macros="$NewPlannedModules" connectors="$Conn_PlannedConnectors" base="$BaseSequence"/>
@@ -20,7 +62,7 @@
   <replace sel="/mdscript/cues/library[@name='NewStation_GenerateFactory']/actions/do_if[@value='$Conn_PlannedConnectors.count']/create_construction_sequence[@station='$Station'][@macros='$NewPlannedModules']">
     <do_if value="true">
       <do_if value="$Station.owner.primaryrace != race.xenon">
-        <create_construction_sequence station="$Station" macros="$NewPlannedModules" connectors="$Conn_PlannedConnectors" base="$BaseSequence" constructionbias="5.0"/>
+        <create_construction_sequence station="$Station" macros="$NewPlannedModules" connectors="$Conn_PlannedConnectors" base="$BaseSequence" constructionbias="10.0"/>
       </do_if>
       <do_else>
         <create_construction_sequence station="$Station" macros="$NewPlannedModules" connectors="$Conn_PlannedConnectors" base="$BaseSequence"/>
