@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/mdscript/cues/cue[@name='Init']/cues/cue[@name='PlayerRelationDiscounts']/actions/set_value[@name='$DiscountMap']/@exact">[['md_relation_discount_1', 0.01f, 0, 3101],['md_relation_discount_2', 0.1f, 0, 3111],['md_relation_discount_3', 1.0f, 0, 3121]]</replace>
+</diff>

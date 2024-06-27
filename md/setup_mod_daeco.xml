@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Setup_Mod_DAEco" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+	<cues>
+		<cue name="Init">
+			<actions>
+				<set_value name="md.$DAEco" exact="true"/>
+			</actions>
+		</cue>
+		<cue name="RunOnceAtStart" instantiate="false">
+			<conditions>
+				<check_any>
+					<event_universe_generated/>
+					<event_cue_signalled cue="md.Setup.Start"/>
+					<event_game_loaded/>
+				</check_any>
+				<check_value value="player.galaxy.macro.ismacro.{macro.xu_ep2_universe_macro}"/>
+			</conditions>
+			<actions>
+				<set_value name="$ProperInstall" exact="false"/>
+				<set_value name="$FixedDiscounts" exact="false"/>
+				<do_if value="not (ware.da_adv_schematics? and ware.da_adv_schematics.objectmacro?)">
+					<signal_cue cue="NotifyOfInstallationIssue"/>
+				</do_if>
+				<do_else>
+					<set_value name="$ProperInstall" exact="true"/>
+					<cancel_cue cue="NotifyOfInstallationIssue"/>
+				</do_else>
+				<do_if value="md.Notifications.PlayerRelationDiscounts.$DiscountMap?">
+					<set_value name="$FixedDiscounts" exact="true"/>
+					<signal_cue_instantly cue="AdjustDiscountMap"/>
+				</do_if>
+				<do_else>
+					<cancel_cue cue="AdjustDiscountMap"/>
+				</do_else>
+				<debug_text text="'MOD: DAEco -- Completed RunOnceAtStart -- $ProperInstall: %s -- $FixedDiscounts: %s'.[$ProperInstall,$FixedDiscounts]" context="false" filter="scripts"/>
+				<remove_value name="$ProperInstall"/>
+				<remove_value name="$FixedDiscounts"/>
+				<cancel_cue cue="RunOnceAtStart"/>
+			</actions>
+		</cue>
+		<cue name="NotifyOfInstallationIssue" instantiate="false">
+			<conditions>
+				<event_cue_signalled/>
+			</conditions>
+			<delay exact="30s"/>
+			<actions>
+				<set_value name="$GameHatesMyTEntry" exact="'%s'.[readtext.{33232473}.{100}]"/>
+				<show_help custom="$GameHatesMyTEntry" position="4" duration="15s" force="true"/>
+				<remove_value name="$GameHatesMyTEntry"/>
+				<cancel_cue cue="NotifyOfInstallationIssue"/>
+			</actions>
+		</cue>
+		<cue name="AdjustDiscountMap" instantiate="false">
+			<conditions>
+				<event_cue_signalled/>
+			</conditions>
+			<actions>
+				<set_value name="md.Notifications.PlayerRelationDiscounts.$DiscountMap" exact="[['md_relation_discount_1', 0.01f, 0, 3101],['md_relation_discount_2', 0.1f, 0, 3111],['md_relation_discount_3', 1.0f, 0, 3121]]"/>
+				<set_value name="$DiscountMap" exact="[['md_relation_discount_1', 0.01f, 0, 3101],['md_relation_discount_2', 0.1f, 0, 3111],['md_relation_discount_3', 1.0f, 0, 3121]]"/>
+				<do_for_each name="$Faction" in="md.$EconomicFactions">
+					<set_value name="$Relation" exact="$Faction.relationto.{faction.player}"/>
+					<do_all exact="$DiscountMap.count" counter="$DiscountCounter">
+						<do_if value="player.hasdiscount.{$Faction}.{$DiscountMap.{$DiscountCounter}.{1}}">
+							<remove_player_discount id="$DiscountMap.{$DiscountCounter}.{1}" faction="$Faction"/>
+						</do_if>
+					</do_all>
+					<do_if value="$Faction.knowntoplayer">
+						<do_all exact="$DiscountMap.count" counter="$DiscountCounter">
+							<do_if value="$Relation ge $DiscountMap.{$DiscountCounter}.{2}">
+								<set_value name="$DoDiscount" exact="false"/>
+								<do_if value="$DiscountMap.count == $DiscountCounter">
+									<set_value name="$DoDiscount" exact="true"/>
+								</do_if>
+								<do_elseif value="$Relation lt $DiscountMap.{$DiscountCounter + 1}.{2}">
+									<set_value name="$DoDiscount" exact="true"/>
+								</do_elseif>
+								<do_if value="$DoDiscount">
+									<do_if value="not player.hasdiscount.{$Faction}.{$DiscountMap.{$DiscountCounter}.{1}}">
+										<add_player_discount id="$DiscountMap.{$DiscountCounter}.{1}" amount="$DiscountMap.{$DiscountCounter}.{3}" faction="$Faction" name="readtext.{20210}.{$DiscountMap.{$DiscountCounter}.{4}}"/>
+									</do_if>
+								</do_if>
+								<remove_value name="$DoDiscount"/>
+							</do_if>
+							<do_else>
+								<break/>
+							</do_else>
+						</do_all>
+					</do_if>
+					<remove_value name="$Relation"/>
+				</do_for_each>
+				<remove_value name="$DiscountMap"/>
+				<cancel_cue cue="AdjustDiscountMap"/>
+			</actions>
+		</cue>
+	</cues>
+</mdscript>

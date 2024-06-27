@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <language>
 	<page id="33232473" title="DeadAir ECO T Files" descr="used in DeadAir ECO" voice="no">
-		<t id="0001">(4 Digits this time around)</t>
+		<t id="0001">(4 Digits this time around)(nevermind since the game thinks it is an octal number)</t>
 		<t id="0010">Advanced Schematics</t>
 		<t id="0011">Consumable schematics used at factories that produce highly advanced wares. They are used to increase the production efficiency of a single production cycle. The amount used depends on the specific ware being produced.</t>
 		<t id="0012">Advanced Schematic Facility</t>
@@ -17,5 +17,6 @@
 		<t id="0022">Labor Union Facility</t>
 		<t id="0023">Labor Union Contract Production</t>
 		<t id="0024">{20006,102}(No information available)</t>
+		<t id="100">Unable to find ware added by DA Eco. Potential install issue that will affect gameplay. Check for incorrect folder name, corrupted install, or mod conflict.</t>
 	</page>
 </language>
