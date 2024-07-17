@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <add sel="/aiscript/attention[@min='unknown']/actions/do_if[@value='$tradedeal.iswareexchange or $tradeoffer.offeramount.{this.ship} gt 0']/do_if[@value='$amount gt 0']/execute_trade[@amount='$amount']" pos="before">
+    <do_if value="$tradedeal.seller.exists and (not $tradedeal.buyfree) and (($tradedeal.unitprice * $amount) gt this.container.money)">
+      <debug_text text="'MOD: DA Eco -- ERROR -- %s(%s) -- Found trade that would fail due to rounding error. Attempting fix.'.[this.assignedcontrolled.knownname,this.assignedcontrolled.idcode]" context="false" filter="economy_verbose"/>
+      <set_value name="$DARoundingErrorAmount" exact="($tradedeal.unitprice * $amount) - this.container.money" comment="ct"/>
+      <do_if value="$DARoundingErrorAmount gt 0">
+        <set_value name="$DANeededCredits" exact="($DARoundingErrorAmount / 100) + 1"/>
+        <do_if value="this.assignedcontrolled.trueowner.money gt ($DANeededCredits)Cr">
+          <transfer_money from="this.assignedcontrolled.trueowner" to="this.container" amount="($DANeededCredits)Cr" result="$DAMoneyTransferred"/>
+          <do_if value="$DAMoneyTransferred gt 0">
+            <do_if value="$DAMoneyTransferred ge $DARoundingErrorAmount">
+              <debug_text text="'MOD: DA Eco -- FIXED -- %s(%s) -- Transferred %s(ct) or %s(Cr) -- Calculated Price: %s -- this.container.money: %s'.[this.assignedcontrolled.knownname,this.assignedcontrolled.idcode,$DAMoneyTransferred,($DAMoneyTransferred / 100),($tradedeal.unitprice * $amount),this.container.money]" context="false" filter="economy_verbose"/>
+            </do_if>
+            <do_else>
+              <debug_text text="'MOD: DA Eco -- FAILED -- %s(%s) -- Transferred %s(ct) or %s(Cr) -- Calculated Price: %s -- this.container.money: %s'.[this.assignedcontrolled.knownname,this.assignedcontrolled.idcode,$DAMoneyTransferred,($DAMoneyTransferred / 100),($tradedeal.unitprice * $amount),this.container.money]" context="false" filter="error"/>
+            </do_else>
+          </do_if>
+        </do_if>
+        <remove_value name="$DANeededCredits"/>
+      </do_if>
+      <remove_value name="$DARoundingErrorAmount"/>
+    </do_if>
+  </add>
+</diff>

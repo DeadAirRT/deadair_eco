@@ -1727,6 +1727,16 @@
   </add>
   <replace sel="/wares/ware[@id='welfare_bor_artacademy_01']/production[@method='default'][@amount='1'][@time='1155']/primary/ware[@ware='claytronics'][@amount='516']/@amount">860</replace>
   <remove sel="/wares/ware[@id='welfare_bor_artacademy_01']/production[@method='default'][@amount='1'][@time='1155']/primary/ware[@ware='hullparts'][@amount='3775']"/>
+  <replace sel="/wares/ware[@id='module_conn_arg_antigonearc_01']/production[@method='default'][@amount='1'][@time='220']/primary/ware[@ware='claytronics'][@amount='19']/@amount">32</replace>
+  <remove sel="/wares/ware[@id='module_conn_arg_antigonearc_01']/production[@method='default'][@amount='1'][@time='220']/primary/ware[@ware='hullparts'][@amount='142']"/>
+  <replace sel="/wares/ware[@id='module_conn_arg_antigonescaffolding_01']/production[@method='default'][@amount='1'][@time='302']/primary/ware[@ware='claytronics'][@amount='21']/@amount">36</replace>
+  <remove sel="/wares/ware[@id='module_conn_arg_antigonescaffolding_01']/production[@method='default'][@amount='1'][@time='302']/primary/ware[@ware='hullparts'][@amount='159']"/>
+  <replace sel="/wares/ware[@id='module_conn_arg_antigonestraight_01']/production[@method='default'][@amount='1'][@time='275']/primary/ware[@ware='claytronics'][@amount='15']/@amount">26</replace>
+  <remove sel="/wares/ware[@id='module_conn_arg_antigonestraight_01']/production[@method='default'][@amount='1'][@time='275']/primary/ware[@ware='hullparts'][@amount='112']"/>
+  <replace sel="/wares/ware[@id='module_hab_arg_antigonepillar_01']/production[@method='default'][@amount='1'][@time='530']/primary/ware[@ware='claytronics'][@amount='117']/@amount">198</replace>
+  <remove sel="/wares/ware[@id='module_hab_arg_antigonepillar_01']/production[@method='default'][@amount='1'][@time='530']/primary/ware[@ware='hullparts'][@amount='888']"/>
+  <replace sel="/wares/ware[@id='module_hab_arg_antigonespire_01']/production[@method='default'][@amount='1'][@time='848']/primary/ware[@ware='claytronics'][@amount='165']/@amount">280</replace>
+  <remove sel="/wares/ware[@id='module_hab_arg_antigonespire_01']/production[@method='default'][@amount='1'][@time='848']/primary/ware[@ware='hullparts'][@amount='1256']"/>
   <add sel="/wares">
     <ware id="da_adv_schematics" name="{33232473,0010}" description="{33232473,0011}" factoryname="{33232473,0012}" group="pharmaceutical" transport="container" volume="100" tags="container economy">
       <price min="1938" average="2500" max="4438"/>
