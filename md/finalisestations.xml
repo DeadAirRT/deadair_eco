@@ -139,8 +139,6 @@
       <remove_value name="$ViableHabModules"/>
     </do_if>
   </add>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/set_value[@exact='0.45f'][@name='$NonCapitalTradeRatio']/@exact">0.35f</replace>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/set_value[@exact='3000'][@name='$TradeCapacity']/@exact">6000</replace>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_else[1]/set_value[@name='$weight'][@min='($Sector.economy + $Sector.security) / 2'][@max='$Sector.economy + $Sector.security']/@min">1</replace>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_else[1]/set_value[@name='$weight'][@min='1'][@max='$Sector.economy + $Sector.security']/@max">100</replace>
   <remove sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_else[1]/set_value[@exact='($weight / 2.0f) * 100.0f'][@name='$weight']"/>
@@ -183,7 +181,6 @@
     </do_if>
   </add>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='0.55f'][@name='$CapitalTradeRatio']/@exact">0.65f</replace>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='17500'][@name='$TradeCapacity']/@exact">50000</replace>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='1000 - (1000 - $NumRequiredPiers)i'][@name='$NumRequiredPiers']/@exact">[1000 - (1000 - $NumRequiredPiers)i,1].max</replace>
   <add sel="/mdscript/cues/library[@name='DefaultCalculateDefence']/actions/do_if[@value='$Station.owner != faction.xenon']/do_for_each[@name='$OpposingFaction']" pos="before">
     <set_value name="$DAhighestscore" exact="0"/>
