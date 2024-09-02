@@ -1,5 +1,30 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
+  <remove sel="/groups/group[@name='pier_base_arg']/select[@macro='pier_arg_harbor_01_macro']"/>
+  <add sel="/groups/group[@name='pier_add_arg']">
+    <select macro="pier_arg_harbor_03_macro"/>
+  </add>
+  <remove sel="/groups/group[@name='pier_base_par']/select[@macro='pier_par_harbor_01_macro']"/>
+  <add sel="/groups/group[@name='pier_add_par']">
+    <select macro="pier_par_harbor_03_macro"/>
+  </add>
+  <remove sel="/groups/group[@name='pier_base_tel']/select[@macro='pier_tel_harbor_01_macro']"/>
+  <add sel="/groups/group[@name='pier_add_tel']">
+    <select macro="pier_tel_harbor_03_macro"/>
+  </add>
+  <remove sel="/groups/group[@name='pier_base_spl']/select[@macro='pier_spl_harbor_03_macro']"/>
+  <add sel="/groups/group[@name='pier_add_spl']">
+    <select macro="pier_spl_harbor_03_macro"/>
+  </add>
+  <remove sel="/groups/group[@name='pier_base_ter']/select[@macro='pier_ter_harbor_01_macro']"/>
+  <remove sel="/groups/group[@name='pier_base_ter']/select[@macro='pier_ter_harbor_03_macro']"/>
+  <add sel="/groups/group[@name='pier_add_ter']">
+    <select macro="pier_ter_harbor_03_macro"/>
+  </add>
+  <remove sel="/groups/group[@name='pier_base_bor']/select[@macro='pier_bor_harbor_03_macro']"/>
+  <add sel="/groups/group[@name='pier_add_bor']">
+    <select macro="pier_bor_harbor_03_macro"/>
+  </add>
   <add sel="/groups">
     <group name="prod_gen_da_adv_schematics">
       <select macro="prod_gen_da_adv_schematics_macro"/>
@@ -13,6 +38,21 @@
   <add sel="/groups">
     <group name="prod_gen_da_laborunion_contracts">
       <select macro="prod_gen_da_laborunion_contracts_macro"/>
+    </group>
+  </add>
+  <add sel="/groups">
+    <group name="prod_gen_da_adv_schematics_ter">
+      <select macro="prod_gen_da_adv_schematics_ter_macro"/>
+    </group>
+  </add>
+  <add sel="/groups">
+    <group name="prod_gen_da_mil_schematics_ter">
+      <select macro="prod_gen_da_mil_schematics_ter_macro"/>
+    </group>
+  </add>
+  <add sel="/groups">
+    <group name="prod_gen_da_laborunion_contracts_ter">
+      <select macro="prod_gen_da_laborunion_contracts_ter_macro"/>
     </group>
   </add>
 </diff>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<macros>
+  <macro name="prod_gen_da_mil_schematics_ter_macro" class="production" alias="prod_gen_da_mil_schematics_macro">
+    <component ref="prod_gen_da_mil_schematics_ter" />
+    <properties>
+      <identification name="{33232473,0018}" shortname="{33232473,0015}" description="{33232473,0019}" makerrace="terran"/>
+      <build>
+        <sets>
+          <set ref="factory" />
+          <set ref="headquarters_player" />
+        </sets>
+      </build>
+      <explosiondamage value="1000" shield="5000" />
+      <hull max="160000" />
+      <secrecy level="2" />
+      <production wares="da_mil_schematics">
+        <queue ware="da_mil_schematics" />
+      </production>
+      <workforce max="500"/>
+    </properties>
+  </macro>
+</macros>

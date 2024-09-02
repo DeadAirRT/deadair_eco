@@ -7,43 +7,7 @@
     <include_actions ref="DAIncreaseStartingStorage"/>
   </add>
   <add sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/actions/set_value[@name='$dbg_str']" pos="before">
-    <do_if value="true">
-      <do_if value="$PlannedModules.count" min="20" comment="this restricts changes to larger stations only">
-        <do_if value="$Station.owner.primaryrace == race.argon">
-          <set_value name="$ProductionConnectors" exact="[macro.struct_arg_base_02_macro,macro.struct_arg_cross_01_macro]"/>
-          <set_value name="$HabitationConnectors" exact="[macro.struct_arg_base_01_macro,macro.struct_arg_cross_01_macro]"/>
-        </do_if>
-        <do_elseif value="$Station.owner.primaryrace == race.paranid">
-          <set_value name="$ProductionConnectors" exact="[macro.struct_par_base_02_macro,macro.struct_par_cross_02_macro]"/>
-          <set_value name="$HabitationConnectors" exact="[macro.struct_par_base_02_macro,macro.struct_par_cross_02_macro]"/>
-        </do_elseif>
-        <do_elseif value="$Station.owner.primaryrace == race.teladi">
-          <set_value name="$ProductionConnectors" exact="[macro.struct_tel_base_02_macro,macro.struct_tel_cross_01_macro]"/>
-          <set_value name="$HabitationConnectors" exact="[macro.struct_tel_base_01_macro,macro.struct_tel_cross_01_macro]"/>
-        </do_elseif>
-        <do_if value="$NewPlannedModules.count" min="1">
-          <do_if value="$ProductionConnectors? and $HabitationConnectors?">
-            <set_value name="$DAPlannedModules" exact="[]"/>
-            <do_all exact="$NewPlannedModules.count" counter="$B">
-              <do_if value="$NewPlannedModules.{$B}.isclass.production">
-                <append_list_elements name="$DAPlannedModules" other="$ProductionConnectors"/>
-                <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
-              </do_if>
-              <do_elseif value="$NewPlannedModules.{$B}.isclass.habitation">
-                <append_list_elements name="$DAPlannedModules" other="$HabitationConnectors"/>
-                <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
-              </do_elseif>
-              <do_else>
-                <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
-              </do_else>
-            </do_all>
-            <do_if value="$DAPlannedModules.count gt $NewPlannedModules.count">
-              <set_value name="$NewPlannedModules" exact="$DAPlannedModules"/>
-            </do_if>
-          </do_if>
-        </do_if>
-      </do_if>
-    </do_if>
+    <include_actions ref="DAImproveStationLayouts"/>
   </add>
   <replace sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/actions/do_if[@value='$Conn_PlannedConnectors.count']/create_construction_sequence[@station='$Station'][@macros='$NewPlannedModules']">
     <do_if value="true">
@@ -60,43 +24,7 @@
     <include_actions ref="DAIncreaseStartingStorage"/>
   </add>
   <add sel="/mdscript/cues/library[@name='NewStation_GenerateFactory']/actions/set_value[@name='$dbg_str']" pos="before">
-    <do_if value="true">
-      <do_if value="$PlannedModules.count" min="20" comment="this restricts changes to larger stations only">
-        <do_if value="$Station.owner.primaryrace == race.argon">
-          <set_value name="$ProductionConnectors" exact="[macro.struct_arg_base_02_macro,macro.struct_arg_cross_01_macro]"/>
-          <set_value name="$HabitationConnectors" exact="[macro.struct_arg_base_01_macro,macro.struct_arg_cross_01_macro]"/>
-        </do_if>
-        <do_elseif value="$Station.owner.primaryrace == race.paranid">
-          <set_value name="$ProductionConnectors" exact="[macro.struct_par_base_02_macro,macro.struct_par_cross_02_macro]"/>
-          <set_value name="$HabitationConnectors" exact="[macro.struct_par_base_02_macro,macro.struct_par_cross_02_macro]"/>
-        </do_elseif>
-        <do_elseif value="$Station.owner.primaryrace == race.teladi">
-          <set_value name="$ProductionConnectors" exact="[macro.struct_tel_base_02_macro,macro.struct_tel_cross_01_macro]"/>
-          <set_value name="$HabitationConnectors" exact="[macro.struct_tel_base_01_macro,macro.struct_tel_cross_01_macro]"/>
-        </do_elseif>
-        <do_if value="$NewPlannedModules.count" min="1">
-          <do_if value="$ProductionConnectors? and $HabitationConnectors?">
-            <set_value name="$DAPlannedModules" exact="[]"/>
-            <do_all exact="$NewPlannedModules.count" counter="$B">
-              <do_if value="$NewPlannedModules.{$B}.isclass.production">
-                <append_list_elements name="$DAPlannedModules" other="$ProductionConnectors"/>
-                <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
-              </do_if>
-              <do_elseif value="$NewPlannedModules.{$B}.isclass.habitation">
-                <append_list_elements name="$DAPlannedModules" other="$HabitationConnectors"/>
-                <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
-              </do_elseif>
-              <do_else>
-                <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
-              </do_else>
-            </do_all>
-            <do_if value="$DAPlannedModules.count gt $NewPlannedModules.count">
-              <set_value name="$NewPlannedModules" exact="$DAPlannedModules"/>
-            </do_if>
-          </do_if>
-        </do_if>
-      </do_if>
-    </do_if>
+    <include_actions ref="DAImproveStationLayouts"/>
   </add>
   <replace sel="/mdscript/cues/library[@name='NewStation_GenerateFactory']/actions/do_if[@value='$Conn_PlannedConnectors.count']/create_construction_sequence[@station='$Station'][@macros='$NewPlannedModules']">
     <do_if value="true">
@@ -109,79 +37,16 @@
     </do_if>
   </replace>
   <add sel="/mdscript/cues/library[@name='DefaultCalculateHabitation']/actions/do_if[@value='$ShouldCalculateHabitation']/do_if[@value='$NecessaryWorkers'][@min='1']/do_if[@value='$ModuleScoreTable.keys.count'][@min='1']/do_while[@value='$WorkforceRemaining'][@min='0']" pos="before">
-    <do_if value="true">
-      <get_module_definition macro="$ViableHabModules" faction="$Station.owner" tags="[tag.habitation, tag.module]" set="$ModuleSet" multiple="true"/>
-      <do_if value="$ViableHabModules.count gt 1">
-        <sort_list list="$ViableHabModules" sortbyvalue="loop.element.workforce.capacity" sortdescending="true"/>
-      </do_if>
-      <do_for_each name="$LocHab" in="$ViableHabModules">
-        <do_if value="($WorkforceRemaining gt 0) and $LocHab">
-          <set_value name="$LocAmountToOrder" exact="[$WorkforceRemaining / $LocHab.workforce.capacity,1].max"/>
-          <do_if value="(($LocAmountToOrder * $LocHab.workforce.capacity) lt $WorkforceRemaining) and ((($LocAmountToOrder + 1) * $LocHab.workforce.capacity) ge $WorkforceRemaining)">
-            <set_value name="$LocAmountToOrder" exact="1" operation="add"/>
-          </do_if>
-          <do_all exact="$LocAmountToOrder">
-            <set_value name="$HabitationModulesToBuild.{$LocHab}" exact="1" operation="add"/>
-            <set_value name="$WorkforceRemaining" exact="$LocHab.workforce.capacity" operation="subtract"/>
-            <set_value name="$dbg_str" exact="$dbg_str + 'Adding ' + $LocHab + '. Workforce remaining now at ' + $WorkforceRemaining + '\n'"/>
-          </do_all>
-          <remove_value name="this.$LocAmountToOrder"/>
-        </do_if>
-        <do_elseif value="($WorkforceRemaining le 0) and (not $HabitationModulesToBuild.{$LocHab}?) and $LocHab">
-          <set_value name="$HabitationModulesToBuild.{$LocHab}" exact="1" operation="add"/>
-          <set_value name="$WorkforceRemaining" exact="$LocHab.workforce.capacity" operation="subtract"/>
-          <set_value name="$dbg_str" exact="$dbg_str + 'Adding ' + $LocHab + '. Workforce remaining now at ' + $WorkforceRemaining + '\n'"/>
-        </do_elseif>
-        <do_elseif value="$WorkforceRemaining le 0">
-          <break/>
-        </do_elseif>
-      </do_for_each>
-      <remove_value name="$ViableHabModules"/>
-    </do_if>
+    <include_actions ref="DAImproveHabitation"/>
   </add>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_else[1]/set_value[@name='$weight'][@min='($Sector.economy + $Sector.security) / 2'][@max='$Sector.economy + $Sector.security']/@min">1</replace>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_else[1]/set_value[@name='$weight'][@min='1'][@max='$Sector.economy + $Sector.security']/@max">100</replace>
-  <remove sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_else[1]/set_value[@exact='($weight / 2.0f) * 100.0f'][@name='$weight']"/>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_if[@value='$ViableDockModules.count gt 0']/do_all[@exact='$ViableDockModules.count']/set_value[@exact='$DockArea.numdocks.{tag.dock_m}'][@name='$DockCountTable.{$DockArea}']/@exact">$DockArea.numdocks.{tag.dock_m} + $DockArea.numdocks.{tag.dock_s}</replace>
+  <add sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_else[1]/do_if[@value='$weight gt 66']" pos="before">
+    <set_value name="$weight" min="1" max="100" seed="$Station"/>
+  </add>
   <add sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_if[@value='$ViableDockModules.count gt 0']/do_while[@value='($NumRequiredDocksMedium gt 0.5f) or ($NumRequiredDocksSmall gt 0.5f)']" pos="before">
-    <do_if value="true">
-      <do_for_each name="$Dock" in="$DockCountList" reverse="true">
-        <do_if value="($NumRequiredDocksMedium gt 0) or ($NumRequiredDocksSmall gt 0)">
-          <do_if value="(($NumRequiredDocksMedium gt 0) and $Dock.numdocks.{tag.dock_m})">
-            <set_value name="$DAOrderAmount" exact="[$NumRequiredDocksMedium / $Dock.numdocks.{tag.dock_m},1].max"/>
-            <do_all exact="$DAOrderAmount">
-              <set_value name="$NumDocksAddedMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="add"/>
-              <set_value name="$NumRequiredDocksMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="subtract"/>
-              <set_value name="$AddModules.{$Dock}" operation="add"/>
-              <do_if value="$Dock.numdocks.{tag.dock_s}">
-                <set_value name="$NumDocksAddedSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="add"/>
-                <set_value name="$NumRequiredDocksSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="subtract"/>
-              </do_if>
-            </do_all>
-            <remove_value name="$DAOrderAmount"/>
-          </do_if>
-          <do_if value="(($NumRequiredDocksSmall gt 0) and $Dock.numdocks.{tag.dock_s})">
-            <set_value name="$DAOrderAmount" exact="[$NumRequiredDocksSmall / $Dock.numdocks.{tag.dock_s},1].max"/>
-            <do_all exact="$DAOrderAmount">
-              <set_value name="$NumDocksAddedSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="add"/>
-              <set_value name="$NumRequiredDocksSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="subtract"/>
-              <set_value name="$AddModules.{$Dock}" operation="add"/>
-              <do_if value="$Dock.numdocks.{tag.dock_m}">
-                <set_value name="$NumDocksAddedMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="add"/>
-                <set_value name="$NumRequiredDocksMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="subtract"/>
-              </do_if>
-            </do_all>
-            <remove_value name="$DAOrderAmount"/>
-          </do_if>
-        </do_if>
-        <do_else>
-          <break/>
-        </do_else>
-      </do_for_each>
-    </do_if>
+    <include_actions ref="DAImproveSMDocks"/>
   </add>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='0.55f'][@name='$CapitalTradeRatio']/@exact">0.65f</replace>
-  <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='1000 - (1000 - $NumRequiredPiers)i'][@name='$NumRequiredPiers']/@exact">[1000 - (1000 - $NumRequiredPiers)i,1].max</replace>
+  <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='1000 - (1000 - $NumRequiredPiers)i'][@name='$NumRequiredPiers']/@exact">[[1000 - (1000 - $NumRequiredPiers)i,1].max,12].min</replace>
   <add sel="/mdscript/cues/library[@name='DefaultCalculateDefence']/actions/do_if[@value='$Station.owner != faction.xenon']/do_for_each[@name='$OpposingFaction']" pos="before">
     <set_value name="$DAhighestscore" exact="0"/>
   </add>
@@ -336,6 +201,158 @@
           <remove_value name="$SolidMods"/>
           <remove_value name="$CapWanted"/>
         </do_if>
+      </actions>
+    </library>
+  </add>
+  <add sel="/mdscript/cues">
+    <library name="DAImproveStationLayouts">
+      <actions>
+        <do_if value="$PlannedModules.count" min="1">
+          <set_value name="$ProductionModules" exact="0"/>
+          <set_value name="$HabitationModules" exact="0"/>
+          <do_all exact="$PlannedModules.count" counter="$P">
+            <do_if value="$PlannedModules.{$P}.isclass.production">
+              <set_value name="$ProductionModules" exact="1" operation="add"/>
+            </do_if>
+            <do_elseif value="$PlannedModules.{$P}.isclass.habitation">
+              <set_value name="$HabitationModules" exact="1" operation="add"/>
+            </do_elseif>
+          </do_all>
+          <do_if value="$ProductionModules + $HabitationModules ge 10">
+            <do_if value="$Station.owner.primaryrace == race.argon">
+              <set_value name="$ProductionConnectors" exact="[macro.struct_arg_base_02_macro,macro.struct_arg_cross_01_macro]"/>
+              <set_value name="$HabitationConnectors" exact="[macro.struct_arg_base_01_macro,macro.struct_arg_cross_01_macro]"/>
+            </do_if>
+            <do_elseif value="$Station.owner.primaryrace == race.paranid">
+              <set_value name="$ProductionConnectors" exact="[macro.struct_par_base_02_macro,macro.struct_par_cross_02_macro]"/>
+              <set_value name="$HabitationConnectors" exact="[macro.struct_par_base_02_macro,macro.struct_par_cross_02_macro]"/>
+            </do_elseif>
+            <do_elseif value="$Station.owner.primaryrace == race.teladi">
+              <set_value name="$ProductionConnectors" exact="[macro.struct_tel_base_02_macro,macro.struct_tel_cross_01_macro]"/>
+              <set_value name="$HabitationConnectors" exact="[macro.struct_tel_base_01_macro,macro.struct_tel_cross_01_macro]"/>
+            </do_elseif>
+            <!-- TODO: Split Terran Boron -->
+            <do_if value="($NewPlannedModules.count ge 1) and $ProductionConnectors? and $HabitationConnectors?">
+              <set_value name="$DAPlannedModules" exact="[]"/>
+              <do_all exact="$NewPlannedModules.count" counter="$B">
+                <do_if value="$NewPlannedModules.{$B}.isclass.production">
+                  <append_to_list name="$DAPlannedModules" exact="$ProductionConnectors.{1}"/>
+                  <append_to_list name="$DAPlannedModules" exact="$ProductionConnectors.{2}"/>
+                  <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
+                </do_if>
+                <do_elseif value="$NewPlannedModules.{$B}.isclass.habitation">
+                  <append_to_list name="$DAPlannedModules" exact="$ProductionConnectors.{1}"/>
+                  <append_to_list name="$DAPlannedModules" exact="$ProductionConnectors.{2}"/>
+                  <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
+                </do_elseif>
+                <do_else>
+                  <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
+                </do_else>
+              </do_all>
+              <do_if value="$DAPlannedModules.count gt $NewPlannedModules.count">
+                <set_value name="$NewPlannedModules" exact="$DAPlannedModules"/>
+              </do_if>
+              <remove_value name="$DAPlannedModules"/>
+            </do_if>
+            <remove_value name="$ProductionConnectors"/>
+            <remove_value name="$HabitationConnectors"/>
+          </do_if>
+          <remove_value name="$ProductionModules"/>
+          <remove_value name="$HabitationModules"/>
+        </do_if>
+      </actions>
+    </library>
+  </add>
+  <add sel="/mdscript/cues">
+    <library name="DAImproveHabitation">
+      <actions>
+        <get_module_definition macro="$ViableHabModules" faction="$Station.owner" tags="[tag.habitation, tag.module]" set="$ModuleSet" multiple="true"/>
+        <do_if value="$ViableHabModules.count gt 1">
+          <sort_list list="$ViableHabModules" sortbyvalue="loop.element.workforce.capacity" sortdescending="true"/>
+        </do_if>
+        <do_for_each name="$LocHab" in="$ViableHabModules">
+          <do_if value="($WorkforceRemaining gt 0) and $LocHab">
+            <set_value name="$LocAmountToOrder" exact="[$WorkforceRemaining / $LocHab.workforce.capacity,1].max"/>
+            <do_if value="(($LocAmountToOrder * $LocHab.workforce.capacity) lt $WorkforceRemaining) and ((($LocAmountToOrder + 1) * $LocHab.workforce.capacity) ge $WorkforceRemaining)">
+              <set_value name="$LocAmountToOrder" exact="1" operation="add"/>
+            </do_if>
+            <do_all exact="$LocAmountToOrder">
+              <set_value name="$HabitationModulesToBuild.{$LocHab}" exact="1" operation="add"/>
+              <set_value name="$WorkforceRemaining" exact="$LocHab.workforce.capacity" operation="subtract"/>
+              <set_value name="$dbg_str" exact="$dbg_str + 'Adding ' + $LocHab + '. Workforce remaining now at ' + $WorkforceRemaining + '\n'"/>
+            </do_all>
+            <remove_value name="this.$LocAmountToOrder"/>
+          </do_if>
+          <do_elseif value="($WorkforceRemaining le 0) and (not $HabitationModulesToBuild.{$LocHab}?) and $LocHab">
+            <set_value name="$HabitationModulesToBuild.{$LocHab}" exact="1" operation="add"/>
+            <set_value name="$WorkforceRemaining" exact="$LocHab.workforce.capacity" operation="subtract"/>
+            <set_value name="$dbg_str" exact="$dbg_str + 'Adding ' + $LocHab + '. Workforce remaining now at ' + $WorkforceRemaining + '\n'"/>
+          </do_elseif>
+          <do_elseif value="$WorkforceRemaining le 0">
+            <break/>
+          </do_elseif>
+        </do_for_each>
+        <remove_value name="$ViableHabModules"/>
+      </actions>
+    </library>
+  </add>
+  <add sel="/mdscript/cues">
+    <library name="DAImproveSMDocks">
+      <actions>
+        <set_value name="$MedDocks" exact="[]"/>
+        <set_value name="$SmallDocks" exact="[]"/>
+        <do_for_each name="$Dock" in="$ViableDockModules">
+          <do_if value="$Dock.numdocks.{tag.dock_m}" min="1">
+            <append_to_list name="$MedDocks" exact="$Dock"/>
+          </do_if>
+          <do_if value="$Dock.numdocks.{tag.dock_s}" min="1">
+            <append_to_list name="$SmallDocks" exact="$Dock"/>
+          </do_if>
+        </do_for_each>
+        <do_if value="$MedDocks.count and ($NumRequiredDocksMedium gt 0)">
+          <sort_list list="$MedDocks" sortbyvalue="loop.element.numdocks.{tag.dock_m}" sortdescending="true"/>
+          <do_for_each name="$Dock" in="$MedDocks">
+            <do_if value="($NumRequiredDocksMedium gt 0) and ($Dock.numdocks.{tag.dock_m} gt 0)">
+              <set_value name="$DAOrderAmount" exact="[$NumRequiredDocksMedium / $Dock.numdocks.{tag.dock_m},1].max"/>
+              <do_all exact="$DAOrderAmount">
+                <set_value name="$NumDocksAddedMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="add"/>
+                <set_value name="$NumRequiredDocksMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="subtract"/>
+                <set_value name="$AddModules.{$Dock}" operation="add"/>
+                <do_if value="$Dock.numdocks.{tag.dock_s} gt 0">
+                  <set_value name="$NumDocksAddedSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="add"/>
+                  <set_value name="$NumRequiredDocksSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="subtract"/>
+                </do_if>
+              </do_all>
+              <remove_value name="$DAOrderAmount"/>
+            </do_if>
+            <do_else>
+              <break/>
+            </do_else>
+          </do_for_each>
+        </do_if>
+        <do_if value="$SmallDocks.count and ($NumRequiredDocksSmall gt 0)">
+          <sort_list list="$SmallDocks" sortbyvalue="loop.element.numdocks.{tag.dock_s}" sortdescending="true"/>
+          <do_for_each name="$Dock" in="$SmallDocks">
+            <do_if value="($NumRequiredDocksSmall gt 0) and ($Dock.numdocks.{tag.dock_s} gt 0)">
+              <set_value name="$DAOrderAmount" exact="[$NumRequiredDocksSmall / $Dock.numdocks.{tag.dock_s},1].max"/>
+              <do_all exact="$DAOrderAmount">
+                <set_value name="$NumDocksAddedSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="add"/>
+                <set_value name="$NumRequiredDocksSmall" exact="$Dock.numdocks.{tag.dock_s}" operation="subtract"/>
+                <set_value name="$AddModules.{$Dock}" operation="add"/>
+                <do_if value="$Dock.numdocks.{tag.dock_m} gt 0">
+                  <set_value name="$NumDocksAddedMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="add"/>
+                  <set_value name="$NumRequiredDocksMedium" exact="$Dock.numdocks.{tag.dock_m}" operation="subtract"/>
+                </do_if>
+              </do_all>
+              <remove_value name="$DAOrderAmount"/>
+            </do_if>
+            <do_else>
+              <break/>
+            </do_else>
+          </do_for_each>
+        </do_if>
+        <remove_value name="$MedDocks"/>
+        <remove_value name="$SmallDocks"/>
       </actions>
     </library>
   </add>

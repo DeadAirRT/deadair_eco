@@ -7,5 +7,8 @@
 		<entry name="ware_da_mil_schematics" value="extensions\deadair_eco\assets\wares\ware_da_mil_schematics"/>
 		<entry name="prod_gen_da_laborunion_contracts" value="extensions\deadair_eco\assets\structures\production\prod_gen_da_laborunion_contracts"/>
 		<entry name="ware_da_laborunion_contracts" value="extensions\deadair_eco\assets\wares\ware_da_laborunion_contracts"/>
+		<entry name="prod_gen_da_adv_schematics_ter" value="extensions\deadair_eco\assets\structures\production\prod_gen_da_adv_schematics_ter"/>
+		<entry name="prod_gen_da_mil_schematics_ter" value="extensions\deadair_eco\assets\structures\production\prod_gen_da_mil_schematics_ter"/>
+		<entry name="prod_gen_da_laborunion_contracts_ter" value="extensions\deadair_eco\assets\structures\production\prod_gen_da_laborunion_contracts_ter"/>
 	</add>
 </diff>

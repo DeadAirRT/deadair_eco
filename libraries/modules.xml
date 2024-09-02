@@ -270,7 +270,7 @@
     </module>
   </add>
   <add sel="/modules">
-    <module id="prod_gen_da_adv_schematics_terran" group="prod_gen_da_adv_schematics">
+    <module id="prod_gen_da_adv_schematics_terran" group="prod_gen_da_adv_schematics_ter">
       <category ware="da_adv_schematics" tags="[production, module]" race="[terran]" faction="[terran, pioneers]"/>
       <compatibilities>
         <limits production="25"/>
@@ -279,7 +279,7 @@
     </module>
   </add>
   <add sel="/modules">
-    <module id="prod_gen_da_mil_schematics_terran" group="prod_gen_da_mil_schematics">
+    <module id="prod_gen_da_mil_schematics_terran" group="prod_gen_da_mil_schematics_ter">
       <category ware="da_mil_schematics" tags="[production, module]" race="[terran]" faction="[terran, pioneers]"/>
       <compatibilities>
         <limits production="25"/>
@@ -288,7 +288,7 @@
     </module>
   </add>
   <add sel="/modules">
-    <module id="prod_gen_da_laborunion_contracts_terran" group="prod_gen_da_laborunion_contracts">
+    <module id="prod_gen_da_laborunion_contracts_terran" group="prod_gen_da_laborunion_contracts_ter">
       <category ware="da_laborunion_contracts" tags="[production, module]" race="[terran]" faction="[terran, pioneers]"/>
       <compatibilities>
         <limits production="25"/>
