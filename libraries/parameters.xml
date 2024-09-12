@@ -1,8 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
+  <replace sel="/parameters/economy/prices/build[@min='0.25']/@min">0.33</replace>
+  <replace sel="/parameters/economy/prices/build[@min='0.33']/@shipsalefactor">0.7</replace>
+  <replace sel="/parameters/economy/prices/resource[@min='3600'][@max='144000']/@min">7200</replace>
   <replace sel="/parameters/economy/prices/product/@factor">50000000</replace>
   <replace sel="/parameters/economy/modulelimits[@production='5']/@production">25</replace>
   <replace sel="/parameters/economy/modulelimits[@production='25']/@storage">15</replace>
+  <replace sel="/parameters/workforce/growth/capacity[@min='1000'][@max='1000']/@limit">10000</replace>
+  <replace sel="/parameters/workforce/growth/capacity[@min='1000'][@max='1000']/@max">5000</replace>
+  <replace sel="/parameters/workforce/growth/population[@max='1000']/@step">1000</replace>
+  <replace sel="/parameters/workforce/growth/population[@max='1000']/@max">10000</replace>
+  <replace sel="/parameters/productioncheck[@reportintermediates='false']/threshold[@product='0.05']/@resource">0.1</replace>
+  <replace sel="/parameters/productioncheck[@reportintermediates='false']/threshold[@product='0.05']/@product">0.1</replace>
   <replace sel="/parameters/exclusionzones[@outline='true']/exclusionzone[@tag='ship_l']/@z">50000</replace>
   <replace sel="/parameters/exclusionzones[@outline='true']/exclusionzone[@tag='ship_xl']/@x">1500</replace>
   <replace sel="/parameters/exclusionzones[@outline='true']/exclusionzone[@tag='ship_xl']/@y">1500</replace>

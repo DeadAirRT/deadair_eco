@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <replace sel="/aiscript/attention[@min='unknown']/actions/do_while[@value='this.ship.cargo.{$ware}.free gt 0']/set_value[@exact='1.0f'][@name='$efficiency']/@exact">0.9f</replace>
+</diff>
