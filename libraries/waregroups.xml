@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <add sel="/groups/group[@id='agricultural']" pos="before">
+    <group id="deadair" name="{20102,1001}" factoryname="{20102,1011}" icon="be_deadair" factorymapicon="mapob_deadair" factoryhudicon="si_deadair" tags="tradable" tier="5" priority="5"/>
+  </add>
+</diff>

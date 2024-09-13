@@ -557,11 +557,20 @@
   <add sel="/god/products/product[@id='tel_dlc_split_weaponcomponents'][@ware='weaponcomponents'][@owner='teladi'][@type='factory']" type="@startactive">false</add>
   <add sel="/god/products/product[@id='tel_dlc_split_teladianium'][@ware='teladianium'][@owner='teladi'][@type='factory']" type="@startactive">false</add>
   <add sel="/god/products/product[@id='tel_dlc_split_siliconwafers'][@ware='siliconwafers'][@owner='teladi'][@type='factory']" type="@startactive">false</add>
+  <add sel="/god/products/product[@id='ter_metallicmicrolattice'][@ware='metallicmicrolattice'][@owner='terran'][@type='factory']/quotas/quota[@galaxy='7']" type="@cluster">4</add>
   <add sel="/god/products/product[@id='ter_metallicmicrolattice'][@ware='metallicmicrolattice'][@owner='terran'][@type='factory']/module/select[@ware='metallicmicrolattice'][@race='terran']" type="@faction">terran</add>
+  <add sel="/god/products/product[@id='ter_computronicsubstrate'][@ware='computronicsubstrate'][@owner='terran'][@type='factory']/quotas/quota[@galaxy='8']" type="@cluster">3</add>
+  <replace sel="/god/products/product[@id='ter_computronicsubstrate'][@ware='computronicsubstrate'][@owner='terran'][@type='factory']/location[@faction='terran'][@class='galaxy'][@macro='xu_ep2_universe_macro']">
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="ge">
+      <security min="0.75"/>
+    </location>
+  </replace>
   <add sel="/god/products/product[@id='ter_computronicsubstrate'][@ware='computronicsubstrate'][@owner='terran'][@type='factory']/module/select[@ware='computronicsubstrate'][@race='terran']" type="@faction">terran</add>
+  <add sel="/god/products/product[@id='ter_siliconcarbide'][@ware='siliconcarbide'][@owner='terran'][@type='factory']/quotas/quota[@galaxy='5']" type="@cluster">3</add>
   <add sel="/god/products/product[@id='ter_siliconcarbide'][@ware='siliconcarbide'][@owner='terran'][@type='factory']/module/select[@ware='siliconcarbide'][@race='terran']" type="@faction">terran</add>
   <remove sel="/god/products/product[@id='ter_energycells'][@ware='energycells'][@owner='terran'][@type='factory']/location[@faction='terran'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.6']"/>
   <add sel="/god/products/product[@id='ter_energycells'][@ware='energycells'][@owner='terran'][@type='factory']/module/select[@ware='energycells'][@race='terran']" type="@faction">terran</add>
+  <add sel="/god/products/product[@id='ter_medicalsupplies'][@ware='medicalsupplies'][@owner='terran'][@type='factory']/quotas/quota[@galaxy='16']" type="@cluster">4</add>
   <remove sel="/god/products/product[@id='ter_medicalsupplies'][@ware='medicalsupplies'][@owner='terran'][@type='factory']/location[@faction='terran'][@class='galaxy'][@macro='xu_ep2_universe_macro']/economy[@max='0.75']"/>
   <add sel="/god/products/product[@id='ter_medicalsupplies'][@ware='medicalsupplies'][@owner='terran'][@type='factory']/module/select[@ware='medicalsupplies'][@race='terran']" type="@faction">terran</add>
   <add sel="/god/products/product[@id='ter_proteinpaste'][@ware='proteinpaste'][@owner='terran'][@type='factory']/module/select[@ware='proteinpaste'][@race='terran']" type="@faction">terran</add>

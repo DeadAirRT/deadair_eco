@@ -1754,7 +1754,7 @@
   <replace sel="/wares/ware[@id='module_hab_arg_antigonespire_01']/production[@method='default'][@amount='1'][@time='848']/primary/ware[@ware='claytronics'][@amount='165']/@amount">280</replace>
   <remove sel="/wares/ware[@id='module_hab_arg_antigonespire_01']/production[@method='default'][@amount='1'][@time='848']/primary/ware[@ware='hullparts'][@amount='1256']"/>
   <add sel="/wares">
-    <ware id="da_adv_schematics" name="{33232473,0010}" description="{33232473,0011}" factoryname="{33232473,0012}" group="pharmaceutical" transport="container" volume="100" tags="container economy">
+    <ware id="da_adv_schematics" name="{33232473,0010}" description="{33232473,0011}" factoryname="{33232473,0012}" group="deadair" transport="container" volume="100" tags="container economy">
       <price min="1875" average="2500" max="3500"/>
       <production time="900" amount="10" method="default" name="{20206,201}">
         <effects>
@@ -1811,14 +1811,14 @@
           <ware ware="siliconcarbide" amount="155"/>
         </primary>
       </production>
-      <component ref="prod_gen_da_adv_schematics_macro"/>
+      <component ref="prod_gen_da_adv_schematics_ter_macro"/>
       <restriction licence="station_gen_advanced"/>
       <owner faction="pioneers"/>
       <owner faction="terran"/>
     </ware>
   </add>
   <add sel="/wares">
-    <ware id="da_mil_schematics" name="{33232473,0015}" description="{33232473,0016}" factoryname="{33232473,0017}" group="pharmaceutical" transport="container" volume="50" tags="container economy">
+    <ware id="da_mil_schematics" name="{33232473,0015}" description="{33232473,0016}" factoryname="{33232473,0017}" group="deadair" transport="container" volume="50" tags="container economy">
       <price min="938" average="1250" max="1750"/>
       <production time="900" amount="20" method="default" name="{20206,201}">
         <effects>
@@ -1875,14 +1875,14 @@
           <ware ware="siliconcarbide" amount="124"/>
         </primary>
       </production>
-      <component ref="prod_gen_da_mil_schematics_macro"/>
+      <component ref="prod_gen_da_mil_schematics_ter_macro"/>
       <restriction licence="station_gen_advanced"/>
       <owner faction="pioneers"/>
       <owner faction="terran"/>
     </ware>
   </add>
   <add sel="/wares">
-    <ware id="da_laborunion_contracts" name="{33232473,0020}" description="{33232473,0021}" factoryname="{33232473,0022}" group="pharmaceutical" transport="container" volume="25" tags="container economy">
+    <ware id="da_laborunion_contracts" name="{33232473,0020}" description="{33232473,0021}" factoryname="{33232473,0022}" group="deadair" transport="container" volume="25" tags="container economy">
       <price min="469" average="625" max="875"/>
       <production time="900" amount="40" method="default" name="{20206,201}">
         <effects>
@@ -1939,7 +1939,7 @@
           <ware ware="siliconcarbide" amount="99"/>
         </primary>
       </production>
-      <component ref="prod_gen_da_laborunion_contracts_macro"/>
+      <component ref="prod_gen_da_laborunion_contracts_ter_macro"/>
       <restriction licence="station_gen_advanced"/>
       <owner faction="pioneers"/>
       <owner faction="terran"/>
