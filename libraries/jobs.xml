@@ -165,8 +165,6 @@
   <replace sel="/jobs/job[@id='trinity_corvette_patrol_m_sector_spl_mission'][@name='{20204,10044}']/quota[@galaxy='0'][@maxgalaxy='5'][@sector='1']/@maxgalaxy">0</replace>
   <replace sel="/jobs/job[@id='trinity_fighter_patrol_s_zone_spl'][@name='{20204,2901}']/quota[@galaxy='18'][@maxgalaxy='29'][@zone='1']/@galaxy">0</replace>
   <replace sel="/jobs/job[@id='trinity_fighter_patrol_s_zone_spl'][@name='{20204,2901}']/quota[@galaxy='0'][@maxgalaxy='29'][@zone='1']/@maxgalaxy">0</replace>
-  <replace sel="/jobs/job[@id='ministry_destroyer_patrol_l_spl'][@name='{20204,3301}']/quota[@galaxy='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='teladi_fighter_patrol_s_zone_exp_spl'][@name='{20204,2901}']/quota[@galaxy='12'][@zone='1']/@galaxy">0</replace>
   <replace sel="/jobs/job[@id='terran_food_trader_l'][@name='{20204,1301}']/basket[@basket='food_terran']/@basket">bio_terran</replace>
   <replace sel="/jobs/job[@id='terran_food_trader_m'][@name='{20204,1401}']/basket[@basket='food_terran']/@basket">bio_terran</replace>
   <replace sel="/jobs/job[@id='terran_food_trader_s'][@name='{20204,1801}']/basket[@basket='food_terran']/@basket">terranmre</replace>

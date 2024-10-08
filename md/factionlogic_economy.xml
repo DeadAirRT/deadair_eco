@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
+  <replace sel="/mdscript/cues/library[@name='Econ_Manager']/cues/library[@name='CheckRunningActions'][@purpose='run_actions']/actions/set_value[@exact='90min'][@name='$Request_Commandeerable_Freighter_Release_Time']/@exact">60min</replace>
+  <replace sel="/mdscript/cues/library[@name='Econ_Manager']/cues/library[@name='CheckRunningActions'][@purpose='run_actions']/actions/set_value[@exact='12h'][@name='$Dismantle_Station_Timeout']/@exact">24h</replace>
+  <replace sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='EvaluateShortages']/actions/do_if[@value='@md.FactionLogic_Economy.GlobalStorageData.$Reports']/do_if[@value='$OwnerReports']/set_value[@exact='20000'][@name='$OverflowInsufficientWareThreshold']/@exact">40000</replace>
+  <replace sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='EvaluateShortages']/cues/cue[@name='EvaluateSectorShortage']/actions/do_if[@value='$TableRefIndex le $TableRefKeys.count']/do_all[@exact='$SubTableRefKeys.count']/do_if[@value='$PursueNewAction']/do_all[@exact='$ActionThresholdsKeys.count']/do_elseif[@value='$AdjustedSectorValue ge $ActionCost']/do_if[@value='$ChosenAction']/do_elseif[6]/do_if[@value='$SectorSellOfferValue gt ($SectorBuyOfferValue * 1.2f)']/@value">$SectorSellOfferValue gt ($SectorBuyOfferValue * 2.0f)</replace>
+  <add sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Pause_Production_Module']/actions/do_else/do_if[@value='$Station']/do_if[@value='$ProductionModule']" type="@chance">25</add>
   <add sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Request_Production_Module']/actions/set_value[@name='$DebugText'][@chance='$DebugChance']" pos="before">
     <do_if value="$Faction == faction.hatikvah">
       <set_value name="$CheckProductionCompatibility" exact="true"/>
@@ -17,4 +22,5 @@
   <replace sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Request_Factory']/actions/do_else[1]/do_else/do_if[@value='$Zone or @$BuildInSector']/do_if[@value='not $ProductionPlanned']/set_value[@exact='if $Ware.hastag.recycling then 3 else 1'][@name='$ProductionLimit']/@exact">if $Ware.hastag.recycling then 3 else 5</replace>
   <replace sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Request_Factory']/actions/do_else[1]/do_else/do_if[@value='$Zone or @$BuildInSector']/do_if[@value='not $ProductionPlanned']/do_if[@value='@$BuildInSector']/create_factory[@owner='$Faction'][@sector='$RequestSector'][@race='$Faction.primaryrace'][@name='$Station']/safepos/@radius">5km</replace>
   <replace sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Request_Factory']/actions/do_else[1]/do_else/do_if[@value='$Zone or @$BuildInSector']/do_if[@value='not $ProductionPlanned']/do_else/create_factory[@owner='$Faction'][@race='$Faction.primaryrace'][@name='$Station']/safepos[@max='40km']/@radius">5km</replace>
+  <add sel="/mdscript/cues/library[@name='Econ_Manager']/cues/cue[@name='Remove_Factory']/actions/do_if[@value='$Station.exists']" type="@chance">25</add>
 </diff>

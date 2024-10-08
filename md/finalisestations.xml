@@ -37,13 +37,13 @@
     </do_if>
   </replace>
   <add sel="/mdscript/cues/library[@name='DefaultCalculateHabitation']/actions/do_if[@value='$ShouldCalculateHabitation']/do_if[@value='$NecessaryWorkers'][@min='1']/do_if[@value='$ModuleScoreTable.keys.count'][@min='1']/do_while[@value='$WorkforceRemaining'][@min='0']" pos="before">
-    <include_actions ref="DAImproveHabitation"/>
+    <include_actions ref="md.FinaliseStations.DAImproveHabitation"/>
   </add>
   <add sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_else[1]/do_if[@value='$weight gt 66']" pos="before">
     <set_value name="$weight" min="1" max="100" seed="$Station"/>
   </add>
   <add sel="/mdscript/cues/library[@name='DefaultCalculateDocks']/actions/do_if[@value='$NumRequiredDocksMedium + $NumRequiredDocksSmall'][@min='1']/do_if[@value='$ViableDockModules.count gt 0']/do_while[@value='($NumRequiredDocksMedium gt 0.5f) or ($NumRequiredDocksSmall gt 0.5f)']" pos="before">
-    <include_actions ref="DAImproveSMDocks"/>
+    <include_actions ref="md.FinaliseStations.DAImproveSMDocks"/>
   </add>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='0.55f'][@name='$CapitalTradeRatio']/@exact">0.65f</replace>
   <replace sel="/mdscript/cues/library[@name='DefaultCalculatePiers']/actions/set_value[@exact='1000 - (1000 - $NumRequiredPiers)i'][@name='$NumRequiredPiers']/@exact">[[1000 - (1000 - $NumRequiredPiers)i,1].max,12].min</replace>
@@ -73,134 +73,180 @@
   <add sel="/mdscript/cues">
     <library name="DAIncreaseStartingStorage">
       <actions>
-        <set_value name="$PlannedCapacity" exact="[0,0,0]"/>
-        <do_all exact="$PlannedModules.count" counter="$ModuleCounter" comment="Check for existing storage modules">
+        <!-- $DAPlannedCapacity = Container, Liquid, Solid -->
+        <set_value name="$DAPlannedCapacity" exact="[0,0,0]"/>
+        <!-- $DAPlannedProduction = Production Modules, Production Volume, Consumption Volume -->
+        <set_value name="$DAPlannedProduction" exact="[0,0,0]"/>
+        <do_all exact="$PlannedModules.count" counter="$ModuleCounter">
           <do_if value="$PlannedModules.{$ModuleCounter}.isclass.storage">
             <do_if value="$PlannedModules.{$ModuleCounter}.cargo.capacity.container" min="1">
-              <set_value name="$PlannedCapacity.{1}" exact="$PlannedModules.{$ModuleCounter}.cargo.capacity.container" operation="add"/>
+              <set_value name="$DAPlannedCapacity.{1}" exact="$PlannedModules.{$ModuleCounter}.cargo.capacity.container" operation="add"/>
             </do_if>
             <do_if value="$PlannedModules.{$ModuleCounter}.cargo.capacity.liquid" min="1">
-              <set_value name="$PlannedCapacity.{2}" exact="$PlannedModules.{$ModuleCounter}.cargo.capacity.liquid" operation="add"/>
+              <set_value name="$DAPlannedCapacity.{2}" exact="$PlannedModules.{$ModuleCounter}.cargo.capacity.liquid" operation="add"/>
             </do_if>
             <do_if value="$PlannedModules.{$ModuleCounter}.cargo.capacity.solid" min="1">
-              <set_value name="$PlannedCapacity.{3}" exact="$PlannedModules.{$ModuleCounter}.cargo.capacity.solid" operation="add"/>
+              <set_value name="$DAPlannedCapacity.{3}" exact="$PlannedModules.{$ModuleCounter}.cargo.capacity.solid" operation="add"/>
             </do_if>
           </do_if>
+          <do_if value="$PlannedModules.{$ModuleCounter}.isclass.production">
+            <set_value name="$DAPlannedProduction.{1}" exact="1" operation="add"/>
+            <set_value name="$DAPlannedProduction.{2}" exact="$PlannedModules.{$ModuleCounter}.productionvolume" operation="add"/>
+            <set_value name="$DAPlannedProduction.{3}" exact="$PlannedModules.{$ModuleCounter}.consumptionvolume" operation="add"/>
+          </do_if>
         </do_all>
-        <get_module_definition macro="$PossibleStorageModules" faction="$Station.owner" tags="[tag.storage, tag.module]" set="$ModuleSet" multiple="true"/>
-        <set_value name="$ContainerMods" exact="[]"/>
-        <set_value name="$LiquidMods" exact="[]"/>
-        <set_value name="$SolidMods" exact="[]"/>
-        <do_if value="$PossibleStorageModules.count" min="1">
-          <do_for_each name="$LocMod" in="$PossibleStorageModules">
+        <get_module_definition macro="$DAPossibleStorageModules" faction="$Station.owner" tags="[tag.storage, tag.module]" set="$ModuleSet" multiple="true"/>
+        <set_value name="$DAContainerMods" exact="[]"/>
+        <set_value name="$DALiquidMods" exact="[]"/>
+        <set_value name="$DASolidMods" exact="[]"/>
+        <do_if value="$DAPossibleStorageModules.count" min="1">
+          <do_for_each name="$LocMod" in="$DAPossibleStorageModules">
             <do_if value="$LocMod.cargo.capacity.container" min="1">
-              <do_if value="not $ContainerMods.indexof.{$LocMod}">
-                <append_to_list name="$ContainerMods" exact="$LocMod"/>
+              <do_if value="not $DAContainerMods.indexof.{$LocMod}">
+                <append_to_list name="$DAContainerMods" exact="$LocMod"/>
               </do_if>
             </do_if>
             <do_elseif value="$LocMod.cargo.capacity.liquid" min="1">
-              <do_if value="not $LiquidMods.indexof.{$LocMod}">
-                <append_to_list name="$LiquidMods" exact="$LocMod"/>
+              <do_if value="not $DALiquidMods.indexof.{$LocMod}">
+                <append_to_list name="$DALiquidMods" exact="$LocMod"/>
               </do_if>
             </do_elseif>
             <do_elseif value="$LocMod.cargo.capacity.solid" min="1">
-              <do_if value="not $SolidMods.indexof.{$LocMod}">
-                <append_to_list name="$SolidMods" exact="$LocMod"/>
+              <do_if value="not $DASolidMods.indexof.{$LocMod}">
+                <append_to_list name="$DASolidMods" exact="$LocMod"/>
               </do_if>
             </do_elseif>
           </do_for_each>
         </do_if>
         <remove_value name="$PossibleStorageModules"/>
-        <do_if value="($PlannedCapacity.{1} gt 0) and ($ContainerMods.count gt 0)">
-          <sort_list list="$ContainerMods" sortbyvalue="loop.element.cargo.capacity.container" sortdescending="false"/>
-          <do_for_each name="$Threshhold" in="[2000000,3500000,5000000]">
-            <do_if value="$PlannedCapacity.{1} lt $Threshhold">
-              <set_value name="$CapWanted" exact="$Threshhold - $PlannedCapacity.{1}"/>
-              <do_if value="$CapWanted" min="1">
-                <do_for_each name="$LocMod" in="$ContainerMods" counter="$C">
-                  <do_if value="($CapWanted gt 0) and ($C != $ContainerMods.count)">
-                    <set_value name="$AddModules.{$LocMod}" exact="1" operation="add"/>
-                    <set_value name="$CapWanted" exact="$LocMod.cargo.capacity.container" operation="subtract"/>
+        <!-- Container -->
+        <do_if value="($DAPlannedCapacity.{1} gt 0) and ($DAContainerMods.count gt 0)">
+          <sort_list list="$DAContainerMods" sortbyvalue="loop.element.cargo.capacity.container" sortdescending="true"/>
+          <!-- Container Only = 10 Hours Production storage, 2 Hours Resource storage -->
+          <set_value name="$DADesiredStorage" exact="($DAPlannedProduction.{2} * 10) + ($DAPlannedProduction.{3} * 2)"/>
+          <do_if value="(($DAPlannedCapacity.{2} gt 0) and ($DALiquidMods.count gt 0)) or (($DAPlannedCapacity.{3} gt 0) and ($DASolidMods.count gt 0))">
+            <!-- Not Container Only = 10 Hours Production storage, 2 Hour Resource storage * 0.33 -->
+            <set_value name="$DADesiredStorage" exact="($DAPlannedProduction.{2} * 10) + (($DAPlannedProduction.{3} * 2 * 0.33)L)"/>
+          </do_if>
+          <do_if value="$DAPlannedCapacity.{1} lt $DADesiredStorage">
+            <debug_text text="'MOD: DAEco -- DAIncreaseStartingStorage -- Station: %s(%s) in (%s) -- Planned Container: %s -- Desired Container: %s'.[@$Station.knownname,@$Station.idcode,@$Station.sector.knownname,$DAPlannedCapacity.{1},$DADesiredStorage]" context="false" filter="scripts" chance="0"/>
+            <do_for_each name="$LocMod" in="$DAContainerMods" counter="$C">
+              <set_value name="$DACapWanted" exact="$DADesiredStorage - $DAPlannedCapacity.{1}"/>
+              <do_if value="$DACapWanted" min="1">
+                <do_if value="($C != $DAContainerMods.count)">
+                  <set_value name="$LocWanted" exact="$DACapWanted / $LocMod.cargo.capacity.container"/>
+                  <do_if value="($LocWanted * $LocMod.cargo.capacity.container) lt $DACapWanted">
+                    <set_value name="$LocWanted" exact="($DACapWanted / $LocMod.cargo.capacity.container) + 1"/>
                   </do_if>
-                  <do_elseif value="($CapWanted gt 0) and ($C == $ContainerMods.count)">
-                    <set_value name="$LocWanted" exact="($CapWanted / $LocMod.cargo.capacity.container) + 1"/>
+                  <do_if value="$LocWanted" min="1">
                     <set_value name="$AddModules.{$LocMod}" exact="$LocWanted" operation="add"/>
-                    <set_value name="$CapWanted" exact="$LocMod.cargo.capacity.container * $LocWanted" operation="subtract"/>
-                    <break/>
-                  </do_elseif>
-                  <do_elseif value="$CapWanted le 0">
-                    <break/>
-                  </do_elseif>
-                </do_for_each>
-              </do_if>
-            </do_if>
-            <do_if value="$CapWanted?">
-              <break/>
-            </do_if>
-          </do_for_each>
-          <remove_value name="$ContainerMods"/>
-          <remove_value name="$CapWanted"/>
-        </do_if>
-        <do_if value="($PlannedCapacity.{2} gt 0) and ($LiquidMods.count gt 0)">
-          <sort_list list="$LiquidMods" sortbyvalue="loop.element.cargo.capacity.liquid" sortdescending="false"/>
-          <do_for_each name="$Threshhold" in="[1000000,1500000,2000000,2500000,5000000]">
-            <do_if value="$PlannedCapacity.{2} lt $Threshhold">
-              <set_value name="$CapWanted" exact="$Threshhold - $PlannedCapacity.{2}"/>
-              <do_if value="$CapWanted" min="1">
-                <do_for_each name="$LocMod" in="$LiquidMods" counter="$C">
-                  <do_if value="($CapWanted gt 0) and ($C != $LiquidMods.count)">
-                    <set_value name="$AddModules.{$LocMod}" exact="1" operation="add"/>
-                    <set_value name="$CapWanted" exact="$LocMod.cargo.capacity.liquid" operation="subtract"/>
                   </do_if>
-                  <do_elseif value="($CapWanted gt 0) and ($C == $LiquidMods.count)">
-                    <set_value name="$LocWanted" exact="($CapWanted / $LocMod.cargo.capacity.liquid) + 1"/>
-                    <set_value name="$AddModules.{$LocMod}" exact="$LocWanted" operation="add"/>
-                    <set_value name="$CapWanted" exact="$LocMod.cargo.capacity.liquid * $LocWanted" operation="subtract"/>
-                    <break/>
-                  </do_elseif>
-                  <do_elseif value="$CapWanted le 0">
-                    <break/>
-                  </do_elseif>
-                </do_for_each>
-              </do_if>
-            </do_if>
-            <do_if value="$CapWanted?">
-              <break/>
-            </do_if>
-          </do_for_each>
-          <remove_value name="$LiquidMods"/>
-          <remove_value name="$CapWanted"/>
-        </do_if>
-        <do_if value="($PlannedCapacity.{3} gt 0) and ($SolidMods.count gt 0)">
-          <sort_list list="$SolidMods" sortbyvalue="loop.element.cargo.capacity.solid" sortdescending="false"/>
-          <do_for_each name="$Threshhold" in="[1000000,1500000,2000000,2500000,5000000]">
-            <do_if value="$PlannedCapacity.{3} lt $Threshhold">
-              <set_value name="$CapWanted" exact="$Threshhold - $PlannedCapacity.{3}"/>
-              <do_if value="$CapWanted" min="1">
-                <do_for_each name="$LocMod" in="$SolidMods" counter="$C">
-                  <do_if value="($CapWanted gt 0) and ($C != $SolidMods.count)">
-                    <set_value name="$AddModules.{$LocMod}" exact="1" operation="add"/>
-                    <set_value name="$CapWanted" exact="$LocMod.cargo.capacity.solid" operation="subtract"/>
+                  <remove_value name="$LocWanted"/>
+                </do_if>
+                <do_elseif value="($C == $DAContainerMods.count)">
+                  <set_value name="$LocWanted" exact="($DACapWanted / $LocMod.cargo.capacity.container)"/>
+                  <do_if value="($LocWanted * $LocMod.cargo.capacity.container) lt $DACapWanted">
+                    <set_value name="$LocWanted" exact="($DACapWanted / $LocMod.cargo.capacity.container) + 1"/>
                   </do_if>
-                  <do_elseif value="($CapWanted gt 0) and ($C == $SolidMods.count)">
-                    <set_value name="$LocWanted" exact="($CapWanted / $LocMod.cargo.capacity.solid) + 1"/>
+                  <do_if value="$LocWanted" min="1">
                     <set_value name="$AddModules.{$LocMod}" exact="$LocWanted" operation="add"/>
-                    <set_value name="$CapWanted" exact="$LocMod.cargo.capacity.solid * $LocWanted" operation="subtract"/>
-                    <break/>
-                  </do_elseif>
-                  <do_elseif value="$CapWanted le 0">
-                    <break/>
-                  </do_elseif>
-                </do_for_each>
+                  </do_if>
+                  <remove_value name="$LocWanted"/>
+                </do_elseif>
               </do_if>
-            </do_if>
-            <do_if value="$CapWanted?">
-              <break/>
-            </do_if>
-          </do_for_each>
-          <remove_value name="$SolidMods"/>
-          <remove_value name="$CapWanted"/>
+              <do_else>
+                <break/>
+              </do_else>
+            </do_for_each>
+            <remove_value name="$DACapWanted"/>
+          </do_if>
+          <remove_value name="$DADesiredStorage"/>
         </do_if>
+        <remove_value name="$DAContainerMods"/>
+        <!-- Liquid -->
+        <do_if value="($DAPlannedCapacity.{2} gt 0) and ($DALiquidMods.count gt 0)">
+          <sort_list list="$DALiquidMods" sortbyvalue="loop.element.cargo.capacity.liquid" sortdescending="true"/>
+          <!-- Container already handled above -->
+          <!-- Not Container Only = 2 Hour Resource storage * 0.66 -->
+          <set_value name="$DADesiredStorage" exact="(($DAPlannedProduction.{3} * 2 * 0.66)L)"/>
+          <do_if value="$DAPlannedCapacity.{2} lt $DADesiredStorage">
+            <debug_text text="'MOD: DAEco -- DAIncreaseStartingStorage -- Station: %s(%s) in (%s) -- Planned Liquid: %s -- Desired Liquid: %s'.[@$Station.knownname,@$Station.idcode,@$Station.sector.knownname,$DAPlannedCapacity.{2},$DADesiredStorage]" context="false" filter="scripts" chance="0"/>
+            <do_for_each name="$LocMod" in="$DALiquidMods" counter="$C">
+              <set_value name="$DACapWanted" exact="$DADesiredStorage - $DAPlannedCapacity.{2}"/>
+              <do_if value="$DACapWanted" min="1">
+                <do_if value="($C != $DALiquidMods.count)">
+                  <set_value name="$LocWanted" exact="$DACapWanted / $LocMod.cargo.capacity.liquid"/>
+                  <do_if value="($LocWanted * $LocMod.cargo.capacity.liquid) lt $DACapWanted">
+                    <set_value name="$LocWanted" exact="($DACapWanted / $LocMod.cargo.capacity.liquid) + 1"/>
+                  </do_if>
+                  <do_if value="$LocWanted" min="1">
+                    <set_value name="$AddModules.{$LocMod}" exact="$LocWanted" operation="add"/>
+                  </do_if>
+                  <remove_value name="$LocWanted"/>
+                </do_if>
+                <do_elseif value="($C == $DALiquidMods.count)">
+                  <set_value name="$LocWanted" exact="($DACapWanted / $LocMod.cargo.capacity.liquid)"/>
+                  <do_if value="($LocWanted * $LocMod.cargo.capacity.liquid) lt $DACapWanted">
+                    <set_value name="$LocWanted" exact="($DACapWanted / $LocMod.cargo.capacity.liquid) + 1"/>
+                  </do_if>
+                  <do_if value="$LocWanted" min="1">
+                    <set_value name="$AddModules.{$LocMod}" exact="$LocWanted" operation="add"/>
+                  </do_if>
+                  <remove_value name="$LocWanted"/>
+                </do_elseif>
+              </do_if>
+              <do_else>
+                <break/>
+              </do_else>
+            </do_for_each>
+            <remove_value name="$DACapWanted"/>
+          </do_if>
+          <remove_value name="$DADesiredStorage"/>
+        </do_if>
+        <remove_value name="$DALiquidMods"/>
+        <!-- Solid -->
+        <do_if value="($DAPlannedCapacity.{3} gt 0) and ($DASolidMods.count gt 0)">
+          <sort_list list="$DASolidMods" sortbyvalue="loop.element.cargo.capacity.solid" sortdescending="true"/>
+          <!-- Container already handled above -->
+          <!-- Not Container Only = 2 Hour Resource storage * 0.66 -->
+          <set_value name="$DADesiredStorage" exact="(($DAPlannedProduction.{3} * 2 * 0.66)L)"/>
+          <do_if value="$DAPlannedCapacity.{3} lt $DADesiredStorage">
+            <debug_text text="'MOD: DAEco -- DAIncreaseStartingStorage -- Station: %s(%s) in (%s) -- Planned Solid: %s -- Desired Solid: %s'.[@$Station.knownname,@$Station.idcode,@$Station.sector.knownname,$DAPlannedCapacity.{3},$DADesiredStorage]" context="false" filter="scripts" chance="0"/>
+            <do_for_each name="$LocMod" in="$DASolidMods" counter="$C">
+              <set_value name="$DACapWanted" exact="$DADesiredStorage - $DAPlannedCapacity.{3}"/>
+              <do_if value="$DACapWanted" min="1">
+                <do_if value="($C != $DASolidMods.count)">
+                  <set_value name="$LocWanted" exact="$DACapWanted / $LocMod.cargo.capacity.solid"/>
+                  <do_if value="($LocWanted * $LocMod.cargo.capacity.solid) lt $DACapWanted">
+                    <set_value name="$LocWanted" exact="($DACapWanted / $LocMod.cargo.capacity.solid) + 1"/>
+                  </do_if>
+                  <do_if value="$LocWanted" min="1">
+                    <set_value name="$AddModules.{$LocMod}" exact="$LocWanted" operation="add"/>
+                  </do_if>
+                  <remove_value name="$LocWanted"/>
+                </do_if>
+                <do_elseif value="($C == $DASolidMods.count)">
+                  <set_value name="$LocWanted" exact="($DACapWanted / $LocMod.cargo.capacity.solid)"/>
+                  <do_if value="($LocWanted * $LocMod.cargo.capacity.solid) lt $DACapWanted">
+                    <set_value name="$LocWanted" exact="($DACapWanted / $LocMod.cargo.capacity.solid) + 1"/>
+                  </do_if>
+                  <do_if value="$LocWanted" min="1">
+                    <set_value name="$AddModules.{$LocMod}" exact="$LocWanted" operation="add"/>
+                  </do_if>
+                  <remove_value name="$LocWanted"/>
+                </do_elseif>
+              </do_if>
+              <do_else>
+                <break/>
+              </do_else>
+            </do_for_each>
+            <remove_value name="$DACapWanted"/>
+          </do_if>
+          <remove_value name="$DADesiredStorage"/>
+        </do_if>
+        <remove_value name="$DASolidMods"/>
+        <remove_value name="$DAPlannedCapacity"/>
+        <remove_value name="$DAPlannedProduction"/>
       </actions>
     </library>
   </add>
@@ -221,28 +267,53 @@
           <do_if value="$ProductionModules + $HabitationModules ge 10">
             <do_if value="$Station.owner.primaryrace == race.argon">
               <set_value name="$ProductionConnectors" exact="[macro.struct_arg_base_02_macro,macro.struct_arg_cross_01_macro]"/>
-              <set_value name="$HabitationConnectors" exact="[macro.struct_arg_base_01_macro,macro.struct_arg_cross_01_macro]"/>
+              <set_value name="$ProductionConChance" exact="50"/>
+              <set_value name="$HabitationConnectors" exact="[macro.struct_arg_cross_01_macro]"/>
+              <set_value name="$HabitationConChance" exact="33"/>
             </do_if>
             <do_elseif value="$Station.owner.primaryrace == race.paranid">
               <set_value name="$ProductionConnectors" exact="[macro.struct_par_base_02_macro,macro.struct_par_cross_02_macro]"/>
+              <set_value name="$ProductionConChance" exact="50"/>
               <set_value name="$HabitationConnectors" exact="[macro.struct_par_base_02_macro,macro.struct_par_cross_02_macro]"/>
+              <set_value name="$HabitationConChance" exact="33"/>
             </do_elseif>
             <do_elseif value="$Station.owner.primaryrace == race.teladi">
               <set_value name="$ProductionConnectors" exact="[macro.struct_tel_base_02_macro,macro.struct_tel_cross_01_macro]"/>
-              <set_value name="$HabitationConnectors" exact="[macro.struct_tel_base_01_macro,macro.struct_tel_cross_01_macro]"/>
+              <set_value name="$ProductionConChance" exact="50"/>
+              <set_value name="$HabitationConnectors" exact="[macro.struct_tel_base_02_macro,macro.struct_tel_cross_01_macro]"/>
+              <set_value name="$HabitationConChance" exact="100"/>
             </do_elseif>
-            <!-- TODO: Split Terran Boron -->
+            <do_elseif value="faction.split? and ($Station.owner.primaryrace == race.split)">
+              <set_value name="$ProductionConnectors" exact="[macro.struct_spl_base_03_macro]"/>
+              <set_value name="$ProductionConChance" exact="25"/>
+              <set_value name="$HabitationConnectors" exact="[macro.struct_spl_base_03_macro,macro.struct_spl_cross_01_macro]"/>
+              <set_value name="$HabitationConChance" exact="40"/>
+            </do_elseif>
+            <do_elseif value="faction.terran? and ($Station.owner.primaryrace == race.terran)">
+              <set_value name="$ProductionConnectors" exact="[macro.struct_ter_base_03_macro]"/>
+              <set_value name="$ProductionConChance" exact="20"/>
+              <set_value name="$HabitationConnectors" exact="[macro.struct_ter_cross_01_macro]"/>
+              <set_value name="$HabitationConChance" exact="33"/>
+            </do_elseif>
+            <do_elseif value="faction.boron? and ($Station.owner.primaryrace == race.boron)">
+              <set_value name="$ProductionConnectors" exact="[macro.struct_bor_base_04_macro]"/>
+              <set_value name="$ProductionConChance" exact="20"/>
+              <set_value name="$HabitationConnectors" exact="[macro.struct_bor_cross_01_macro]"/>
+              <set_value name="$HabitationConChance" exact="33"/>
+            </do_elseif>
             <do_if value="($NewPlannedModules.count ge 1) and $ProductionConnectors? and $HabitationConnectors?">
               <set_value name="$DAPlannedModules" exact="[]"/>
               <do_all exact="$NewPlannedModules.count" counter="$B">
                 <do_if value="$NewPlannedModules.{$B}.isclass.production">
-                  <append_to_list name="$DAPlannedModules" exact="$ProductionConnectors.{1}"/>
-                  <append_to_list name="$DAPlannedModules" exact="$ProductionConnectors.{2}"/>
+                  <do_for_each name="$ProdConnector" in="$ProductionConnectors" chance="$ProductionConChance">
+                    <append_to_list name="$DAPlannedModules" exact="$ProdConnector"/>
+                  </do_for_each>
                   <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
                 </do_if>
                 <do_elseif value="$NewPlannedModules.{$B}.isclass.habitation">
-                  <append_to_list name="$DAPlannedModules" exact="$ProductionConnectors.{1}"/>
-                  <append_to_list name="$DAPlannedModules" exact="$ProductionConnectors.{2}"/>
+                  <do_for_each name="$HabConnector" in="$HabitationConnectors" chance="$HabitationConChance">
+                    <append_to_list name="$DAPlannedModules" exact="$HabConnector"/>
+                  </do_for_each>
                   <append_to_list name="$DAPlannedModules" exact="$NewPlannedModules.{$B}"/>
                 </do_elseif>
                 <do_else>

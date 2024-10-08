@@ -49,15 +49,72 @@
         <add_tradeware object="$controllable" ware="ware.siliconwafers" allowbuy="true" allowsell="true" lockavgprice="true"/>
         <add_tradeware object="$controllable" ware="ware.spices" allowbuy="true" allowsell="true" lockavgprice="true"/>
         <add_tradeware object="$controllable" ware="ware.superfluidcoolant" allowbuy="true" allowsell="true" lockavgprice="true"/>
+        <set_value name="$DATradeStation" exact="true"/>
       </do_if>
       <do_else>
         <debug_text text="'MOD: DA Eco -- ERROR -- $tradestation? -- Diff applied to wrong portion of inituniverse.xml due to mod incompatibility or update.'" context="false" filter="error"/>
       </do_else>
     </do_if>
   </add>
-  <replace sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable? and $controllable.isoperational and not $controllable.isscheduledfordeconstruction']/do_if[@value='@$gamestartstation'][2]/do_if[@value='$controllable.canequipships']/add_default_production_wares[@object='$controllable']/@lowerlimit">72</replace>
-  <replace sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable? and $controllable.isoperational and not $controllable.isscheduledfordeconstruction']/do_if[@value='@$gamestartstation'][2]/do_if[@value='$controllable.canequipships']/add_default_production_wares[@object='$controllable']/@upperlimit">78</replace>
-  <replace sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable? and $controllable.isoperational and not $controllable.isscheduledfordeconstruction']/do_if[@value='@$gamestartstation'][2]/do_else/add_default_production_wares[@object='$controllable']/@lowerlimit">72</replace>
-  <replace sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable? and $controllable.isoperational and not $controllable.isscheduledfordeconstruction']/do_if[@value='@$gamestartstation'][2]/do_else/add_default_production_wares[@object='$controllable']/@upperlimit">78</replace>
-  <replace sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable? and $controllable.isoperational and not $controllable.isscheduledfordeconstruction']/do_if[@value='@$gamestartstation'][2]/do_else/add_default_production_wares[@object='$controllable']/@extremechance">0</replace>
+  <replace sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable? and $controllable.isoperational and not $controllable.isscheduledfordeconstruction']/do_if[@value='@$gamestartstation'][2]/do_if[@value='$controllable.canequipships']/add_default_production_wares[@object='$controllable']/@lowerlimit">88</replace>
+  <replace sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable? and $controllable.isoperational and not $controllable.isscheduledfordeconstruction']/do_if[@value='@$gamestartstation'][2]/do_if[@value='$controllable.canequipships']/add_default_production_wares[@object='$controllable']/@upperlimit">92</replace>
+  <replace sel="/mdscript/cues/library[@name='InitStationActions']/actions/do_if[@value='$controllable? and $controllable.isoperational and not $controllable.isscheduledfordeconstruction']/do_if[@value='@$gamestartstation'][2]/do_else/add_default_production_wares[@object='$controllable']">
+    <do_if value="true">
+      <include_actions ref="DADetermineInitialWares"/>
+      <do_if value="@$DALowerLimit and @$DAUpperLimit">
+        <add_default_production_wares object="$controllable" lowerlimit="$DALowerLimit" upperlimit="$DAUpperLimit" extremechance="0"/>
+        <remove_value name="$DALowerLimit"/>
+        <remove_value name="$DAUpperLimit"/>
+      </do_if>
+      <do_else>
+        <add_default_production_wares object="$controllable" lowerlimit="72" upperlimit="78" extremechance="0"/>
+      </do_else>
+    </do_if>
+  </replace>
+  <add sel="/mdscript/cues">
+    <library name="DADetermineInitialWares">
+      <actions>
+        <!-- inputs: $controllable,$DATradeStation -->
+        <!-- outputs: $DALowerLimit, $DAUpperLimit -->
+        <do_if value="$DATradeStation?">
+          <set_value name="$DALowerLimit" exact="88"/>
+          <set_value name="$DAUpperLimit" exact="92"/>
+          <remove_value name="$DATradeStation"/>
+        </do_if>
+        <do_elseif value="faction.split? and ($controllable.trueowner.primaryrace == race.split)">
+          <set_value name="$DALowerLimit" exact="88"/>
+          <set_value name="$DAUpperLimit" exact="92"/>
+        </do_elseif>
+        <do_else>
+          <set_value name="$DALowerLimit" exact="48"/>
+          <set_value name="$DAUpperLimit" exact="52"/>
+          <set_value name="$LocDAPriority" exact="false"/>
+          <set_value name="$LocDAPriorityWares" exact="[]"/>
+          <do_if value="faction.terran? and ($controllable.trueowner.primaryrace == race.terran)">
+            <set_value name="$LocDAPriorityWares" exact="[ware.computronicsubstrate,ware.energycells,ware.siliconcarbide]"/>
+          </do_if>
+          <do_elseif value="faction.loanshark? and (($controllable.trueowner == faction.loanshark) or ($controllable.trueowner == faction.scavenger))">
+            <set_value name="$LocDAPriorityWares" exact="[ware.energycells]"/>
+          </do_elseif>
+          <do_else>
+            <set_value name="$LocDAPriorityWares" exact="[ware.advancedelectronics,ware.antimatterconverters,ware.claytronics,ware.engineparts,ware.fieldcoils,ware.hullparts,ware.microchips,ware.missilecomponents,ware.scanningarrays,ware.shieldcomponents,ware.smartchips,ware.turretcomponents,ware.weaponcomponents]"/>
+          </do_else>
+          <do_if value="$LocDAPriorityWares.count" min="1">
+            <do_for_each name="$LocDAWare" in="$LocDAPriorityWares">
+              <do_if value="$controllable.products.list.indexof.{$LocDAWare}">
+                <set_value name="$LocDAPriority" exact="true"/>
+                <break/>
+              </do_if>
+            </do_for_each>
+            <do_if value="$LocDAPriority">
+              <set_value name="$DALowerLimit" exact="88"/>
+              <set_value name="$DAUpperLimit" exact="92"/>
+            </do_if>
+          </do_if>
+          <remove_value name="$LocDAPriority"/>
+          <remove_value name="$LocDAPriorityWares"/>
+        </do_else>
+      </actions>
+    </library>
+  </add>
 </diff>

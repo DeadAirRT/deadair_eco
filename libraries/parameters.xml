@@ -4,6 +4,7 @@
   <replace sel="/parameters/economy/prices/build[@min='0.33']/@shipsalefactor">0.7</replace>
   <replace sel="/parameters/economy/prices/resource[@min='3600'][@max='144000']/@min">7200</replace>
   <replace sel="/parameters/economy/prices/product/@factor">50000000</replace>
+  <replace sel="/parameters/economy/storage[@max='18000']/@workforce">10800</replace>
   <replace sel="/parameters/economy/modulelimits[@production='5']/@production">25</replace>
   <replace sel="/parameters/economy/modulelimits[@production='25']/@storage">15</replace>
   <replace sel="/parameters/workforce/growth/capacity[@min='1000'][@max='1000']/@limit">10000</replace>
