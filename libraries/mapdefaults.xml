@@ -13,14 +13,19 @@
   <replace sel="/defaults/dataset[@macro='Cluster_06_Sector001_macro']/properties/area[@economy='0.5']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_06_Sector002_macro']/properties/area[@economy='0.5']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_07_Sector001_macro']/properties/area[@economy='0.5']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_07_Sector001_macro']/properties/area[@economy='1.0']/@security">0.75</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_08_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_09_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_09_Sector001_macro']/properties/area[@economy='1.0']/@security">0.75</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_10_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_11_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_11_Sector001_macro']/properties/area[@economy='1.0']/@security">0.25</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_12_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_12_Sector001_macro']/properties/area[@economy='1.0']/@security">0.25</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_13_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_13_Sector001_macro']/properties/area[@economy='1.0']/@security">0.25</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_14_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_14_Sector001_macro']/properties/area[@economy='1.0']/@security">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_15_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_15_Sector001_macro']/properties/area[@economy='1.0']/@security">0.25</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_15_Sector002_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
@@ -28,6 +33,7 @@
   <replace sel="/defaults/dataset[@macro='Cluster_16_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_17_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_18_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_18_Sector001_macro']/properties/area[@economy='1.0']/@security">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_19_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_19_Sector002_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_20_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
@@ -35,16 +41,23 @@
   <replace sel="/defaults/dataset[@macro='Cluster_21_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_21_Sector002_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_22_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_22_Sector001_macro']/properties/area[@economy='1.0']/@security">0.25</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_23_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_23_Sector001_macro']/properties/area[@economy='1.0']/@security">0.5</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_24_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_24_Sector001_macro']/properties/area[@economy='1.0']/@security">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_25_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_25_Sector002_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_26_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_26_Sector002_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_27_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_27_Sector001_macro']/properties/area[@economy='1.0']/@security">0.75</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_28_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_28_Sector001_macro']/properties/area[@economy='1.0']/@security">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_29_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_29_Sector001_macro']/properties/area[@economy='1.0']/@security">0.25</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_29_Sector002_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
+  <replace sel="/defaults/dataset[@macro='Cluster_29_Sector002_macro']/properties/area[@economy='1.0']/@security">0.25</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_30_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_31_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_32_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>
@@ -86,7 +99,6 @@
   <replace sel="/defaults/dataset[@macro='Cluster_403_Sector001_macro']/properties/area[@economy='0.5']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_403_Sector001_macro']/properties/area[@economy='1.0']/@security">0.25</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_404_Sector001_macro']/properties/area[@economy='0.5']/@economy">1.0</replace>
-  <replace sel="/defaults/dataset[@macro='Cluster_404_Sector001_macro']/properties/area[@economy='1.0']/@security">0.25</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_405_Sector001_macro']/properties/area[@economy='0.75']/@economy">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_405_Sector001_macro']/properties/area[@economy='1.0']/@security">1.0</replace>
   <replace sel="/defaults/dataset[@macro='Cluster_406_Sector001_macro']/properties/area[@economy='0.25']/@economy">1.0</replace>

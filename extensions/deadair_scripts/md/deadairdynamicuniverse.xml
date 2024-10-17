@@ -1,50 +1,49 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
 	<add sel="//library[@name='LibraryGodSetDefaultQuota']/actions/do_if[@value='true'][@comment='EasyDiffAddMarker']">
-		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_adv_schematics}" exact="13"/>
-		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_mil_schematics}" exact="4"/>
-		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_laborunion_contracts}" exact="11"/>
+		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_adv_schematics}" exact="17"/>
+		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_mil_schematics}" exact="14"/>
+		<set_value name="$DADVT.$DAGodDefaultModuleQuotas.{ware.da_laborunion_contracts}" exact="20"/>
 	</add>
 	<add sel="//library[@name='LibraryGodFactionOverrides']/actions/do_if[@value='true'][@comment='EasyDiffAddMarker']">
 		<do_if value="not $DADVT.$DAGodFactionsTriggered.indexof.{faction.paranid}">
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.paranid}.{ware.da_adv_schematics}.{2}" exact="14"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.paranid}.{ware.da_mil_schematics}.{2}" exact="7"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.paranid}.{ware.da_laborunion_contracts}.{2}" exact="16"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.paranid}.{ware.da_adv_schematics}.{2}" exact="18"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.paranid}.{ware.da_mil_schematics}.{2}" exact="15"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.paranid}.{ware.da_laborunion_contracts}.{2}" exact="25"/>
 		</do_if>
 		<do_if value="not $DADVT.$DAGodFactionsTriggered.indexof.{faction.holyorder}">
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.holyorder}.{ware.da_adv_schematics}.{2}" exact="14"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.holyorder}.{ware.da_mil_schematics}.{2}" exact="7"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.holyorder}.{ware.da_laborunion_contracts}.{2}" exact="15"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.holyorder}.{ware.da_adv_schematics}.{2}" exact="20"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.holyorder}.{ware.da_mil_schematics}.{2}" exact="16"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.holyorder}.{ware.da_laborunion_contracts}.{2}" exact="35"/>
 		</do_if>
 		<do_if value="not $DADVT.$DAGodFactionsTriggered.indexof.{faction.teladi}">
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.teladi}.{ware.da_adv_schematics}.{2}" exact="20"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.teladi}.{ware.da_mil_schematics}.{2}" exact="15"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.teladi}.{ware.da_laborunion_contracts}.{2}" exact="26"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.teladi}.{ware.da_adv_schematics}.{2}" exact="27"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.teladi}.{ware.da_mil_schematics}.{2}" exact="25"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.teladi}.{ware.da_laborunion_contracts}.{2}" exact="48"/>
 		</do_if>
 		<do_if value="faction.split? and (not $DADVT.$DAGodFactionsTriggered.indexof.{faction.split})">
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.split}.{ware.da_adv_schematics}.{2}" exact="17"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.split}.{ware.da_mil_schematics}.{2}" exact="7"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.split}.{ware.da_adv_schematics}.{2}" exact="20"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.split}.{ware.da_mil_schematics}.{2}" exact="10"/>
 			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.split}.{ware.da_laborunion_contracts}.{2}" exact="28"/>
 		</do_if>
 		<do_if value="faction.court? and (not $DADVT.$DAGodFactionsTriggered.indexof.{faction.court})">
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.court}.{ware.da_adv_schematics}.{2}" exact="26"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.court}.{ware.da_mil_schematics}.{2}" exact="12"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.court}.{ware.da_adv_schematics}.{2}" exact="29"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.court}.{ware.da_mil_schematics}.{2}" exact="15"/>
 			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.court}.{ware.da_laborunion_contracts}.{2}" exact="41"/>
 		</do_if>
 		<do_if value="faction.terran? and (not $DADVT.$DAGodFactionsTriggered.indexof.{faction.terran})">
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.terran}.{ware.da_adv_schematics}.{2}" exact="17"/>
 			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.terran}.{ware.da_mil_schematics}.{2}" exact="6"/>
 			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.terran}.{ware.da_laborunion_contracts}.{2}" exact="2"/>
 		</do_if>
 		<do_if value="faction.pioneers? and (not $DADVT.$DAGodFactionsTriggered.indexof.{faction.pioneers})">
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.terran}.{ware.da_adv_schematics}.{2}" exact="17"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.terran}.{ware.da_mil_schematics}.{2}" exact="6"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.terran}.{ware.da_laborunion_contracts}.{2}" exact="2"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.pioneers}.{ware.da_adv_schematics}.{2}" exact="33"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.pioneers}.{ware.da_mil_schematics}.{2}" exact="12"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.pioneers}.{ware.da_laborunion_contracts}.{2}" exact="3"/>
 		</do_if>
 		<do_if value="faction.boron? and (not $DADVT.$DAGodFactionsTriggered.indexof.{faction.boron})">
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.boron}.{ware.da_adv_schematics}.{2}" exact="15"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.boron}.{ware.da_mil_schematics}.{2}" exact="5"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.boron}.{ware.da_laborunion_contracts}.{2}" exact="10"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.boron}.{ware.da_adv_schematics}.{2}" exact="16"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.boron}.{ware.da_mil_schematics}.{2}" exact="6"/>
+			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.boron}.{ware.da_laborunion_contracts}.{2}" exact="11"/>
 		</do_if>
 	</add>
 </diff>

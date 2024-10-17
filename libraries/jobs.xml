@@ -310,4 +310,23 @@
       </ship>
     </job>
   </add>
+  <add sel="/jobs">
+    <job id="xenon_stationtrader_m_da" name="{20204,201}">
+      <modifiers rebuild="false" commandeerable="false"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="maxbuy" value="3"/>
+        </order>
+      </orders>
+      <basket basket="energycells"/>
+      <category faction="xenon" tags="[stationtrader]" size="ship_m"/>
+      <quota galaxy="0" maxgalaxy="60"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="xenon" relation="self" comparison="exact" matchextension="false"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="xenon" tags="[miner, solid]" size="ship_m"/>
+        <owner exact="xenon" overridenpc="true"/>
+      </ship>
+    </job>
+  </add>
 </diff>

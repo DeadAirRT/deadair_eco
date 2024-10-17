@@ -12,7 +12,7 @@
         <set_value name="$wantedtraders" exact="table[{class.ship_m} = table[$wanted = 2]]"/>
       </do_if>
       <do_else>
-        <set_value name="$wantedtraders" exact="table[{class.ship_l} = table[$wanted = 2], {class.ship_m} = table[$wanted = 3]]"/>
+        <set_value name="$wantedtraders" exact="table[{class.ship_l} = table[$wanted = 3], {class.ship_m} = table[$wanted = 4]]"/>
       </do_else>
     </do_if>
   </replace>
@@ -22,7 +22,7 @@
         <set_value name="$wantedtraders" exact="table[{class.ship_m} = table[$wanted = 2]]"/>
       </do_if>
       <do_else>
-        <set_value name="$wantedtraders" exact="table[{class.ship_l} = table[$wanted = 1], {class.ship_m} = table[$wanted = 3]]"/>
+        <set_value name="$wantedtraders" exact="table[{class.ship_l} = table[$wanted = 3], {class.ship_m} = table[$wanted = 4]]"/>
       </do_else>
     </do_if>
   </replace>
