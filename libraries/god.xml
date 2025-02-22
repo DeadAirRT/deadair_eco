@@ -3,15 +3,6 @@
   <replace sel="/god/stations/defaults/location/@coreboundaryzoneheight">30000</replace>
   <replace sel="/god/stations/defaults/modules[@production='5']/@production">25</replace>
   <replace sel="/god/stations/defaults/modules[@production='25']/@storage">15</replace>
-  <add sel="/god/stations/station[@id='wharf_split_02'][@owner='split'][@race='split'][@type='factory']" type="@startactive">false</add>
-  <add sel="/god/stations/station[@id='arg_defence_cluster_416_sector001'][@owner='argon'][@race='argon'][@type='factory']" type="@startactive">false</add>
-  <add sel="/god/stations/station[@id='arg_defence_cluster_416_sector002'][@owner='argon'][@race='argon'][@type='factory']" type="@startactive">false</add>
-  <add sel="/god/stations/station[@id='arg_wharf_cluster_416_sector002'][@owner='argon'][@race='argon'][@type='factory']" type="@startactive">false</add>
-  <add sel="/god/stations/station[@id='arg_defence_cluster_417_sector001'][@owner='argon'][@race='argon'][@type='factory']" type="@startactive">false</add>
-  <add sel="/god/stations/station[@id='par_defence_cluster_423_sector001'][@owner='paranid'][@race='paranid'][@type='factory']" type="@startactive">false</add>
-  <add sel="/god/stations/station[@id='par_defence_cluster_423_sector002'][@owner='paranid'][@race='paranid'][@type='factory']" type="@startactive">false</add>
-  <add sel="/god/stations/station[@id='par_defence_cluster_422_sector001'][@owner='paranid'][@race='paranid'][@type='factory']" type="@startactive">false</add>
-  <add sel="/god/stations/station[@id='par_wharf_cluster_422_sector001'][@owner='paranid'][@race='paranid'][@type='factory']" type="@startactive">false</add>
   <add sel="/god/products/product[@id='tel_advancedelectronics_new'][@ware='advancedelectronics'][@owner='teladi'][@type='factory']/module/select[@ware='advancedelectronics'][@race='teladi']" type="@faction">teladi</add>
   <add sel="/god/products/product[@id='tel_antimattercells_new'][@ware='antimattercells'][@owner='teladi'][@type='factory']/module/select[@ware='antimattercells'][@race='teladi']" type="@faction">teladi</add>
   <add sel="/god/products/product[@id='tel_teladianium_new'][@ware='teladianium'][@owner='teladi'][@type='factory']/module/select[@ware='teladianium'][@race='teladi']" type="@faction">teladi</add>

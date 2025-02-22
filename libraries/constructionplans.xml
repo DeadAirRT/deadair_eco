@@ -7,5 +7,10 @@
   <replace sel="/plans/plan[@id='tel_tradestation'][@name='{20102,1311}']/entry[@macro='dockarea_arg_m_station_01_macro']/@macro">dockarea_arg_m_station_02_macro</replace>
   <replace sel="/plans/plan[@id='arg_tradestation'][@name='{20102,1111}']/entry[@macro='dockarea_arg_m_station_01_hightech_macro'][@connection='connectionsnap001']/@macro">dockarea_arg_m_station_02_hightech_macro</replace>
   <replace sel="/plans/plan[@id='arg_tradestation'][@name='{20102,1111}']/entry[@macro='dockarea_arg_m_station_01_hightech_macro']/@macro">dockarea_arg_m_station_02_hightech_macro</replace>
-  <replace sel="/plans/plan[@id='pir_factory_base_with_condensate'][@name='{20102,1001}']/entry[@macro='dockarea_arg_m_station_01_lowtech_macro']/@macro">dockarea_arg_m_station_02_lowtech_macro</replace>
+  <replace sel="/plans/plan[@id='buccaneer_storage_station_l'][@name='{20102,3221}']/entry[@macro='dockarea_arg_m_station_01_lowtech_macro']/@macro">dockarea_arg_m_station_02_lowtech_macro</replace>
+  <replace sel="/plans/plan[@id='buccaneer_storage_station_m'][@name='{20102,3221}']/entry[@macro='dockarea_arg_m_station_01_lowtech_macro']/@macro">dockarea_arg_m_station_02_lowtech_macro</replace>
+  <replace sel="/plans/plan[@id='civilian_tradingstation_cluster_722'][@name='{20103,4801}']/entry[@macro='dockarea_arg_m_station_01_macro'][@connection='connectionsnap004'][@index='10']/@macro">dockarea_arg_m_station_02_macro</replace>
+  <replace sel="/plans/plan[@id='civilian_tradingstation_cluster_722'][@name='{20103,4801}']/entry[@macro='dockarea_arg_m_station_01_macro']/@macro">dockarea_arg_m_station_02_macro</replace>
+  <replace sel="/plans/plan[@id='civilian_tradingstation_cluster_720'][@name='{20103,4801}']/entry[@macro='dockarea_arg_m_station_01_macro'][@connection='connectionsnap004']/@macro">dockarea_arg_m_station_02_macro</replace>
+  <replace sel="/plans/plan[@id='civilian_tradingstation_cluster_720'][@name='{20103,4801}']/entry[@macro='dockarea_arg_m_station_01_macro']/@macro">dockarea_arg_m_station_02_macro</replace>
 </diff>

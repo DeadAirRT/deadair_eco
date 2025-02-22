@@ -1,8 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
-  <remove sel="/groups/group[@name='pier_base_arg']/select[@macro='pier_arg_harbor_01_macro']"/>
+  <replace sel="/groups/group[@name='pier_base_arg']/select[@macro='pier_arg_harbor_01_macro']/@macro">pier_arg_harbor_03_macro</replace>
+  <remove sel="/groups/group[@name='pier_base_arg']/select[@macro='pier_arg_harbor_03_macro'][2]"/>
+  <remove sel="/groups/group[@name='pier_base_arg']/select[@macro='pier_arg_harbor_04_macro']"/>
   <add sel="/groups/group[@name='pier_add_arg']">
     <select macro="pier_arg_harbor_03_macro"/>
+  </add>
+  <add sel="/groups/group[@name='pier_add_arg']">
+    <select macro="pier_arg_harbor_04_macro"/>
   </add>
   <remove sel="/groups/group[@name='pier_base_par']/select[@macro='pier_par_harbor_01_macro']"/>
   <add sel="/groups/group[@name='pier_add_par']">

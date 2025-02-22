@@ -10,5 +10,14 @@
 		<entry name="prod_gen_da_adv_schematics_ter_macro" value="extensions\deadair_eco\assets\structures\production\macros\prod_gen_da_adv_schematics_ter_macro"/>
 		<entry name="prod_gen_da_mil_schematics_ter_macro" value="extensions\deadair_eco\assets\structures\production\macros\prod_gen_da_mil_schematics_ter_macro"/>
 		<entry name="prod_gen_da_laborunion_contracts_ter_macro" value="extensions\deadair_eco\assets\structures\production\macros\prod_gen_da_laborunion_contracts_ter_macro"/>
+		<entry name="prod_gen_da_adv_schematics_macro" value="extensions\deadair_eco-master\assets\structures\production\macros\prod_gen_da_adv_schematics_macro"/>
+		<entry name="ware_da_adv_schematics_macro" value="extensions\deadair_eco-master\assets\wares\macros\ware_da_adv_schematics_macro"/>
+		<entry name="prod_gen_da_mil_schematics_macro" value="extensions\deadair_eco-master\assets\structures\production\macros\prod_gen_da_mil_schematics_macro"/>
+		<entry name="ware_da_mil_schematics_macro" value="extensions\deadair_eco-master\assets\wares\macros\ware_da_mil_schematics_macro"/>
+		<entry name="prod_gen_da_laborunion_contracts_macro" value="extensions\deadair_eco-master\assets\structures\production\macros\prod_gen_da_laborunion_contracts_macro"/>
+		<entry name="ware_da_laborunion_contracts_macro" value="extensions\deadair_eco-master\assets\wares\macros\ware_da_laborunion_contracts_macro"/>
+		<entry name="prod_gen_da_adv_schematics_ter_macro" value="extensions\deadair_eco-master\assets\structures\production\macros\prod_gen_da_adv_schematics_ter_macro"/>
+		<entry name="prod_gen_da_mil_schematics_ter_macro" value="extensions\deadair_eco-master\assets\structures\production\macros\prod_gen_da_mil_schematics_ter_macro"/>
+		<entry name="prod_gen_da_laborunion_contracts_ter_macro" value="extensions\deadair_eco-master\assets\structures\production\macros\prod_gen_da_laborunion_contracts_ter_macro"/>
 	</add>
 </diff>

@@ -45,7 +45,9 @@
   <add sel="/jobs/job[@id='paranid_tech_trader_m'][@name='{20204,401}']/orders/order[@order='TradeRoutine'][@default='true']">
     <param name="maxsell" value="5"/>
   </add>
+  <replace sel="/jobs/job[@id='paranid_stationtrader_m'][@name='{20204,801}']/quota[@galaxy='5'][@maxgalaxy='10']/@galaxy">0</replace>
   <replace sel="/jobs/job[@id='paranid_stationtrader_m'][@name='{20204,801}']/quota[@galaxy='0'][@maxgalaxy='10']/@maxgalaxy">24</replace>
+  <replace sel="/jobs/job[@id='paranid_stationtrader_l'][@name='{20204,701}']/quota[@galaxy='5'][@maxgalaxy='3']/@galaxy">0</replace>
   <replace sel="/jobs/job[@id='paranid_stationtrader_l'][@name='{20204,701}']/quota[@galaxy='0'][@maxgalaxy='3']/@maxgalaxy">12</replace>
   <replace sel="/jobs/job[@id='paranid_construction_vessel_xl_playeronly'][@name='{20204,5101}']/orders/order[@order='FindBuildTasks'][@default='true']/param[@name='playeronly'][@value='true']/@value">false</replace>
   <replace sel="/jobs/job[@id='holyorder_bio_trader_l'][@name='{20204,1301}']/basket[@basket='bio']/@basket">bio_paranid</replace>
@@ -140,31 +142,6 @@
   <replace sel="/jobs/job[@id='freesplit_stationtrader_m'][@name='{20204,801}']/quota[@galaxy='0'][@maxgalaxy='10']/@maxgalaxy">24</replace>
   <replace sel="/jobs/job[@id='freesplit_stationtrader_l'][@name='{20204,701}']/quota[@galaxy='0'][@maxgalaxy='3']/@maxgalaxy">12</replace>
   <replace sel="/jobs/job[@id='freesplit_construction_vessel_xl_playeronly'][@name='{20204,5101}']/orders/order[@order='FindBuildTasks'][@default='true']/param[@name='playeronly'][@value='true']/@value">false</replace>
-  <replace sel="/jobs/job[@id='argon_destroyer_patrol_l_sector_spl'][@name='{20204,3301}']/quota[@galaxy='2'][@sector='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='argon_frigate_patrol_m_sector_exp_spl'][@name='{20204,2901}']/quota[@galaxy='9'][@maxgalaxy='23'][@sector='2']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='argon_frigate_patrol_m_sector_exp_spl'][@name='{20204,2901}']/quota[@galaxy='0'][@maxgalaxy='23'][@sector='2']/@maxgalaxy">0</replace>
-  <replace sel="/jobs/job[@id='argon_frigate_patrol_m_sector_exp_spl_mission'][@name='{20204,2901}']/quota[@galaxy='5'][@maxgalaxy='5'][@sector='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='argon_frigate_patrol_m_sector_exp_spl_mission'][@name='{20204,2901}']/quota[@galaxy='0'][@maxgalaxy='5'][@sector='1']/@maxgalaxy">0</replace>
-  <replace sel="/jobs/job[@id='argon_dronecarrier_patrol_m_sector_spl'][@name='{20204,5001}']/quota[@galaxy='3'][@maxgalaxy='9'][@sector='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='argon_dronecarrier_patrol_m_sector_spl'][@name='{20204,5001}']/quota[@galaxy='0'][@maxgalaxy='9'][@sector='1']/@maxgalaxy">0</replace>
-  <replace sel="/jobs/job[@id='argon_dronecarrier_patrol_m_sector_spl_mission'][@name='{20204,5001}']/quota[@galaxy='3'][@maxgalaxy='3'][@sector='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='argon_dronecarrier_patrol_m_sector_spl_mission'][@name='{20204,5001}']/quota[@galaxy='0'][@maxgalaxy='3'][@sector='1']/@maxgalaxy">0</replace>
-  <replace sel="/jobs/job[@id='argon_fighter_patrol_s_zone_spl'][@name='{20204,2901}']/quota[@galaxy='12'][@maxgalaxy='20'][@zone='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='argon_fighter_patrol_s_zone_spl'][@name='{20204,2901}']/quota[@galaxy='0'][@maxgalaxy='20'][@zone='1']/@maxgalaxy">0</replace>
-  <replace sel="/jobs/job[@id='paranid_carrier_patrol_xl_cluster_spl'][@name='{20204,6301}']/quota[@galaxy='1'][@maxgalaxy='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='paranid_corvette_patrol_m_sector_spl'][@name='{20204,10044}']/quota[@galaxy='7'][@maxgalaxy='17'][@sector='2']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='paranid_corvette_patrol_m_sector_spl'][@name='{20204,10044}']/quota[@galaxy='0'][@maxgalaxy='17'][@sector='2']/@maxgalaxy">0</replace>
-  <replace sel="/jobs/job[@id='paranid_corvette_patrol_m_sector_spl_mission'][@name='{20204,10044}']/quota[@galaxy='5'][@maxgalaxy='5'][@sector='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='paranid_corvette_patrol_m_sector_spl_mission'][@name='{20204,10044}']/quota[@galaxy='0'][@maxgalaxy='5'][@sector='1']/@maxgalaxy">0</replace>
-  <replace sel="/jobs/job[@id='paranid_fighter_patrol_s_zone_spl'][@name='{20204,2901}']/quota[@galaxy='18'][@maxgalaxy='29'][@zone='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='paranid_fighter_patrol_s_zone_spl'][@name='{20204,2901}']/quota[@galaxy='0'][@maxgalaxy='29'][@zone='1']/@maxgalaxy">0</replace>
-  <replace sel="/jobs/job[@id='trinity_carrier_patrol_xl_cluster_spl'][@name='{20204,6301}']/quota[@galaxy='1'][@maxgalaxy='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='trinity_corvette_patrol_m_sector_spl'][@name='{20204,10044}']/quota[@galaxy='7'][@maxgalaxy='17'][@sector='2']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='trinity_corvette_patrol_m_sector_spl'][@name='{20204,10044}']/quota[@galaxy='0'][@maxgalaxy='17'][@sector='2']/@maxgalaxy">0</replace>
-  <replace sel="/jobs/job[@id='trinity_corvette_patrol_m_sector_spl_mission'][@name='{20204,10044}']/quota[@galaxy='5'][@maxgalaxy='5'][@sector='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='trinity_corvette_patrol_m_sector_spl_mission'][@name='{20204,10044}']/quota[@galaxy='0'][@maxgalaxy='5'][@sector='1']/@maxgalaxy">0</replace>
-  <replace sel="/jobs/job[@id='trinity_fighter_patrol_s_zone_spl'][@name='{20204,2901}']/quota[@galaxy='18'][@maxgalaxy='29'][@zone='1']/@galaxy">0</replace>
-  <replace sel="/jobs/job[@id='trinity_fighter_patrol_s_zone_spl'][@name='{20204,2901}']/quota[@galaxy='0'][@maxgalaxy='29'][@zone='1']/@maxgalaxy">0</replace>
   <replace sel="/jobs/job[@id='terran_food_trader_l'][@name='{20204,1301}']/basket[@basket='food_terran']/@basket">bio_terran</replace>
   <replace sel="/jobs/job[@id='terran_food_trader_m'][@name='{20204,1401}']/basket[@basket='food_terran']/@basket">bio_terran</replace>
   <replace sel="/jobs/job[@id='terran_food_trader_s'][@name='{20204,1801}']/basket[@basket='food_terran']/@basket">terranmre</replace>

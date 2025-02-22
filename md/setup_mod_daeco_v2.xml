@@ -21,10 +21,14 @@
 					<actions>
 						<do_if value="(not $LastCheckTime?) or (player.age gt (@$LastCheckTime + 5s))">
 							<set_value name="$LastCheckTime" exact="player.age"/>
-							<do_if value="not (ware.da_adv_schematics? and ware.da_adv_schematics.objectmacro?)">
+							<do_if value="not (ware.da_adv_schematics? and ware.da_adv_schematics and ware.da_adv_schematics.objectmacro and ware.da_adv_schematics.objectmacro.class)">
 								<set_value name="$ProperInstall" exact="false"/>
 								<include_actions ref="NotifyOfInstallationIssue"/>
 							</do_if>
+							<do_elseif value="not (macro.prod_gen_da_adv_schematics_macro? and macro.prod_gen_da_adv_schematics_macro and macro.prod_gen_da_adv_schematics_macro.class and macro.prod_gen_da_adv_schematics_macro.workforce.optimal)">
+								<set_value name="$ProperInstall" exact="false"/>
+								<include_actions ref="NotifyOfInstallationIssue"/>
+							</do_elseif>
 							<do_else>
 								<set_value name="$ProperInstall" exact="true"/>
 							</do_else>
@@ -41,6 +45,7 @@
 					<actions>
 						<set_value name="$GameHatesMyTEntry" exact="'%s'.[readtext.{33232473}.{100}]"/>
 						<show_help custom="$GameHatesMyTEntry" position="4" duration="30s" force="true"/>
+						<write_to_logbook category="tips" title="{33232473,101}" text="{33232473,100}" highlighted="true"/>
 						<remove_value name="$GameHatesMyTEntry"/>
 						<debug_text text="'MOD: DAEco -- NotifyOfInstallationIssue -- INSTALLATION ISSUE -- $ProperInstall: %s'.[$ProperInstall]" context="false" filter="error"/>
 					</actions>
