@@ -21,7 +21,7 @@
 					<actions>
 						<do_if value="(not $LastCheckTime?) or (player.age gt (@$LastCheckTime + 5s))">
 							<set_value name="$LastCheckTime" exact="player.age"/>
-							<do_if value="not (ware.da_adv_schematics? and ware.da_adv_schematics and ware.da_adv_schematics.objectmacro and ware.da_adv_schematics.objectmacro.class)">
+							<do_if value="not (ware.da_adv_schematics? and ware.da_adv_schematics and macro.ware_da_adv_schematics_macro? and macro.ware_da_adv_schematics_macro)">
 								<set_value name="$ProperInstall" exact="false"/>
 								<include_actions ref="NotifyOfInstallationIssue"/>
 							</do_if>

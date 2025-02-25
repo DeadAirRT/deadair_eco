@@ -4,8 +4,5 @@
 		<icon name="be_deadair" texture="extensions\deadair_eco\assets\fx\gui\textures\button_elements\be_deadair.png" height="128" width="128"/>
 		<icon name="mapob_deadair" texture="extensions\deadair_eco\assets\fx\gui\textures\map_objects\mapob_deadair.png" height="128" width="128"/>
 		<icon name="si_deadair" texture="extensions\deadair_eco\assets\fx\gui\textures\stationicon\si_deadair.png" height="128" width="128"/>
-		<icon name="be_deadair" texture="extensions\deadair_eco-master\assets\fx\gui\textures\button_elements\be_deadair.png" height="128" width="128"/>
-		<icon name="mapob_deadair" texture="extensions\deadair_eco-master\assets\fx\gui\textures\map_objects\mapob_deadair.png" height="128" width="128"/>
-		<icon name="si_deadair" texture="extensions\deadair_eco-master\assets\fx\gui\textures\stationicon\si_deadair.png" height="128" width="128"/>
 	</add>
 </diff>
