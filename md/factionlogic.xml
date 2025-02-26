@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+	<replace sel="/mdscript/cues/library[@name='Manager']/cues/cue[@name='Ship_Construction_Manager'][@ref='md.Job_Helper.Manager']">
+		<cue name="DAEco_SCM_Handler">
+			<actions>
+				<do_if value="(not md.$DAEcoVarTable?) or (md.$DAEcoVarTable == null)">
+					<set_value name="md.$DAEcoVarTable" exact="table[]"/>
+				</do_if>
+				<do_if value="(not md.$DAEcoVarTable.$ShipManagerDA?) or (md.$DAEcoVarTable.$ShipManagerDA == null)">
+					<set_value name="md.$DAEcoVarTable.$ShipManagerDA" exact="table[]"/>
+				</do_if>
+				<do_if value="(not md.$DAEcoVarTable.$ShipManagerDA.{$Faction}?) or (md.$DAEcoVarTable.$ShipManagerDA.{$Faction} == null)">
+					<set_value name="md.$DAEcoVarTable.$ShipManagerDA.{$Faction}" exact="false"/>
+				</do_if>
+				<set_value name="$DAEcoIntervalCheckerTime" min="70s" max="90s"/>
+				<set_value name="$LocUsingDAEcoShipManager" exact="false"/>
+				<set_value name="$LocInitialStartupCompleted" exact="false"/>
+			</actions>
+			<cues>
+				<cue name="DAEco_Xenon_Job_Helper">
+					<conditions>
+						<event_cue_signalled/>
+					</conditions>
+					<actions>
+						<debug_text text="'MOD: DAEco FactionLogic -- Starting DAEco Xenon Job Helper for %s'.[$Faction.knownname]" context="false" filter="scripts"/>
+					</actions>
+					<cues>
+						<cue name="DAEco_Ship_Construction_Manager" ref="md.Xenon_Job_Helper_DA.Manager">
+							<param name="FactionManagerCue" value="Manager"/>
+							<param name="Faction" value="$Faction"/>
+							<param name="DebugChance" value="0"/>
+						</cue>
+					</cues>
+				</cue>
+				<cue name="DAEco_Vanilla_Job_Helper">
+					<conditions>
+						<event_cue_signalled/>
+					</conditions>
+					<actions>
+						<debug_text text="'MOD: DAEco FactionLogic -- Starting Vanilla Job Helper for %s'.[$Faction.knownname]" context="false" filter="scripts"/>
+					</actions>
+					<cues>
+						<cue name="Vanilla_Ship_Construction_Manager" ref="md.Job_Helper.Manager">
+							<param name="FactionManagerCue" value="Manager"/>
+							<param name="Faction" value="$Faction"/>
+							<param name="DebugChance" value="0"/>
+						</cue>
+					</cues>
+				</cue>
+				<cue name="DAEco_IntervalChecker">
+					<delay exact="$DAEcoIntervalCheckerTime"/>
+					<actions>
+						<do_if value="$LocUsingDAEcoShipManager == md.$DAEcoVarTable.$ShipManagerDA.{$Faction}">
+							<do_if value="not $LocInitialStartupCompleted">
+								<do_if value="md.$DAEcoVarTable.$ShipManagerDA.{$Faction}">
+									<signal_cue_instantly cue="DAEco_Xenon_Job_Helper"/>
+									<reset_cue cue="DAEco_Vanilla_Job_Helper"/>
+									<set_value name="$LocInitialStartupCompleted" exact="true"/>
+								</do_if>
+								<do_else>
+									<signal_cue_instantly cue="DAEco_Vanilla_Job_Helper"/>
+									<reset_cue cue="DAEco_Xenon_Job_Helper"/>
+									<set_value name="$LocInitialStartupCompleted" exact="true"/>
+								</do_else>
+							</do_if>
+						</do_if>
+						<do_elseif value="$LocUsingDAEcoShipManager != md.$DAEcoVarTable.$ShipManagerDA.{$Faction}">
+							<do_if value="$LocUsingDAEcoShipManager and (not md.$DAEcoVarTable.$ShipManagerDA.{$Faction})">
+								<!-- Deactivate -->
+								<set_value name="$LocUsingDAEcoShipManager" exact="false"/>
+								<set_value name="$LocInitialStartupCompleted" exact="true"/>
+								<signal_cue_instantly cue="DAEco_Vanilla_Job_Helper"/>
+								<reset_cue cue="DAEco_Xenon_Job_Helper"/>
+							</do_if>
+							<do_elseif value="(not $LocUsingDAEcoShipManager) and md.$DAEcoVarTable.$ShipManagerDA.{$Faction}">
+								<!-- Activate -->
+								<set_value name="$LocUsingDAEcoShipManager" exact="true"/>
+								<set_value name="$LocInitialStartupCompleted" exact="true"/>
+								<signal_cue_instantly cue="DAEco_Xenon_Job_Helper"/>
+								<reset_cue cue="DAEco_Vanilla_Job_Helper"/>
+							</do_elseif>
+						</do_elseif>
+						<reset_cue cue="DAEco_IntervalChecker"/>
+					</actions>
+				</cue>
+			</cues>
+		</cue>
+	</replace>
+</diff>

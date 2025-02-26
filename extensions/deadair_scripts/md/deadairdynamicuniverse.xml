@@ -26,11 +26,6 @@
 			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.split}.{ware.da_mil_schematics}.{2}" exact="10"/>
 			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.split}.{ware.da_laborunion_contracts}.{2}" exact="28"/>
 		</do_if>
-		<do_if value="faction.court? and (not $DADVT.$DAGodFactionsTriggered.indexof.{faction.court})">
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.court}.{ware.da_adv_schematics}.{2}" exact="29"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.court}.{ware.da_mil_schematics}.{2}" exact="15"/>
-			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.court}.{ware.da_laborunion_contracts}.{2}" exact="41"/>
-		</do_if>
 		<do_if value="faction.terran? and (not $DADVT.$DAGodFactionsTriggered.indexof.{faction.terran})">
 			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.terran}.{ware.da_mil_schematics}.{2}" exact="6"/>
 			<set_value name="$DADVT.$DAGodFactionModuleQuotas.{faction.terran}.{ware.da_laborunion_contracts}.{2}" exact="2"/>

@@ -36,6 +36,7 @@
 								<set_value name="$FixedDiscounts" exact="true"/>
 								<include_actions ref="AdjustDiscountMap"/>
 							</do_if>
+							<include_actions ref="ApplyNewChanges"/>
 							<debug_text text="'MOD: DAEco -- Completed PeriodicRun -- $ProperInstall: %s -- $FixedDiscounts: %s'.[$ProperInstall,$FixedDiscounts]" context="false" filter="scripts"/>
 						</do_if>
 						<reset_cue cue="this"/>
@@ -87,6 +88,18 @@
 						</do_for_each>
 						<remove_value name="$DiscountMap"/>
 						<debug_text text="'MOD: DAEco -- Completed AdjustDiscountMap -- $FixedDiscounts: %s'.[$FixedDiscounts]" context="false" filter="scripts"/>
+					</actions>
+				</library>
+				<library name="ApplyNewChanges">
+					<actions>
+						<do_if value="(not md.$DAEcoVarTable?) or (md.$DAEcoVarTable == null)">
+							<set_value name="md.$DAEcoVarTable" exact="table[]"/>
+						</do_if>
+						<do_if value="(not md.$DAEcoVarTable.$ShipManagerDA?) or (md.$DAEcoVarTable.$ShipManagerDA == null)">
+							<set_value name="md.$DAEcoVarTable.$ShipManagerDA" exact="table[]"/>
+						</do_if>
+						<set_value name="md.$DAEcoVarTable.$ShipManagerDA.{faction.xenon}" exact="true"/>
+						<debug_text text="'MOD: DAEco -- Completed ApplyNewChanges'" context="false" filter="scripts"/>
 					</actions>
 				</library>
 			</cues>

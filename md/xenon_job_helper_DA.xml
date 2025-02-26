@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mdscript xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Xenon_Job_Helper_DA" xsi:noNamespaceSchemaLocation="md.xsd">
+	<cues>
+		<library name="Manager" namespace="this">
+			<params>
+				<param name="FactionManagerCue"/>
+				<param name="Faction"/>
+				<param name="DebugChance" default="0"/>
+			</params>
+			<cues>
+				<cue name="Process_Ships">
+					<actions>
+						<set_value name="$WaitTime" min="50s" max="70s"/>
+						<set_value name="$Shipyards" exact="[]"/>
+						<set_value name="$ShipsToBuild" exact="[]"/>
+						<set_value name="$ShipyardTable" exact="table[]"/>
+						<find_waiting_subordinate name="$ShipsToBuild" owner="$Faction" hasbuildingtask="false" multiple="true">
+							<match_parent negate="true" class="class.component" comment="Only interested in the disconnected ships"/>
+						</find_waiting_subordinate>
+						<find_waiting_job_ship name="$ShipsToBuild" owner="$Faction" hasbuildingtask="false" multiple="true" append="true">
+							<match_parent negate="true" class="class.component" comment="Only interested in the disconnected ships"/>
+						</find_waiting_job_ship>
+						<do_if value="$ShipsToBuild.count">
+							<find_station name="$Shipyards" canbuildships="true" canbuildfor="$Faction" hascontrolentity="controlpost.shiptrader" space="player.galaxy" multiple="true"/>
+							<do_for_each name="$Shipyard" in="$Shipyards" reverse="true">
+								<remove_value name="$BuildableShipWares"/>
+								<remove_value name="$BuildModules"/>
+								<remove_value name="$BuildProcessors"/>
+								<get_ship_build_wares result="$BuildableShipWares" object="$Shipyard" otherfaction="$Faction" requireblueprints="true" canbuild="true"/>
+								<do_if value="not $BuildableShipWares.count">
+									<continue/>
+								</do_if>
+								<set_value name="$BuildModules" exact="$Shipyard.buildmodules"/>
+								<do_if value="not $BuildModules.count">
+									<continue/>
+								</do_if>
+								<do_for_each name="$BuildModule" in="$BuildModules" reverse="true">
+									<find_object_component name="$BuildProcessors" class="class.buildprocessor" object="$BuildModule" multiple="true"/>
+									<do_if value="not $BuildProcessors.count">
+										<remove_from_list name="$BuildModules" exact="$BuildModule" multiple="false"/>
+									</do_if>
+								</do_for_each>
+								<do_if value="$BuildModules.count" min="1">
+									<set_value name="$ShipyardTable.{$Shipyard}" exact="table[]"/>
+									<set_value name="$ShipyardTable.{$Shipyard}.$BuildModuleList" exact="$BuildModules"/>
+									<set_value name="$ShipyardTable.{$Shipyard}.$BuildableShipWares" exact="$BuildableShipWares"/>
+									<set_value name="$ShipyardTable.{$Shipyard}.$OrderedShips" exact="0"/>
+								</do_if>
+								<do_else>
+									<remove_from_list name="$Shipyards" exact="$Shipyard" multiple="false"/>
+								</do_else>
+							</do_for_each>
+							<debug_text text="'XenonJobHelper:ECO %s: Faction: %s -- $ShipyardTable.keys.count: %s -- $ShipsToBuild.count: %s'.[player.age,$Faction,$ShipyardTable.keys.count,$ShipsToBuild.count]" context="false" filter="economy_verbose"/>
+							<do_if value="$Shipyards.count">
+								<do_if value="not $ShipsToBuild.count">
+									<!-- Nothing to do! -->
+								</do_if>
+								<do_else>
+									<!-- Shuffle and shorten -->
+									<shuffle_list list="$ShipsToBuild"/>
+									<do_if value="$ShipsToBuild.count" min="21">
+										<resize_list list="$ShipsToBuild" count="20"/>
+									</do_if>
+									<!-- Data tracking -->
+									<set_value name="$ShipyardPriceTables" exact="table[]" comment="DA - Used to reduce amount of times that buildbuyprices needs to be set"/>
+									<set_value name="$ShipyardDistanceTable" exact="table[]" comment="DA - Will store distances from each checked job sector"/>
+									<do_all exact="$ShipsToBuild.count" counter="$i">
+										<set_value name="$ShipToBuild" exact="$ShipsToBuild.{$i}"/>
+										<set_value name="$SelectedShipyard" exact="null"/>
+										<do_if value="$Shipyards.count" min="2">
+											<set_value name="$TempOrderList" exact="[]"/>
+											<!-- Get data -->
+											<set_value name="$JobSector" exact="@$ShipToBuild.jobcommander.sector"/>
+											<do_if value="not $JobSector">
+												<set_value name="$JobSector" exact="@$ShipToBuild.jobmainsector"/>
+											</do_if>
+											<do_if value="$JobSector and (not $ShipyardDistanceTable.{$JobSector}?)">
+												<append_list_elements name="$TempOrderList" other="$Shipyards"/>
+												<sort_list list="$TempOrderList" sortbyvalue="loop.element.gatedistance.{$JobSector} + ((loop.element.gatedistance.{$JobSector} ge 0) * 1000)" sortdescending="false" comment="DA - Handling for -1 if there is no route"/>
+												<set_value name="$ShipyardDistanceTable.{$JobSector}" exact="$TempOrderList"/>
+											</do_if>
+											<do_elseif value="$JobSector and $ShipyardDistanceTable.{$JobSector}?">
+												<append_list_elements name="$TempOrderList" other="$ShipyardDistanceTable.{$JobSector}"/>
+											</do_elseif>
+											<do_else>
+												<append_list_elements name="$TempOrderList" other="$Shipyards"/>
+												<shuffle_list list="$TempOrderList"/>
+											</do_else>
+											<do_for_each name="$Shipyard" in="$TempOrderList">
+												<do_if value="$ShipyardTable.{$Shipyard}.$BuildableShipWares.indexof.{$ShipToBuild.macro.ware}">
+													<set_value name="$HasSuitableBuildModule" exact="false"/>
+													<do_all exact="$ShipyardTable.{$Shipyard}.$BuildModuleList.count" counter="$o">
+														<do_if value="$ShipyardTable.{$Shipyard}.$BuildModuleList.{$o}.dock.{$ShipToBuild.docksize}">
+															<set_value name="$SelectedShipyard" exact="$Shipyard"/>
+															<set_value name="$HasSuitableBuildModule" exact="true"/>
+															<break/>
+														</do_if>
+													</do_all>
+													<do_if value="$HasSuitableBuildModule">
+														<break/>
+													</do_if>
+												</do_if>
+											</do_for_each>
+											<remove_value name="$HasSuitableBuildModule"/>
+										</do_if>
+										<do_else>
+											<set_value name="$Shipyard" exact="$Shipyards.{1}"/>
+											<do_if value="$ShipyardTable.{$Shipyard}.$BuildableShipWares.indexof.{$ShipToBuild.macro.ware}">
+												<do_all exact="$ShipyardTable.{$Shipyard}.$BuildModuleList.count" counter="$o">
+													<do_if value="$ShipyardTable.{$Shipyard}.$BuildModuleList.{$o}.dock.{$ShipToBuild.docksize}">
+														<set_value name="$SelectedShipyard" exact="$Shipyard"/>
+														<break/>
+													</do_if>
+												</do_all>
+											</do_if>
+											<remove_value name="$Shipyard"/>
+										</do_else>
+										<do_if value="$SelectedShipyard">
+											<set_value name="$Shipyard" exact="$SelectedShipyard"/>
+											<do_if value="$Shipyard.isplayerowned">
+												<do_if value="not $ShipyardPriceTables.{$Shipyard}?">
+													<set_value name="$ShipyardPriceTables.{$Shipyard}" exact="$Shipyard.buildbuyprices"/>
+												</do_if>
+												<get_object_value result="$ShipValue" object="$ShipToBuild" pricetable="$ShipyardPriceTables.{$Shipyard}"/>
+											</do_if>
+											<add_build_to_construct_ship result="$Build" object="$Shipyard" buildobject="$ShipToBuild" faction="$Faction" price="if ($Shipyard.isplayerowned and @$ShipValue) then $ShipValue else 0Cr"/>
+											<set_value name="$ShipyardTable.{$Shipyard}.$OrderedShips" exact="1" operation="add"/>
+											<debug_text text="'XenonJobHelper:ECO %s: Faction: %s -- Ordered Ship Macro: %s -- $JobSector: %s -- Shipyard Location: %s'.[player.age,$Faction,$ShipToBuild.macro.id,@$JobSector.knownname,$Shipyard.sector.knownname]" context="false" filter="economy_verbose"/>
+										</do_if>
+										<remove_value name="$ShipToBuild"/>
+										<remove_value name="$SelectedShipyard"/>
+										<remove_value name="$JobSector"/>
+										<remove_value name="$TempOrderList"/>
+									</do_all>
+									<do_if value="true">
+										<set_value name="$Statistics" exact="[]"/>
+										<set_value name="$DebugString" exact="'XenonJobHelper:ECO Report\n'"/>
+										<do_for_each name="$Shipyard" in="$ShipyardTable.keys.list">
+											<append_to_list name="$Statistics" exact="[$Shipyard,$ShipyardTable.{$Shipyard}.$OrderedShips]"/>
+										</do_for_each>
+										<do_all exact="$Statistics.count" counter="$DA">
+											<set_value name="$DebugString" exact="'%s) %s in %s - %s'.[$DA,$Statistics.{$DA}.{1}.idcode,$Statistics.{$DA}.{1}.sector.knownname,$Statistics.{$DA}.{2}]" operation="add"/>
+											<do_if value="$DA lt $Statistics.count">
+												<set_value name="$DebugString" exact="'\n'" operation="add"/>
+											</do_if>
+										</do_all>
+										<debug_text text="$DebugString" context="false" filter="scripts"/>
+										<remove_value name="$Statistics"/>
+										<remove_value name="$DebugString"/>
+									</do_if>
+									<remove_value name="$ShipyardPriceTables"/>
+									<remove_value name="$ShipyardDistanceTable"/>
+								</do_else>
+							</do_if>
+						</do_if>
+						<remove_value name="$Shipyards"/>
+						<remove_value name="$ShipyardTable"/>
+						<remove_value name="$ShipsToBuild"/>
+					</actions>
+					<cues>
+						<cue name="Reset_Process_Ships">
+							<delay exact="$WaitTime"/>
+							<actions>
+								<reset_cue cue="Process_Ships"/>
+							</actions>
+						</cue>
+					</cues>
+				</cue>
+			</cues>
+		</library>
+	</cues>
+</mdscript>
