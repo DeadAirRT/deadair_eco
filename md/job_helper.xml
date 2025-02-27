@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
   <add sel="/mdscript/cues/library[@name='Manager']/cues/cue[@name='Process_Ships']/actions/do_if[@value='$Shipyards.count']">
-    <debug_text text="'JH:ECO %s: Faction: %s -- Completed vanilla job helper script'.[player.age,$Faction]" context="false" filter="scripts"/>
+    <debug_text text="'JH:ECO %s: Faction: %s -- Completed vanilla job helper script'.[player.age,$Faction]" context="false" filter="economy_verbose"/>
   </add>
 </diff>

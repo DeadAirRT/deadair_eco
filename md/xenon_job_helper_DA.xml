@@ -144,7 +144,7 @@
 												<set_value name="$DebugString" exact="'\n'" operation="add"/>
 											</do_if>
 										</do_all>
-										<debug_text text="$DebugString" context="false" filter="scripts"/>
+										<debug_text text="$DebugString" context="false" filter="economy_verbose"/>
 										<remove_value name="$Statistics"/>
 										<remove_value name="$DebugString"/>
 									</do_if>

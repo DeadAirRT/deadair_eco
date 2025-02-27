@@ -22,7 +22,7 @@
 						<event_cue_signalled/>
 					</conditions>
 					<actions>
-						<debug_text text="'MOD: DAEco FactionLogic -- Starting DAEco Xenon Job Helper for %s'.[$Faction.knownname]" context="false" filter="scripts"/>
+						<debug_text text="'MOD: DAEco FactionLogic -- Starting DAEco Xenon Job Helper for %s'.[$Faction.knownname]" context="false" filter="economy_verbose"/>
 					</actions>
 					<cues>
 						<cue name="DAEco_Ship_Construction_Manager" ref="md.Xenon_Job_Helper_DA.Manager">
@@ -37,7 +37,7 @@
 						<event_cue_signalled/>
 					</conditions>
 					<actions>
-						<debug_text text="'MOD: DAEco FactionLogic -- Starting Vanilla Job Helper for %s'.[$Faction.knownname]" context="false" filter="scripts"/>
+						<debug_text text="'MOD: DAEco FactionLogic -- Starting Vanilla Job Helper for %s'.[$Faction.knownname]" context="false" filter="economy_verbose"/>
 					</actions>
 					<cues>
 						<cue name="Vanilla_Ship_Construction_Manager" ref="md.Job_Helper.Manager">
