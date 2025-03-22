@@ -76,7 +76,7 @@
 											</do_if>
 											<do_if value="$JobSector and (not $ShipyardDistanceTable.{$JobSector}?)">
 												<append_list_elements name="$TempOrderList" other="$Shipyards"/>
-												<sort_list list="$TempOrderList" sortbyvalue="loop.element.gatedistance.{$JobSector} + ((loop.element.gatedistance.{$JobSector} ge 0) * 1000)" sortdescending="false" comment="DA - Handling for -1 if there is no route"/>
+												<sort_list list="$TempOrderList" sortbyvalue="loop.element.gatedistance.{$JobSector} + ((loop.element.gatedistance.{$JobSector} == -1) * 1000)" sortdescending="false" comment="DA - Handling for -1 if there is no route"/>
 												<set_value name="$ShipyardDistanceTable.{$JobSector}" exact="$TempOrderList"/>
 											</do_if>
 											<do_elseif value="$JobSector and $ShipyardDistanceTable.{$JobSector}?">
@@ -88,16 +88,18 @@
 											</do_else>
 											<do_for_each name="$Shipyard" in="$TempOrderList">
 												<do_if value="$ShipyardTable.{$Shipyard}.$BuildableShipWares.indexof.{$ShipToBuild.macro.ware}">
-													<set_value name="$HasSuitableBuildModule" exact="false"/>
-													<do_all exact="$ShipyardTable.{$Shipyard}.$BuildModuleList.count" counter="$o">
-														<do_if value="$ShipyardTable.{$Shipyard}.$BuildModuleList.{$o}.dock.{$ShipToBuild.docksize}">
-															<set_value name="$SelectedShipyard" exact="$Shipyard"/>
-															<set_value name="$HasSuitableBuildModule" exact="true"/>
+													<do_if value="(not $JobSector) or ($JobSector and ($Shipyard.gatedistance.{$JobSector} ge 0))">
+														<set_value name="$HasSuitableBuildModule" exact="false"/>
+														<do_all exact="$ShipyardTable.{$Shipyard}.$BuildModuleList.count" counter="$o">
+															<do_if value="$ShipyardTable.{$Shipyard}.$BuildModuleList.{$o}.dock.{$ShipToBuild.docksize}">
+																<set_value name="$SelectedShipyard" exact="$Shipyard"/>
+																<set_value name="$HasSuitableBuildModule" exact="true"/>
+																<break/>
+															</do_if>
+														</do_all>
+														<do_if value="$HasSuitableBuildModule">
 															<break/>
 														</do_if>
-													</do_all>
-													<do_if value="$HasSuitableBuildModule">
-														<break/>
 													</do_if>
 												</do_if>
 											</do_for_each>
@@ -106,12 +108,14 @@
 										<do_else>
 											<set_value name="$Shipyard" exact="$Shipyards.{1}"/>
 											<do_if value="$ShipyardTable.{$Shipyard}.$BuildableShipWares.indexof.{$ShipToBuild.macro.ware}">
-												<do_all exact="$ShipyardTable.{$Shipyard}.$BuildModuleList.count" counter="$o">
-													<do_if value="$ShipyardTable.{$Shipyard}.$BuildModuleList.{$o}.dock.{$ShipToBuild.docksize}">
-														<set_value name="$SelectedShipyard" exact="$Shipyard"/>
-														<break/>
-													</do_if>
-												</do_all>
+												<do_if value="(not $JobSector) or ($JobSector and ($Shipyard.gatedistance.{$JobSector} ge 0))">
+													<do_all exact="$ShipyardTable.{$Shipyard}.$BuildModuleList.count" counter="$o">
+														<do_if value="$ShipyardTable.{$Shipyard}.$BuildModuleList.{$o}.dock.{$ShipToBuild.docksize}">
+															<set_value name="$SelectedShipyard" exact="$Shipyard"/>
+															<break/>
+														</do_if>
+													</do_all>
+												</do_if>
 											</do_if>
 											<remove_value name="$Shipyard"/>
 										</do_else>
