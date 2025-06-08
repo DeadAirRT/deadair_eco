@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+  <add sel="/aiscript/attention/actions/do_if/do_if[@value='not $skipshortage?']/do_if/do_for_each/do_for_each[@in='$table_insufficient']" pos="prepend">
+    <!-- Trading for station, checking insufficient wares -->
+    <do_if value="[ware.da_laborunion_contracts, ware.da_adv_schematics, ware.da_mil_schematics].indexof.{$locware} != 0">
+      <!-- Skip the secondary wares -->
+      <continue />
+    </do_if>
+  </add>
+
+  <add sel="/aiscript/attention/actions/do_if/do_if[@value='not $skipshortage?']/do_if/do_for_each/do_for_each[@in='$table_insufficient']" pos="prepend">
+    <!-- Trading for station, checking shortage wares -->
+    <do_if value="[ware.da_laborunion_contracts, ware.da_adv_schematics, ware.da_mil_schematics].indexof.{$locware} != 0">
+      <!-- Skip the secondary wares -->
+      <continue />
+    </do_if>
+  </add>
+</diff>
