@@ -6,6 +6,7 @@
 	<dependency id="ego_dlc_boron" optional="false" name="Fish People"/>
 	<dependency id="ego_dlc_timelines" optional="true" name="Not Sandbox DLC"/>
 	<dependency version="700"/>
+	<dependency id="addmoresectorsre" optional="true" name="Trey's Sectors Reemergence Patch" comment="let Treys patch god first, then eco patch god, then both will work" />
 	<text language="7" 	name="DeadAir Eco" description="Rebalance of pricing, production, and general economy." author="DeadAir" />
 	<text language="33" name="DeadAir Eco" description="Rebalance of pricing, production, and general economy." author="DeadAir" />
 	<text language="34" name="DeadAir Eco" description="Rebalance of pricing, production, and general economy." author="DeadAir" />
